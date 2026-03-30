@@ -11,18 +11,18 @@ const inter = Inter({
 });
 
 // AOS Provider Component (client-side initialization)
-function AOSProvider({ children }) {
+function AOSInit() {
   'use client';
 
   import('aos').then((AOS) => {
-    AOS.init({
+    AOS.default.init({
       duration: 800,
       once: true,
       offset: 80,
     });
   });
 
-  return <>{children}</>;
+  return null;
 }
 
 export const metadata = {
@@ -66,11 +66,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} scroll-smooth`}>
       <body className="min-h-screen flex flex-col font-sans antialiased">
-        <AOSProvider>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </AOSProvider>
+        <AOSInit />
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );
