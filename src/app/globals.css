@@ -1,41 +1,76 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand Colors - Based on Delta Clicks Logo */
-  --primary: #a855f7;
-  /* Purple */
-  --primary-dark: #9333ea;
-  /* Darker Purple */
-  --primary-light: #c084fc;
-  /* Light Purple */
-  --secondary: #ec4899;
-  /* Pink */
-  --secondary-dark: #db2777;
-  /* Darker Pink */
-  --accent: #f97316;
-  /* Orange */
-  --accent-dark: #ea580c;
-  /* Darker Orange */
-  --background: #0a0a0a;
-  /* Dark Background */
-  --background-light: #171717;
-  /* Slightly Lighter Dark */
-  --foreground: #ffffff;
-  /* White Text */
-  --foreground-muted: #a3a3a3;
-  /* Gray Text */
+  /* Brand Colors - Dark Purple Theme from Logo */
+  /* Boundary/Edge colors - Deep dark purple */
+  --boundary-dark: #190626;
+  /* Very dark purple edges */
+  --boundary: #2a0a40;
+  /* Dark purple boundaries */
+  
+  /* Main Focus Area - Center content colors */
+  --focus-dark: #3a085a;
+  /* Transition to focus */
+  --focus: #420969;
+  /* Main focus purple */
+  --focus-light: #5a0f8a;
+  /* Lighter focus area */
+  
+  /* Accent Colors */
+  --primary: #7c3aed;
+  /* Vibrant Purple for CTAs */
+  --primary-light: #a78bfa;
+  /* Light Purple highlights */
+  --accent: #fbbf24;
+  /* Yellow from sparkles */
+  --accent-light: #fcd34d;
+  /* Bright Yellow */
+  
+  /* Text Colors */
+  --text-primary: #f5f3ff;
+  /* Primary text - Very light purple-white */
+  --text-secondary: #e9d5ff;
+  /* Secondary text - Light lavender */
+  --text-muted: #c4b5d9;
+  /* Muted text - Soft purple-gray */
+  --text-gradient-start: #f5f3ff;
+  /* Gradient text start */
+  --text-gradient-mid: #e9d5ff;
+  /* Gradient text middle */
+  --text-gradient-end: #c4b5d9;
+  /* Gradient text end */
+  
+  /* Backgrounds */
+  --background: #0a0210;
+  /* Darkest background */
+  --background-light: #140528;
+  /* Lighter background */
+  --background-card: #1f0838;
+  /* Card background */
+  
+  /* Foreground */
+  --foreground: #f5f3ff;
+  /* Main foreground text */
+  --foreground-muted: #c4b5d9;
+  /* Muted foreground */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-boundary: var(--boundary);
+  --color-boundary-dark: var(--boundary-dark);
+  --color-focus: var(--focus);
+  --color-focus-dark: var(--focus-dark);
+  --color-focus-light: var(--focus-light);
   --color-primary: var(--primary);
-  --color-primary-dark: var(--primary-dark);
   --color-primary-light: var(--primary-light);
-  --color-secondary: var(--secondary);
-  --color-secondary-dark: var(--secondary-dark);
   --color-accent: var(--accent);
-  --color-accent-dark: var(--accent-dark);
+  --color-accent-light: var(--accent-light);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-background-card: var(--background-card);
   --font-sans: var(--font-inter), Arial, sans-serif;
 }
 
@@ -68,34 +103,57 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--primary), var(--secondary));
+  background: linear-gradient(180deg, var(--primary), var(--primary-dark));
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--primary-dark), var(--secondary-dark));
+  background: linear-gradient(180deg, var(--primary-light), var(--primary));
 }
 
-/* Gradient Text Utility */
+/* Gradient Text Utility - Attractive Purple-Yellow-White */
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  background: linear-gradient(135deg, var(--text-gradient-start), var(--accent-light), var(--primary-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Gradient Background Utility */
+/* Gradient Background Utility - Boundary to Focus blend */
 .gradient-bg {
-  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  background: linear-gradient(135deg, var(--boundary), var(--focus), var(--focus-light));
 }
 
-/* Glow Effect */
+/* Glow Effect - Purple Glow */
 .glow {
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4),
-    0 0 40px rgba(236, 72, 153, 0.2);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.4),
+    0 0 60px rgba(66, 9, 105, 0.3),
+    0 0 90px rgba(251, 191, 36, 0.15);
 }
 
 .glow-text {
-  text-shadow: 0 0 20px rgba(168, 85, 247, 0.5),
-    0 0 40px rgba(236, 72, 153, 0.3);
+  text-shadow: 0 0 25px rgba(167, 139, 250, 0.5),
+    0 0 50px rgba(124, 58, 237, 0.4),
+    0 0 75px rgba(66, 9, 105, 0.3);
+}
+
+/* Corner Blends - Circular black to theme */
+.corner-blend-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle at top right, black 0%, rgba(25, 6, 38, 0.3) 50%, transparent 70%);
+  pointer-events: none;
+}
+
+.corner-blend-top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle at top left, black 0%, rgba(25, 6, 38, 0.4) 50%, transparent 70%);
+  pointer-events: none;
 }

@@ -39,22 +39,20 @@ export default function Navbar() {
           : 'bg-transparent'
           }`}
       >
+        {/* Black corner blend for navbar area */}
+        {!isScrolled && <div className="corner-blend-top-right" />}
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-24">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-2 group">
-              <div className="relative w-12 h-12">
+            <Link href="/" className="flex items-center group">
+              <div className="relative w-28 h-20 sm:w-36 sm:h-24">
                 <Image
-                  src="/logo.png"
+                  src="/logo-cropped.png"
                   alt="DeltaClicks Logo"
-                  width={48}
-                  height={48}
-                  className="transition-transform group-hover:scale-110"
+                  fill
+                  className="object-contain transition-transform group-hover:scale-105"
                 />
               </div>
-              <span className={`text-xl font-bold ${isScrolled ? 'text-foreground' : 'text-white'}`}>
-                Delta<span className="gradient-text">Clicks</span>
-              </span>
             </Link>
 
             {/* Desktop Navigation */}

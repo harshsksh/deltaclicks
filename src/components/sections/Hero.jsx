@@ -18,11 +18,20 @@ export default function Hero({
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
+      {/* Background - Boundary to Focus gradient */}
       {background === 'gradient' && (
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary/90 to-primary/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-boundary-dark via-boundary to-focus" />
       )}
-      
+
+      {/* Circular black blend in top-left corner */}
+      <div className="corner-blend-top-left" />
+
+      {/* Circular black blend in top-right corner */}
+      <div className="corner-blend-top-right" />
+
+      {/* Radial gradient for focus effect - lighter in center */}
+      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-focus/20 to-transparent pointer-events-none" />
+
       {/* Animated Background Shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -31,7 +40,7 @@ export default function Hero({
             rotate: [0, 90, 0],
           }}
           transition={{ duration: 20, repeat: Infinity }}
-          className="absolute -top-1/2 -right-1/4 w-full h-full bg-white/5 rounded-full blur-3xl"
+          className="absolute -top-1/2 -right-1/4 w-full h-full bg-accent/15 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -39,7 +48,16 @@ export default function Hero({
             rotate: [0, -90, 0],
           }}
           transition={{ duration: 25, repeat: Infinity }}
-          className="absolute -bottom-1/2 -left-1/4 w-full h-full bg-primary/10 rounded-full blur-3xl"
+          className="absolute -bottom-1/2 -left-1/4 w-full h-full bg-primary/20 rounded-full blur-3xl"
+        />
+        {/* Yellow sparkle accents */}
+        <motion.div
+          animate={{
+            opacity: [0.3, 0.6, 0.3],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{ duration: 3, repeat: Infinity }}
+          className="absolute top-1/4 right-1/4 w-32 h-32 bg-accent-light/10 rounded-full blur-2xl"
         />
       </div>
 
@@ -49,7 +67,7 @@ export default function Hero({
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 max-w-5xl"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-6 max-w-5xl drop-shadow-lg"
         >
           {title}
         </motion.h1>
@@ -59,7 +77,7 @@ export default function Hero({
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg sm:text-xl text-white/80 mb-8 max-w-2xl"
+            className="text-lg sm:text-xl text-text-secondary mb-8 max-w-2xl drop-shadow"
           >
             {subtitle}
           </motion.p>

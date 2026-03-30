@@ -11,7 +11,8 @@
       "Bash(del *)",
       "Bash(npm uninstall *)",
       "Bash(echo.)",
-      "Bash(npm ls *)"
+      "Bash(npm ls *)",
+      "Bash(python *)"
     ]
   },
   "$version": 3

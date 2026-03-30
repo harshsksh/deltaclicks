@@ -35,21 +35,20 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary text-white">
+    <footer className="bg-background-light text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Column 1: Brand Info */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="relative w-10 h-10">
+              <div className="relative w-14 h-10">
                 <Image
-                  src="/logo.svg"
+                  src="/logo-cropped.png"
                   alt="DeltaClicks Logo"
-                  width={40}
-                  height={40}
+                  fill
+                  className="object-contain"
                 />
               </div>
-              <span className="text-xl font-bold">DeltaClicks</span>
             </Link>
             <p className="text-gray-400 leading-relaxed">
               Your trusted partner for digital marketing excellence. We help businesses

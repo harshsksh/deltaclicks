@@ -59,9 +59,9 @@ export default function Home() {
       />
 
       {/* Trust Strip */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-boundary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-500 mb-8">Trusted by 50+ brands worldwide</p>
+          <p className="text-center text-text-muted mb-8">Trusted by 50+ brands worldwide</p>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
             {[1, 2, 3, 4, 5, 6].map((i) => (
               <div key={i} className="w-32 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
@@ -94,7 +94,7 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-focus">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Why Choose Us"
@@ -148,7 +148,7 @@ export default function Home() {
       </section>
 
       {/* Portfolio Highlights Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-boundary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Our Work"
