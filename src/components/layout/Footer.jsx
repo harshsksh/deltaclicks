@@ -1,15 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { 
-  Linkedin, 
-  Instagram, 
-  Facebook, 
-  Twitter, 
-  Youtube,
+import {
   Mail,
   Phone,
   MapPin,
-  Clock
+  Clock,
+  Globe,
+  Send,
+  Share2,
+  Video,
+  MessageCircle
 } from 'lucide-react';
 import { services } from '@/data/services';
 
@@ -25,11 +25,11 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { name: 'LinkedIn', href: 'https://linkedin.com', icon: Linkedin },
-    { name: 'Instagram', href: 'https://instagram.com', icon: Instagram },
-    { name: 'Facebook', href: 'https://facebook.com', icon: Facebook },
-    { name: 'Twitter/X', href: 'https://twitter.com', icon: Twitter },
-    { name: 'YouTube', href: 'https://youtube.com', icon: Youtube },
+    { name: 'Website', href: 'https://deltaclicks.com', icon: Globe },
+    { name: 'Contact', href: 'mailto:info@deltaclicks.com', icon: Send },
+    { name: 'Share', href: '#', icon: Share2 },
+    { name: 'Video', href: 'https://youtube.com', icon: Video },
+    { name: 'Chat', href: '#', icon: MessageCircle },
   ];
 
   const currentYear = new Date().getFullYear();
@@ -52,7 +52,7 @@ export default function Footer() {
               <span className="text-xl font-bold">DeltaClicks</span>
             </Link>
             <p className="text-gray-400 leading-relaxed">
-              Your trusted partner for digital marketing excellence. We help businesses 
+              Your trusted partner for digital marketing excellence. We help businesses
               grow through data-driven strategies and creative solutions.
             </p>
             <div className="flex space-x-4">
