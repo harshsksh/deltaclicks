@@ -34,27 +34,26 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-lg'
-            : 'bg-transparent'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+          ? 'bg-background/95 backdrop-blur-md shadow-lg border-b border-white/10'
+          : 'bg-transparent'
+          }`}
       >
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 group">
-              <div className="relative w-10 h-10">
+              <div className="relative w-12 h-12">
                 <Image
-                  src="/logo.svg"
+                  src="/logo.png"
                   alt="DeltaClicks Logo"
-                  width={40}
-                  height={40}
+                  width={48}
+                  height={48}
                   className="transition-transform group-hover:scale-110"
                 />
               </div>
-              <span className={`text-xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
-                DeltaClicks
+              <span className={`text-xl font-bold ${isScrolled ? 'text-foreground' : 'text-white'}`}>
+                Delta<span className="gradient-text">Clicks</span>
               </span>
             </Link>
 
@@ -64,13 +63,12 @@ export default function Navbar() {
                 <div key={link.name} className="relative">
                   {link.hasDropdown ? (
                     <div
-                      className={`flex items-center space-x-1 cursor-pointer transition-colors ${
-                        pathname === link.href
-                          ? 'text-primary font-semibold'
-                          : isScrolled
-                          ? 'text-gray-700 hover:text-primary'
+                      className={`flex items-center space-x-1 cursor-pointer transition-colors ${pathname === link.href
+                        ? 'gradient-text font-semibold'
+                        : isScrolled
+                          ? 'text-foreground-muted hover:text-foreground'
                           : 'text-white/90 hover:text-white'
-                      }`}
+                        }`}
                       onMouseEnter={() => setOpenServiceDropdown('services')}
                       onMouseLeave={() => setOpenServiceDropdown(null)}
                     >
@@ -80,13 +78,12 @@ export default function Navbar() {
                   ) : (
                     <Link
                       href={link.href}
-                      className={`transition-colors ${
-                        pathname === link.href
-                          ? 'text-primary font-semibold'
-                          : isScrolled
-                          ? 'text-gray-700 hover:text-primary'
+                      className={`transition-colors ${pathname === link.href
+                        ? 'gradient-text font-semibold'
+                        : isScrolled
+                          ? 'text-foreground-muted hover:text-foreground'
                           : 'text-white/90 hover:text-white'
-                      }`}
+                        }`}
                     >
                       {link.name}
                     </Link>
@@ -99,7 +96,7 @@ export default function Navbar() {
             <div className="hidden lg:block">
               <Link
                 href="/contact"
-                className="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+                className="gradient-bg hover:opacity-90 text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 glow"
               >
                 Get a Quote
               </Link>
@@ -112,9 +109,9 @@ export default function Navbar() {
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <X className={`w-6 h-6 ${isScrolled ? 'text-gray-900' : 'text-white'}`} />
+                <X className={`w-6 h-6 ${isScrolled ? 'text-foreground' : 'text-white'}`} />
               ) : (
-                <Menu className={`w-6 h-6 ${isScrolled ? 'text-gray-900' : 'text-white'}`} />
+                <Menu className={`w-6 h-6 ${isScrolled ? 'text-foreground' : 'text-white'}`} />
               )}
             </button>
           </div>
@@ -127,7 +124,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="hidden lg:block absolute top-full left-0 right-0 bg-white shadow-xl border-t"
+              className="hidden lg:block absolute top-full left-0 right-0 bg-background shadow-xl border-t border-white/10"
               onMouseEnter={() => setOpenServiceDropdown('services')}
               onMouseLeave={() => setOpenServiceDropdown(null)}
             >
@@ -137,16 +134,16 @@ export default function Navbar() {
                     <Link
                       key={service.slug}
                       href={`/services/${service.slug}`}
-                      className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
+                      className="flex items-start space-x-3 p-3 rounded-lg hover:bg-white/5 transition-colors group"
                     >
-                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <service.icon className="w-5 h-5 text-primary" />
+                      <div className="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center group-hover:opacity-90 transition-opacity">
+                        <service.icon className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-medium text-gray-900 group-hover:text-primary transition-colors">
+                        <h4 className="font-medium text-foreground group-hover:text-primary-light transition-colors">
                           {service.title}
                         </h4>
-                        <p className="text-sm text-gray-500 mt-1 line-clamp-2">
+                        <p className="text-sm text-foreground-muted mt-1 line-clamp-2">
                           {service.shortDescription}
                         </p>
                       </div>
@@ -167,7 +164,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden fixed top-20 left-0 right-0 bg-white shadow-xl z-40 overflow-hidden"
+            className="lg:hidden fixed top-20 left-0 right-0 bg-background shadow-xl z-40 overflow-hidden border-t border-white/10"
           >
             <div className="px-4 py-6 space-y-4">
               {navLinks.map((link) => (
@@ -180,13 +177,12 @@ export default function Navbar() {
                             openServiceDropdown === 'mobile-services' ? null : 'mobile-services'
                           )
                         }
-                        className="flex items-center justify-between w-full py-2 text-gray-900 font-medium"
+                        className="flex items-center justify-between w-full py-2 text-foreground font-medium"
                       >
                         {link.name}
                         <ChevronDown
-                          className={`w-4 h-4 transition-transform ${
-                            openServiceDropdown === 'mobile-services' ? 'rotate-180' : ''
-                          }`}
+                          className={`w-4 h-4 transition-transform ${openServiceDropdown === 'mobile-services' ? 'rotate-180' : ''
+                            }`}
                         />
                       </button>
                       <AnimatePresence>
@@ -203,7 +199,7 @@ export default function Navbar() {
                                   key={service.slug}
                                   href={`/services/${service.slug}`}
                                   onClick={() => setIsMobileMenuOpen(false)}
-                                  className="flex items-center space-x-3 text-gray-600 hover:text-primary"
+                                  className="flex items-center space-x-3 text-foreground-muted hover:text-primary-light"
                                 >
                                   <service.icon className="w-4 h-4" />
                                   <span>{service.title}</span>
@@ -218,11 +214,10 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`block py-2 font-medium ${
-                        pathname === link.href
-                          ? 'text-primary'
-                          : 'text-gray-900 hover:text-primary'
-                      }`}
+                      className={`block py-2 font-medium ${pathname === link.href
+                        ? 'gradient-text'
+                        : 'text-foreground-muted hover:text-foreground'
+                        }`}
                     >
                       {link.name}
                     </Link>
@@ -232,7 +227,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full bg-primary hover:bg-primary-dark text-white text-center px-6 py-3 rounded-full font-medium transition-colors"
+                className="block w-full gradient-bg hover:opacity-90 text-white text-center px-6 py-3 rounded-full font-medium transition-colors glow"
               >
                 Get a Quote
               </Link>

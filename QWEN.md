@@ -1,0 +1,2 @@
+## Qwen Added Memories
+- CRITICAL: Never configure Tailwind CSS with incompatible PostCSS plugin setups. Using `tailwindcss` directly as a PostCSS plugin (instead of `@tailwindcss/postcss` for Tailwind v4) causes infinite file watching that severely lags the entire system. Always verify Tailwind v4 uses `@import "tailwindcss"` in CSS and `@tailwindcss/postcss` in PostCSS config with CommonJS format (.js not .mjs).

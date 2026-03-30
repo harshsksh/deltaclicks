@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import AOSProvider from '@/components/providers/AOSProvider';
 
 // Initialize Google Fonts
 const inter = Inter({
@@ -10,22 +11,8 @@ const inter = Inter({
   display: 'swap',
 });
 
-// AOS Provider Component (client-side initialization)
-function AOSInit() {
-  'use client';
-
-  import('aos').then((AOS) => {
-    AOS.default.init({
-      duration: 800,
-      once: true,
-      offset: 80,
-    });
-  });
-
-  return null;
-}
-
 export const metadata = {
+  metadataBase: new URL('https://deltaclicks.com'),
   title: {
     default: 'DeltaClicks - Digital Marketing Agency',
     template: '%s | DeltaClicks',
@@ -66,7 +53,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} scroll-smooth`}>
       <body className="min-h-screen flex flex-col font-sans antialiased">
-        <AOSInit />
+        <AOSProvider />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
