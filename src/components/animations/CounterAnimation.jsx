@@ -12,19 +12,24 @@ export default function CounterAnimation({ value, suffix = '', duration = 2000 }
   useEffect(() => {
     if (isInView && !hasAnimated.current) {
       hasAnimated.current = true;
-      let start = 0;
       const end = parseInt(value.toString().replace(/\D/g, ''));
-      const incrementTime = duration / end;
+      const startTime = performance.now();
+      const easing = (t) => 1 - Math.pow(1 - t, 3); // Cubic ease out
 
-      const timer = setInterval(() => {
-        start += 1;
-        setCount(start);
-        if (start >= end) {
-          clearInterval(timer);
+      const animate = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = easing(progress);
+        const currentCount = Math.floor(end * easedProgress);
+
+        setCount(currentCount);
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
         }
-      }, incrementTime);
+      };
 
-      return () => clearInterval(timer);
+      requestAnimationFrame(animate);
     }
   }, [isInView, value, duration]);
 

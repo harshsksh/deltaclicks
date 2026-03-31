@@ -63,52 +63,59 @@ export default function Hero({
 
       {/* Content */}
       <div className={`relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 ${alignmentClasses[align]} flex flex-col`}>
-        <motion.h1
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-6 max-w-5xl drop-shadow-lg"
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col gap-6"
         >
-          {title}
-        </motion.h1>
+          <motion.h1
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-2 max-w-5xl drop-shadow-lg"
+          >
+            {title}
+          </motion.h1>
 
-        {subtitle && (
-          <motion.p
+          {subtitle && (
+            <motion.p
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="text-lg sm:text-xl text-text-secondary mb-4 max-w-2xl drop-shadow"
+            >
+              {subtitle}
+            </motion.p>
+          )}
+
+          <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg sm:text-xl text-text-secondary mb-8 max-w-2xl drop-shadow"
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row gap-4"
           >
-            {subtitle}
-          </motion.p>
-        )}
-
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4"
-        >
-          {primaryCTA && (
-            <Button
-              href={primaryCTA.href}
-              variant="primary"
-              size="lg"
-              className="bg-white text-primary hover:bg-white/90"
-            >
-              {primaryCTA.text}
-            </Button>
-          )}
-          {secondaryCTA && (
-            <Button
-              href={secondaryCTA.href}
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white/10"
-            >
-              {secondaryCTA.text}
-            </Button>
-          )}
+            {primaryCTA && (
+              <Button
+                href={primaryCTA.href}
+                variant="primary"
+                size="lg"
+                className="bg-white text-primary hover:bg-white/90"
+              >
+                {primaryCTA.text}
+              </Button>
+            )}
+            {secondaryCTA && (
+              <Button
+                href={secondaryCTA.href}
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white/10"
+              >
+                {secondaryCTA.text}
+              </Button>
+            )}
+          </motion.div>
         </motion.div>
       </div>
     </section>

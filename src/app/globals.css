@@ -157,3 +157,86 @@ body {
   background: radial-gradient(circle at top left, black 0%, rgba(25, 6, 38, 0.4) 50%, transparent 70%);
   pointer-events: none;
 }
+
+/* ===== MICRO-INTERACTIONS ===== */
+
+/* Button hover lift and glow */
+button, [role="button"], a.button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover, [role="button"]:hover, a.button:hover {
+  transform: translateY(-2px);
+}
+
+button:active, [role="button"]:active, a.button:active {
+  transform: translateY(0);
+}
+
+/* Card hover effects */
+.card, [class*="card"], [class*="Card"] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Link hover underline animation */
+a:not([class*="button"], [class*="btn"]) {
+  position: relative;
+  text-decoration: none;
+}
+
+a:not([class*="button"], [class*="btn"])::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+a:not([class*="button"], [class*="btn"]):hover::after {
+  width: 100%;
+}
+
+/* Input focus glow */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--primary);
+}
+
+/* Image hover zoom */
+[class*="group"]:hover img {
+  transform: scale(1.05);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+/* Selection color */
+::selection {
+  background: var(--primary);
+  color: var(--text-primary);
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
