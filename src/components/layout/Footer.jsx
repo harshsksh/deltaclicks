@@ -46,6 +46,7 @@ export default function Footer() {
                   src="/logo.png"
                   alt="DeltaClicks Logo"
                   fill
+                  sizes="(max-width: 640px) 80px, 96px"
                   className="object-contain"
                 />
               </div>

@@ -46,11 +46,12 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-24">
             {/* Logo */}
             <Link href="/" className="flex items-center group">
-              <div className="relative w-56 h-20 sm:w-72 sm:h-54 mt-12">
+              <div className="relative w-64 h-20 sm:w-80 sm:h-20">
                 <Image
                   src="/logo.png"
                   alt="DeltaClicks Logo"
                   fill
+                  sizes="(max-width: 640px) 256px, 320px"
                   className="object-contain transition-transform group-hover:scale-105"
                   priority
                 />

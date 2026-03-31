@@ -17,7 +17,8 @@
       "Bash(mkdir *)",
       "Bash(type *)",
       "Bash(findstr *)",
-      "Bash(tasklist)"
+      "Bash(tasklist)",
+      "Bash(copy *)"
     ]
   },
   "$version": 3
