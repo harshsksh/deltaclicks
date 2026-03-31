@@ -9,6 +9,7 @@ import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 import FadeIn from '@/components/animations/FadeIn';
 import StaggerContainer from '@/components/animations/StaggerContainer';
+import BlogPostingSchema from '@/components/seo/BlogPostingSchema';
 import { blog, getPostBySlug, getRelatedPosts, getBlogCategories } from '@/data/blog';
 
 // Generate static params for all blog slugs
@@ -45,6 +46,9 @@ export default function BlogPostPage({ params }) {
 
   return (
     <>
+      {/* JSON-LD Structured Data for Blog Post */}
+      <BlogPostingSchema post={post} />
+
       {/* Hero Section with Cover Image */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-boundary-dark via-boundary to-focus" />

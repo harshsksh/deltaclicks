@@ -9,6 +9,7 @@ import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import FadeIn from '@/components/animations/FadeIn';
 import StaggerContainer from '@/components/animations/StaggerContainer';
+import ServiceSchema from '@/components/seo/ServiceSchema';
 import { services, getServiceBySlug } from '@/data/services';
 
 // Generate static params for all service slugs
@@ -50,6 +51,9 @@ export default function ServicePage({ params }) {
 
   return (
     <>
+      {/* JSON-LD Structured Data for Service */}
+      <ServiceSchema service={service} />
+
       {/* Hero Section */}
       <Hero
         title={service.title}

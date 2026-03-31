@@ -3,6 +3,9 @@ import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import AOSProvider from '@/components/providers/AOSProvider';
+import OrganizationSchema from '@/components/seo/OrganizationSchema';
+import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
+import WebSiteSchema from '@/components/seo/WebSiteSchema';
 
 // Initialize Google Fonts
 const inter = Inter({
@@ -57,6 +60,10 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        {/* JSON-LD Structured Data */}
+        <OrganizationSchema />
+        <LocalBusinessSchema />
+        <WebSiteSchema />
       </body>
     </html>
   );
