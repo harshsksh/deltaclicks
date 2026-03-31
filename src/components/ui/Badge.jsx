@@ -1,11 +1,11 @@
-export default function Badge({ text, color = 'primary', size = 'md' }) {
+export default function Badge({ text, color = 'primary', size = 'md', className = '' }) {
   const colors = {
-    primary: 'bg-primary/10 text-primary',
-    secondary: 'bg-secondary/10 text-secondary',
-    accent: 'bg-accent/10 text-accent',
-    green: 'bg-green-100 text-green-800',
-    blue: 'bg-blue-100 text-blue-800',
-    purple: 'bg-purple-100 text-purple-800',
+    primary: 'bg-primary/20 text-primary-light border border-primary/30',
+    secondary: 'bg-focus text-foreground-muted border border-white/10',
+    accent: 'bg-accent/20 text-accent border border-accent/30',
+    green: 'bg-green-500/20 text-green-400 border border-green-500/30',
+    blue: 'bg-blue-500/20 text-blue-400 border border-blue-500/30',
+    purple: 'bg-purple-500/20 text-purple-400 border border-purple-500/30',
   };
 
   const sizes = {
@@ -15,7 +15,7 @@ export default function Badge({ text, color = 'primary', size = 'md' }) {
   };
 
   return (
-    <span className={`inline-flex items-center font-medium rounded-full ${colors[color]} ${sizes[size]}`}>
+    <span className={`inline-flex items-center font-medium rounded-full ${colors[color]} ${sizes[size]} ${className}`}>
       {text}
     </span>
   );

@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { services } from '@/data/services';
+import { getIcon } from '@/lib/icons';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,12 +46,13 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-24">
             {/* Logo */}
             <Link href="/" className="flex items-center group">
-              <div className="relative w-28 h-20 sm:w-36 sm:h-24">
+              <div className="relative w-56 h-20 sm:w-72 sm:h-54 mt-12">
                 <Image
-                  src="/logo-cropped.png"
+                  src="/logo.png"
                   alt="DeltaClicks Logo"
                   fill
                   className="object-contain transition-transform group-hover:scale-105"
+                  priority
                 />
               </div>
             </Link>
@@ -128,25 +130,28 @@ export default function Navbar() {
             >
               <div className="container mx-auto px-4 py-6">
                 <div className="grid grid-cols-4 gap-4">
-                  {services.map((service) => (
-                    <Link
-                      key={service.slug}
-                      href={`/services/${service.slug}`}
-                      className="flex items-start space-x-3 p-3 rounded-lg hover:bg-white/5 transition-colors group"
-                    >
-                      <div className="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center group-hover:opacity-90 transition-opacity">
-                        <service.icon className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <h4 className="font-medium text-foreground group-hover:text-primary-light transition-colors">
-                          {service.title}
-                        </h4>
-                        <p className="text-sm text-foreground-muted mt-1 line-clamp-2">
-                          {service.shortDescription}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
+                  {services.map((service) => {
+                    const IconComponent = getIcon(service.icon);
+                    return (
+                      <Link
+                        key={service.slug}
+                        href={`/services/${service.slug}`}
+                        className="flex items-start space-x-3 p-3 rounded-lg hover:bg-white/5 transition-colors group"
+                      >
+                        <div className="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center group-hover:opacity-90 transition-opacity">
+                          <IconComponent className="w-5 h-5 text-white" />
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-foreground group-hover:text-primary-light transition-colors">
+                            {service.title}
+                          </h4>
+                          <p className="text-sm text-foreground-muted mt-1 line-clamp-2">
+                            {service.shortDescription}
+                          </p>
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             </motion.div>
@@ -192,17 +197,20 @@ export default function Navbar() {
                             className="overflow-hidden"
                           >
                             <div className="py-4 space-y-3">
-                              {services.map((service) => (
-                                <Link
-                                  key={service.slug}
-                                  href={`/services/${service.slug}`}
-                                  onClick={() => setIsMobileMenuOpen(false)}
-                                  className="flex items-center space-x-3 text-foreground-muted hover:text-primary-light"
-                                >
-                                  <service.icon className="w-4 h-4" />
-                                  <span>{service.title}</span>
-                                </Link>
-                              ))}
+                              {services.map((service) => {
+                                const IconComponent = getIcon(service.icon);
+                                return (
+                                  <Link
+                                    key={service.slug}
+                                    href={`/services/${service.slug}`}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className="flex items-center space-x-3 text-foreground-muted hover:text-primary-light"
+                                  >
+                                    <IconComponent className="w-4 h-4" />
+                                    <span>{service.title}</span>
+                                  </Link>
+                                );
+                              })}
                             </div>
                           </motion.div>
                         )}

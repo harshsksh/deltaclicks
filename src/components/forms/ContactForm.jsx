@@ -49,7 +49,7 @@ export default function ContactForm() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    
+
     // Validate on blur
     const error = validateField(name, value);
     setErrors((prev) => ({ ...prev, [name]: error }));
@@ -73,7 +73,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Validate all fields
     const newErrors = {};
     Object.keys(formData).forEach((key) => {
@@ -130,10 +130,10 @@ export default function ContactForm() {
 
   if (isSuccess) {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
-        <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
-        <p className="text-gray-600 mb-6">
+      <div className="bg-green-500/10 border border-green-500/30 rounded-2xl p-8 text-center">
+        <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
+        <h3 className="text-2xl font-bold text-foreground mb-2">Message Sent!</h3>
+        <p className="text-foreground-muted mb-6">
           Thank you for reaching out. We'll get back to you within 24 hours.
         </p>
         <Button
@@ -150,7 +150,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Name */}
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
           Full Name *
         </label>
         <input
@@ -161,12 +161,12 @@ export default function ContactForm() {
           onChange={handleChange}
           onBlur={handleBlur}
           className={`w-full px-4 py-3 rounded-lg border ${
-            errors.name ? 'border-red-500' : 'border-gray-300'
-          } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
+            errors.name ? 'border-red-500' : 'border-white/10 bg-background-card'
+          } text-foreground placeholder-foreground-muted focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
           placeholder="John Doe"
         />
         {errors.name && (
-          <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
+          <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
             <AlertCircle className="w-4 h-4" /> {errors.name}
           </p>
         )}
@@ -174,7 +174,7 @@ export default function ContactForm() {
 
       {/* Email */}
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
           Email Address *
         </label>
         <input
@@ -185,12 +185,12 @@ export default function ContactForm() {
           onChange={handleChange}
           onBlur={handleBlur}
           className={`w-full px-4 py-3 rounded-lg border ${
-            errors.email ? 'border-red-500' : 'border-gray-300'
-          } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
+            errors.email ? 'border-red-500' : 'border-white/10 bg-background-card'
+          } text-foreground placeholder-foreground-muted focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
           placeholder="john@example.com"
         />
         {errors.email && (
-          <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
+          <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
             <AlertCircle className="w-4 h-4" /> {errors.email}
           </p>
         )}
@@ -198,7 +198,7 @@ export default function ContactForm() {
 
       {/* Phone */}
       <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
           Phone Number
         </label>
         <input
@@ -209,12 +209,12 @@ export default function ContactForm() {
           onChange={handleChange}
           onBlur={handleBlur}
           className={`w-full px-4 py-3 rounded-lg border ${
-            errors.phone ? 'border-red-500' : 'border-gray-300'
-          } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
+            errors.phone ? 'border-red-500' : 'border-white/10 bg-background-card'
+          } text-foreground placeholder-foreground-muted focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
           placeholder="+1 (234) 567-890"
         />
         {errors.phone && (
-          <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
+          <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
             <AlertCircle className="w-4 h-4" /> {errors.phone}
           </p>
         )}
@@ -222,7 +222,7 @@ export default function ContactForm() {
 
       {/* Service Dropdown */}
       <div>
-        <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="service" className="block text-sm font-medium text-foreground mb-2">
           Service Interested In *
         </label>
         <select
@@ -232,8 +232,8 @@ export default function ContactForm() {
           onChange={handleChange}
           onBlur={handleBlur}
           className={`w-full px-4 py-3 rounded-lg border ${
-            errors.service ? 'border-red-500' : 'border-gray-300'
-          } focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
+            errors.service ? 'border-red-500' : 'border-white/10 bg-background-card'
+          } text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all`}
         >
           <option value="">Select a service</option>
           <option value="SEO">SEO Services</option>
@@ -247,7 +247,7 @@ export default function ContactForm() {
           <option value="General Inquiry">General Inquiry</option>
         </select>
         {errors.service && (
-          <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
+          <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
             <AlertCircle className="w-4 h-4" /> {errors.service}
           </p>
         )}
@@ -255,7 +255,7 @@ export default function ContactForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
           Message *
         </label>
         <textarea
@@ -266,12 +266,12 @@ export default function ContactForm() {
           onBlur={handleBlur}
           rows={5}
           className={`w-full px-4 py-3 rounded-lg border ${
-            errors.message ? 'border-red-500' : 'border-gray-300'
-          } focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none`}
+            errors.message ? 'border-red-500' : 'border-white/10 bg-background-card'
+          } text-foreground placeholder-foreground-muted focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none`}
           placeholder="Tell us about your project..."
         />
         {errors.message && (
-          <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
+          <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
             <AlertCircle className="w-4 h-4" /> {errors.message}
           </p>
         )}
@@ -300,8 +300,8 @@ export default function ContactForm() {
 
       {/* Error Message */}
       {errorMessage && (
-        <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-          <p className="text-red-600 text-sm">{errorMessage}</p>
+        <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+          <p className="text-red-400 text-sm">{errorMessage}</p>
         </div>
       )}
     </form>

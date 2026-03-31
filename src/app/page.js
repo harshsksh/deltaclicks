@@ -102,17 +102,20 @@ export default function Home() {
             subtitle="We're not just another agency. Here's why businesses trust us with their growth."
           />
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {whyChooseUs.map((item, index) => (
-              <FadeIn key={index} delay={index * 0.1}>
-                <Card className="p-6 h-full text-center">
-                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
-                </Card>
-              </FadeIn>
-            ))}
+            {whyChooseUs.map((item, index) => {
+              const ItemIcon = item.icon;
+              return (
+                <FadeIn key={index} delay={index * 0.1}>
+                  <Card className="p-6 h-full text-center">
+                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <ItemIcon className="w-7 h-7 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                    <p className="text-gray-600">{item.description}</p>
+                  </Card>
+                </FadeIn>
+              );
+            })}
           </StaggerContainer>
         </div>
       </section>

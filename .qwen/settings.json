@@ -12,7 +12,12 @@
       "Bash(npm uninstall *)",
       "Bash(echo.)",
       "Bash(npm ls *)",
-      "Bash(python *)"
+      "Bash(python *)",
+      "Read(c:\\Users\\hr392\\Downloads/**)",
+      "Bash(mkdir *)",
+      "Bash(type *)",
+      "Bash(findstr *)",
+      "Bash(tasklist)"
     ]
   },
   "$version": 3

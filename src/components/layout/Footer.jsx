@@ -41,9 +41,9 @@ export default function Footer() {
           {/* Column 1: Brand Info */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="relative w-14 h-10">
+              <div className="relative w-20 h-14 sm:w-24 sm:h-16">
                 <Image
-                  src="/logo-cropped.png"
+                  src="/logo.png"
                   alt="DeltaClicks Logo"
                   fill
                   className="object-contain"
@@ -55,19 +55,22 @@ export default function Footer() {
               grow through data-driven strategies and creative solutions.
             </p>
             <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center 
-                           hover:bg-primary transition-colors group"
-                  aria-label={social.name}
-                >
-                  <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                </a>
-              ))}
+              {socialLinks.map((social) => {
+                const SocialIcon = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center
+                             hover:bg-primary transition-colors group"
+                    aria-label={social.name}
+                  >
+                    <SocialIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
