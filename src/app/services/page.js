@@ -59,9 +59,9 @@ export default function ServicesPage() {
                 Comprehensive Digital Marketing Solutions
               </h2>
               <p className="text-foreground-muted text-lg leading-relaxed mb-6">
-                At DeltaClicks, we offer a full suite of digital marketing services designed to help 
-                your business thrive in the online world. Whether you're looking to improve your search 
-                rankings, engage customers on social media, or build a stunning website, our team of 
+                At DeltaClicks, we offer a full suite of digital marketing services designed to help
+                your business thrive in the online world. Whether you&apos;re looking to improve your search
+                rankings, engage customers on social media, or build a stunning website, our team of
                 experts has you covered.
               </p>
               <p className="text-foreground-muted text-lg leading-relaxed">
@@ -155,8 +155,8 @@ export default function ServicesPage() {
               Not Sure Which Service You Need?
             </h2>
             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-              Our experts can help you identify the right services for your business goals. 
-              Let's have a conversation about your needs.
+              Our experts can help you identify the right services for your business goals.
+              Let&apos;s have a conversation about your needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button

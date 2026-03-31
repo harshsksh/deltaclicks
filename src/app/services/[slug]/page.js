@@ -83,7 +83,7 @@ export default function ServicePage({ params }) {
                     your business stand out in the competitive digital landscape.
                   </p>
                   <p>
-                    Whether you're just getting started or looking to optimize existing campaigns, 
+                    Whether you&apos;re just getting started or looking to optimize existing campaigns,
                     our team of experts will work closely with you to achieve your goals.
                   </p>
                 </div>
@@ -218,7 +218,7 @@ export default function ServicePage({ params }) {
               Ready to Get Started?
             </h2>
             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-              Let's discuss how our {service.title.toLowerCase()} services can help your 
+              Let&apos;s discuss how our {service.title.toLowerCase()} services can help your
               business achieve its goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

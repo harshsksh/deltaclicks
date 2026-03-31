@@ -168,7 +168,7 @@ export default function ProjectPage({ params }) {
                 <Card className="p-8 md:p-12 bg-background-card border border-white/10">
                   <Quote className="w-12 h-12 text-primary mb-6" />
                   <blockquote className="text-2xl md:text-3xl text-foreground font-medium leading-relaxed mb-8">
-                    "{project.testimonial}"
+                    &quot;{project.testimonial}&quot;
                   </blockquote>
                   <div className="flex items-center">
                     <div className="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
@@ -243,7 +243,7 @@ export default function ProjectPage({ params }) {
               Want Results Like This?
             </h2>
             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can help your business achieve similar success with our 
+              Let&apos;s discuss how we can help your business achieve similar success with our
               digital marketing expertise.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

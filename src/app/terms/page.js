@@ -50,9 +50,9 @@ export default function TermsPage() {
                   prose-a:text-primary-light hover:prose-a:text-primary">
                   
                   <p className="text-lg">
-                    Welcome to DeltaClicks. These Terms of Service ("Terms") govern your access to 
-                    and use of our website, services, and content. By accessing or using our website 
-                    and services, you agree to be bound by these Terms. If you do not agree to these 
+                    Welcome to DeltaClicks. These Terms of Service (&quot;Terms&quot;) govern your access to
+                    and use of our website, services, and content. By accessing or using our website
+                    and services, you agree to be bound by these Terms. If you do not agree to these
                     Terms, please do not use our website or services.
                   </p>
 
@@ -133,10 +133,10 @@ export default function TermsPage() {
 
                   <h2>7. Disclaimer of Warranties</h2>
                   <p>
-                    THIS WEBSITE AND OUR SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT 
-                    WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT 
-                    PERMISSIBLE UNDER APPLICABLE LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR 
-                    IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, 
+                    THIS WEBSITE AND OUR SERVICES ARE PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT
+                    WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT
+                    PERMISSIBLE UNDER APPLICABLE LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR
+                    IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY,
                     FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
                   </p>
                   <p>
@@ -192,9 +192,9 @@ export default function TermsPage() {
 
                   <h2>12. Changes to Terms</h2>
                   <p>
-                    We reserve the right to modify or replace these Terms at any time at our sole 
-                    discretion. If a revision is material, we will provide at least 30 days' notice 
-                    prior to any new terms taking effect. What constitutes a material change will 
+                    We reserve the right to modify or replace these Terms at any time at our sole
+                    discretion. If a revision is material, we will provide at least 30 days&apos; notice
+                    prior to any new terms taking effect. What constitutes a material change will
                     be determined at our sole discretion.
                   </p>
 

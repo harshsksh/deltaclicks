@@ -138,7 +138,7 @@ export default function PortfolioPage() {
               Want Results Like These?
             </h2>
             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can help your business achieve similar success with our 
+              Let&apos;s discuss how we can help your business achieve similar success with our
               digital marketing services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

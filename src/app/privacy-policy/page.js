@@ -50,9 +50,9 @@ export default function PrivacyPolicyPage() {
                   prose-a:text-primary-light hover:prose-a:text-primary">
                   
                   <p className="text-lg">
-                    At DeltaClicks ("we," "our," or "us"), we are committed to protecting your privacy 
-                    and ensuring the security of your personal information. This Privacy Policy explains 
-                    how we collect, use, disclose, and safeguard your information when you visit our 
+                    At DeltaClicks (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), we are committed to protecting your privacy
+                    and ensuring the security of your personal information. This Privacy Policy explains
+                    how we collect, use, disclose, and safeguard your information when you visit our
                     website or use our services.
                   </p>
 
@@ -136,7 +136,7 @@ export default function PrivacyPolicyPage() {
                     review their privacy policies.
                   </p>
 
-                  <h2>7. Children's Privacy</h2>
+                  <h2>7. Children&apos;s Privacy</h2>
                   <p>
                     Our services are not directed to individuals under the age of 18. We do not 
                     knowingly collect personal information from children. If we become aware that 
@@ -152,8 +152,8 @@ export default function PrivacyPolicyPage() {
 
                   <h2>9. Changes to This Privacy Policy</h2>
                   <p>
-                    We may update this Privacy Policy from time to time. The updated version will be 
-                    indicated by the "Last updated" date at the top of this page. We encourage you 
+                    We may update this Privacy Policy from time to time. The updated version will be
+                    indicated by the &quot;Last updated&quot; date at the top of this page. We encourage you
                     to review this Privacy Policy periodically for any changes.
                   </p>
 

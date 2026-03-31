@@ -134,7 +134,7 @@ export default function ContactForm() {
         <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
         <h3 className="text-2xl font-bold text-foreground mb-2">Message Sent!</h3>
         <p className="text-foreground-muted mb-6">
-          Thank you for reaching out. We'll get back to you within 24 hours.
+          Thank you for reaching out. We&apos;ll get back to you within 24 hours.
         </p>
         <Button
           onClick={() => setIsSuccess(false)}

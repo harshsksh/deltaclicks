@@ -92,24 +92,24 @@ export default function AboutPage() {
                 />
                 <div className="space-y-4 text-foreground-muted text-lg leading-relaxed">
                   <p>
-                    DeltaClicks was founded in 2019 with a simple yet powerful mission: to help businesses of all sizes 
-                    harness the power of digital marketing to achieve sustainable growth. What started as a small team 
+                    DeltaClicks was founded in 2019 with a simple yet powerful mission: to help businesses of all sizes
+                    harness the power of digital marketing to achieve sustainable growth. What started as a small team
                     of three digital enthusiasts has grown into a full-service agency serving clients across industries.
                   </p>
                   <p>
-                    Our founders recognized early on that the digital landscape was becoming increasingly complex. 
-                    Businesses needed a partner who could navigate this complexity while delivering clear, measurable results. 
-                    That's exactly what we set out to become.
+                    Our founders recognized early on that the digital landscape was becoming increasingly complex.
+                    Businesses needed a partner who could navigate this complexity while delivering clear, measurable results.
+                    That&apos;s exactly what we set out to become.
                   </p>
                   <p>
-                    Today, DeltaClicks stands as a trusted partner for over 50 businesses worldwide. We've managed 
-                    multi-million dollar ad budgets, generated millions in organic traffic, and helped countless brands 
-                    establish their digital presence. But what we're most proud of is the long-term relationships we've 
+                    Today, DeltaClicks stands as a trusted partner for over 50 businesses worldwide. We&apos;ve managed
+                    multi-million dollar ad budgets, generated millions in organic traffic, and helped countless brands
+                    establish their digital presence. But what we&apos;re most proud of is the long-term relationships we&apos;ve
                     built with our clients – many of whom have been with us since the beginning.
                   </p>
                   <p>
-                    Our approach combines data-driven strategies with creative excellence. We believe that great digital 
-                    marketing isn't just about numbers – it's about telling compelling stories, building genuine connections, 
+                    Our approach combines data-driven strategies with creative excellence. We believe that great digital
+                    marketing isn&apos;t just about numbers – it&apos;s about telling compelling stories, building genuine connections,
                     and creating experiences that resonate with your audience.
                   </p>
                 </div>
@@ -250,7 +250,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="gradient-bg p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Let's Work Together
+              Let&apos;s Work Together
             </h2>
             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
               Ready to take your digital marketing to the next level? Our team is here to help 
