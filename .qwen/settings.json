@@ -18,7 +18,10 @@
       "Bash(type *)",
       "Bash(findstr *)",
       "Bash(tasklist)",
-      "Bash(copy *)"
+      "Bash(copy *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   },
   "$version": 3
