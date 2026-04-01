@@ -11,7 +11,7 @@ export default function ServicesGrid({ services, limit }) {
   const displayServices = limit ? services.slice(0, limit) : services;
 
   return (
-    <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {displayServices.map((service, index) => {
         const IconComponent = Icons[service.icon] || Icons.Star;
 
