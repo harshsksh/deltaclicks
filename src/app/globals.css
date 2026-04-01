@@ -71,7 +71,8 @@
   --color-text-secondary: var(--text-secondary);
   --color-text-muted: var(--text-muted);
   --color-background-card: var(--background-card);
-  --font-sans: var(--font-inter), Arial, sans-serif;
+  /* Font fallback chain - Inter first, then system fonts */
+  --font-sans: var(--font-inter), Arial, Helvetica, sans-serif;
 }
 
 @media (prefers-color-scheme: light) {

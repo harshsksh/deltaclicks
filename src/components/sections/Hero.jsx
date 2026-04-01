@@ -3,6 +3,12 @@
 import { motion } from 'framer-motion';
 import Button from '@/components/ui/Button';
 
+// Static class maps - Tailwind can detect these strings at build time
+const ALIGNMENT_CLASSES = {
+  center: 'text-center items-center',
+  left: 'text-left items-start',
+};
+
 export default function Hero({
   title,
   subtitle,
@@ -11,11 +17,8 @@ export default function Hero({
   background = 'gradient',
   align = 'center',
 }) {
-  const alignmentClasses = {
-    center: 'text-center items-center',
-    left: 'text-left items-start',
-  };
-
+  const alignmentClass = ALIGNMENT_CLASSES[align] || ALIGNMENT_CLASSES.center;
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background - Boundary to Focus gradient */}
@@ -62,7 +65,7 @@ export default function Hero({
       </div>
 
       {/* Content */}
-      <div className={`relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 ${alignmentClasses[align]} flex flex-col`}>
+      <div className={['relative z-10 container mx-auto px-4 sm:px-6 lg:px-8', alignmentClass, 'flex flex-col'].filter(Boolean).join(' ')}>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -98,9 +101,8 @@ export default function Hero({
             {primaryCTA && (
               <Button
                 href={primaryCTA.href}
-                variant="primary"
+                variant="white"
                 size="lg"
-                className="bg-white text-primary hover:bg-white/90"
               >
                 {primaryCTA.text}
               </Button>
@@ -108,9 +110,8 @@ export default function Hero({
             {secondaryCTA && (
               <Button
                 href={secondaryCTA.href}
-                variant="outline"
+                variant="whiteOutline"
                 size="lg"
-                className="border-white text-white hover:bg-white/10"
               >
                 {secondaryCTA.text}
               </Button>

@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google';
 import './globals.css';
+import ErrorBoundary from '@/components/ErrorBoundary';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import AOSProvider from '@/components/providers/AOSProvider';
@@ -7,11 +8,14 @@ import OrganizationSchema from '@/components/seo/OrganizationSchema';
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import WebSiteSchema from '@/components/seo/WebSiteSchema';
 
-// Initialize Google Fonts
+// Initialize Google Fonts with fallbacks
+// display: 'swap' ensures text is visible immediately with system font
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
+  preload: true,
+  fallback: ['Arial', 'Helvetica', 'sans-serif'],
 });
 
 export const metadata = {
@@ -56,14 +60,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} scroll-smooth`}>
       <body className="min-h-screen flex flex-col font-sans antialiased">
-        <AOSProvider />
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        {/* JSON-LD Structured Data */}
-        <OrganizationSchema />
-        <LocalBusinessSchema />
-        <WebSiteSchema />
+        <ErrorBoundary>
+          <AOSProvider />
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          {/* JSON-LD Structured Data */}
+          <OrganizationSchema />
+          <LocalBusinessSchema />
+          <WebSiteSchema />
+        </ErrorBoundary>
       </body>
     </html>
   );
