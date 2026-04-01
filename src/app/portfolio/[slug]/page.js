@@ -79,7 +79,7 @@ export default function ProjectPage({ params }) {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
                 <div>
                   <h3 className="text-lg font-semibold text-foreground-muted mb-2">Client</h3>
                   <p className="text-xl font-bold text-foreground">{project.client}</p>
@@ -143,7 +143,7 @@ export default function ProjectPage({ params }) {
               title="Measurable Impact"
               subtitle="Key performance indicators that demonstrate success"
             />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12">
               {project.results.map((result, index) => (
                 <FadeIn key={index} delay={index * 0.1}>
                   <Card className="p-8 text-center gradient-bg">
@@ -190,7 +190,7 @@ export default function ProjectPage({ params }) {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {prevProject ? (
                 <FadeIn>
                   <Link

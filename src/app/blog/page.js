@@ -138,7 +138,7 @@ export default function BlogPage() {
               <p className="text-foreground-muted text-xl">No posts found in this category.</p>
             </div>
           ) : (
-            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
               {gridPosts.map((post, index) => (
                 <FadeIn key={post.slug} delay={index * 0.1}>
                   <Card className="group overflow-hidden bg-background-card border border-white/5 hover:border-primary/30 transition-colors h-full flex flex-col">

@@ -149,7 +149,7 @@ export default function ContactPage() {
             title="Frequently Asked Questions"
             subtitle="Quick answers to common questions"
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12 max-w-4xl mx-auto">
             {[
               {
                 question: 'How quickly can you start working on my project?',

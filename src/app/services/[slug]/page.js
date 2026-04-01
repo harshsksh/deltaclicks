@@ -114,7 +114,7 @@ export default function ServicePage({ params }) {
             title={`Our ${service.title} Package`}
             subtitle="Everything you need to succeed with our comprehensive service"
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12 max-w-4xl mx-auto">
             {service.features.map((feature, index) => (
               <FadeIn key={index} delay={index * 0.05}>
                 <div className="flex items-start space-x-4 p-4 rounded-xl bg-background-card border border-white/5">
@@ -135,7 +135,7 @@ export default function ServicePage({ params }) {
             title={`How We Deliver ${service.title}`}
             subtitle="A proven methodology tailored to your needs"
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {service.process.map((step, index) => (
               <FadeIn key={index} delay={index * 0.1}>
                 <Card className="p-6 h-full bg-background-card border border-white/5">
@@ -159,7 +159,7 @@ export default function ServicePage({ params }) {
             title={`Why Invest in ${service.title}?`}
             subtitle="The tangible advantages our clients experience"
           />
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {service.benefits.map((benefit, index) => (
               <FadeIn key={index} delay={index * 0.1}>
                 <Card className="p-6 h-full bg-background-card border border-white/5">
@@ -180,7 +180,7 @@ export default function ServicePage({ params }) {
             title="Related Services"
             subtitle="Other services that might interest you"
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
             {relatedServices.map((relatedService, index) => {
               const RelatedIcon = Icons[relatedService.icon] || Icons.Star;
               return (

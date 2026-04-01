@@ -68,7 +68,7 @@ export default function PortfolioPage() {
               <p className="text-foreground-muted text-xl">No projects found in this category.</p>
             </div>
           ) : (
-            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
               {filteredProjects.map((project, index) => (
                 <FadeIn key={project.slug} delay={index * 0.1}>
                   <Card className="group overflow-hidden bg-background-card border border-white/5 hover:border-primary/30 transition-colors">

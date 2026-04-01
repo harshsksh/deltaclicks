@@ -101,7 +101,7 @@ export default function Home() {
             title="What Sets Us Apart"
             subtitle="We're not just another agency. Here's why businesses trust us with their growth."
           />
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUs.map((item, index) => {
               const ItemIcon = item.icon;
               return (
@@ -131,7 +131,7 @@ export default function Home() {
             title="How We Work"
             subtitle="A proven methodology that delivers consistent results"
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
               <FadeIn key={index} delay={index * 0.1}>
                 <div className="text-center relative">
@@ -158,7 +158,7 @@ export default function Home() {
             title="Featured Projects"
             subtitle="See how we've helped businesses achieve remarkable results"
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProjects.map((project, index) => (
               <FadeIn key={project.slug} delay={index * 0.1}>
                 <Card className="group overflow-hidden">

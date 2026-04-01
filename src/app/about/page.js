@@ -127,7 +127,7 @@ export default function AboutPage() {
             title="Mission & Vision"
             subtitle="Guiding principles that drive everything we do"
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12">
             <FadeIn delay={0.1}>
               <Card className="p-8 h-full gradient-bg">
                 <div className="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center mb-6">
@@ -167,7 +167,7 @@ export default function AboutPage() {
             title="Core Values That Define Us"
             subtitle="The principles that guide our work and relationships"
           />
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {coreValues.map((value, index) => {
               const ValueIcon = value.icon;
               return (
@@ -194,7 +194,7 @@ export default function AboutPage() {
             title="Meet the Experts"
             subtitle="The talented people behind DeltaClicks success"
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {team.map((member, index) => (
               <FadeIn key={member.name} delay={index * 0.1}>
                 <Card className="group overflow-hidden bg-background-card border border-white/5">

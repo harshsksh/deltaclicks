@@ -226,7 +226,7 @@ export default function BlogPostPage({ params }) {
               title="More From This Category"
               subtitle={`Explore more {post.category} content`}
             />
-            <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <StaggerContainer className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12">
               {relatedPosts.map((relatedPost, index) => (
                 <FadeIn key={relatedPost.slug} delay={index * 0.1}>
                   <Card className="group overflow-hidden bg-background-card border border-white/5 hover:border-primary/30 transition-colors h-full flex flex-col">

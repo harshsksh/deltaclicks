@@ -96,7 +96,7 @@ export default function ServicesPage() {
             title="What You Get With Every Service"
             subtitle="Our commitment to excellence across all offerings"
           />
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {serviceFeatures.map((feature, index) => {
               const FeatureIcon = feature.icon;
               return (
@@ -123,7 +123,7 @@ export default function ServicesPage() {
             title="Our Service Delivery Process"
             subtitle="A proven framework that ensures consistent results"
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             {[
               { number: 1, title: 'Consultation', description: 'We start by understanding your business, goals, and challenges.' },
               { number: 2, title: 'Strategy', description: 'Our experts develop a customized strategy tailored to your needs.' },
