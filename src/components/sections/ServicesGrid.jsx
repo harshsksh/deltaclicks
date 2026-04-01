@@ -11,13 +11,13 @@ export default function ServicesGrid({ services, limit }) {
   const displayServices = limit ? services.slice(0, limit) : services;
 
   return (
-    <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <StaggerContainer className="flex flex-wrap gap-6 justify-center">
       {displayServices.map((service, index) => {
         const IconComponent = Icons[service.icon] || Icons.Star;
 
         return (
           <FadeIn key={service.slug} delay={index * 0.1}>
-            <Card className="p-6 h-full bg-background-card border border-white/5 hover:border-primary/30 transition-colors">
+            <Card className="w-72 p-6 h-full bg-background-card border border-white/5 hover:border-primary/30 transition-colors">
               <div className="w-14 h-14 gradient-bg rounded-xl flex items-center justify-center mb-4">
                 <IconComponent className="w-7 h-7 text-white" />
               </div>
