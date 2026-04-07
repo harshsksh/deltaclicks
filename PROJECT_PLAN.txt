@@ -1,507 +1,0 @@
-
-
-PROJECT PLAN GUIDE
-Digital Marketing Agency Website
-Full Frontend Development Blueprint  |  Next.js + Tailwind CSS
-
-FrameworkNext.js 14 with App RouterStylingTailwind CSS v3AnimationsFramer Motion v11 + AOSForms BackendWeb3Forms (Free - 250/month)IconsLucide ReactHostingVercel (Free Hobby Tier)Type100% Static Frontend - No Backend / No DatabaseDocument Versionv1.0  -  For Developer Use Only
-Follow all phases sequentially. Do not skip or reorder steps.
-
-
-Table of Contents
-Section 1   Project Overview & Objectives
-Section 2   Full Tech Stack - Details & Justification
-Section 3   Complete Site Architecture & Page List
-Section 4   Project Folder & File Structure
-Phase 1   Environment Setup & Project Initialization
-Phase 2   Global Layout, Theme & Base Components
-Phase 3   Page-by-Page Development (All 18 Pages)
-Phase 4   Animations & Interactivity
-Phase 5   Web3Forms Contact Form Integration
-Phase 6   Performance, SEO & Accessibility
-Phase 7   Testing & Quality Assurance
-Phase 8   Deployment to Vercel & Domain Setup
-Section 13   Post-Launch Checklist
-Section 14   Developer Notes, Best Practices & Timeline
-
-
-1. Project Overview & Objectives
-1.1  Client Summary
-The client is a digital marketing agency requiring a professional, high-converting, fully static frontend website. This site is their primary digital storefront - it must communicate expertise, showcase services, build credibility, and generate leads through a contact form. There is no backend, no database, and no CMS. All content is managed through static data files, and the developer is the sole person who will make any future updates.
-
-1.2  Business Objectives the Website Must Cover
-• Digital marketing services: SEO, Social Media Marketing (SMM), Search Engine Marketing (SEM), Content Marketing, Email Marketing, Influencer Marketing, Online Advertising
-• Digital branding and advertising across websites, social media channels, mobile apps, and all digital mediums
-• Consultancy, strategy development, and campaign management for businesses, startups, and organizations
-• Website and web application design, development, hosting, and maintenance services for clients
-• Digital content creation including graphics, videos, blogs, articles, and multimedia for marketing purposes
-• Brand identity development: logo design, graphic design, and corporate communication services
-• Market research, data analysis, performance tracking, and reporting using analytics platforms
-• Affiliate marketing, online lead generation, and performance-based marketing services
-• Acting as intermediary, agent, and service provider for digital advertising platforms and media buying
-
-1.3  Scope of Work
-IN SCOPEOUT OF SCOPEAll frontend pages (fully static)Backend / server-side developmentFully responsive - mobile, tablet, desktopDatabase of any kindSmooth animations and micro-interactionsCMS or admin panelWeb3Forms contact form integrationClient login or portal areaSEO-optimized metadata on all pagesE-commerce or payment functionalitySitemap.xml and robots.txt generationMulti-language / i18n supportVercel deployment + custom domain setupCustom analytics dashboardPerformance and accessibility optimizationAdvanced third-party API integrations
-
-2. Full Tech Stack - Details & Justification
-Every technology in this stack is free, open-source, or available on a free tier. No paid licenses are required for this project.
-
-CategoryTechnologyPurpose / NotesFrameworkNext.js 14Core framework. App Router for file-based routing. Static export support. Built-in image and font optimization.LanguageJavaScript ES6+Primary language. TypeScript is optional but not required for this scope.StylingTailwind CSS v3Utility-first CSS. Responsive design with mobile-first breakpoints. No custom CSS needed for most elements.AnimationsFramer Motion v11React-native animation library. Used for page transitions, entrance animations, hover states, and counter animations.Scroll AnimationsAOS v2Animate on Scroll. Lightweight library for scroll-triggered reveal effects. Initialized once in root layout.IconsLucide ReactClean, consistent open-source SVG icon set built for React. Zero configuration required.Form SubmissionWeb3FormsFree serverless form backend. 250 submissions/month on free plan. Sends form data directly to client email. No server needed.Typography@tailwindcss/typographyTailwind plugin for styling blog post and long-form content. Applied using prose class.FontsGoogle Fonts via next/fontZero layout shift, self-hosted font loading. Recommended: Inter or Plus Jakarta Sans.ImagesNext.js Image ComponentAutomatic WebP conversion, lazy loading, responsive srcset, and blur placeholder. Always use this over plain img tags.Package ManagernpmComes with Node.js. Used for all package installation.Version ControlGit + GitHubSource control. GitHub repo connects to Vercel for automatic deployments.DeploymentVercel Hobby (Free)Zero-config Next.js hosting. Automatic HTTPS. Global CDN. Preview deployments on every PR.Node.js Version18.x or 20.x LTSRequired by Next.js 14. Do not use Node 16 or older.Code EditorVS CodeInstall: Tailwind CSS IntelliSense, ESLint, Prettier extensions.
-NOTE: Install npm packages for this project with one command: npm install framer-motion aos lucide-react @tailwindcss/typography
-
-3. Complete Site Architecture & Page List
-3.1  All Pages
-RoutePage NameKey Sections/HomeHero, Services Overview, Why Choose Us, Stats Counter, Process Steps, Portfolio Highlights, Testimonials Slider, CTA Banner, Footer/aboutAbout UsHero, Our Story, Mission & Vision, Core Values, Team Members Grid, CTA/servicesServices OverviewHero, All 8 Service Cards Grid, Intro Paragraph, CTA Section/services/seoSEO ServicesHero, What Is SEO, What's Included, Our Process, Benefits, Related Services, CTA/services/smmSocial Media MarketingHero, What Is SMM, Platforms Covered, Process, Benefits, Related Services, CTA/services/semSearch Engine MarketingHero, Paid Ads Overview, Ad Platforms, Process, Benefits, Related Services, CTA/services/content-marketingContent MarketingHero, Content Types, Strategy Process, Benefits, Related Services, CTA/services/email-marketingEmail MarketingHero, Campaign Types, Tools Used, Process, Benefits, Related Services, CTA/services/brandingBranding & DesignHero, Brand Identity, Logo Design, Guidelines, Process, Benefits, CTA/services/web-developmentWeb DevelopmentHero, Tech Stack, Service Types, Process, Portfolio Examples, CTA/services/analyticsAnalytics & ReportingHero, Tools Used, Reporting Types, Process, Benefits, CTA/portfolioPortfolioHero, Category Filter Tabs, Projects Grid, Hover Overlay on Cards/portfolio/[slug]Case Study DetailHero, Project Overview, Challenge, Solution, Results, Client Quote, Prev/Next Nav, CTA/blogBlogHero, Featured Post, Category Filter, Posts Grid/blog/[slug]Blog PostCover, Title, Author, Date, Article Body (prose), Author Bio, Related Posts, Share Buttons/contactContactHero, Two-Column Layout: Form (left) + Contact Info (right), Social Links/privacy-policyPrivacy PolicyStatic legal text with headings and paragraphs/termsTerms of ServiceStatic legal text with headings and paragraphs
-3.2  Dynamic Routes
-Two dynamic routes use Next.js slug-based routing. Their content is loaded from static data files at build time using generateStaticParams:
-• /services/[slug] - reads from /data/services.js. The slug field in each service object maps to the URL.
-• /portfolio/[slug] - reads from /data/portfolio.js. Each project has a unique slug.
-• /blog/[slug] - reads from /data/blog.js. Each post has a unique slug.
-• generateStaticParams() must be exported from these page files so Next.js can pre-render all paths at build time.
-
-
-4. Project Folder & File Structure
-Follow this structure precisely. It is organized for scalability, separation of concerns, and ease of future updates.
-
-PathPurpose/appApp Router root. All page routes live here./app/layout.jsRoot layout. Contains Navbar, Footer, font config, metadata, AOS init./app/globals.cssGlobal CSS. Tailwind directives, CSS variables, base styles./app/page.jsHomepage (route: /)/app/about/page.jsAbout Us page/app/services/page.jsServices overview listing page/app/services/[slug]/page.jsDynamic individual service detail page/app/portfolio/page.jsPortfolio listing with category filter/app/portfolio/[slug]/page.jsDynamic case study detail page/app/blog/page.jsBlog listing page/app/blog/[slug]/page.jsDynamic individual blog post page/app/contact/page.jsContact page with form/app/privacy-policy/page.jsPrivacy policy static page/app/terms/page.jsTerms of service page/app/not-found.jsCustom 404 error page/app/sitemap.jsAuto-generates sitemap.xml at build time/app/robots.jsAuto-generates robots.txt at build time/components/layout/Navbar.jsxSticky, responsive navbar with mega dropdown and mobile menu/components/layout/Footer.jsx4-column footer with links, social icons, copyright/components/layout/MobileMenu.jsxFull-screen mobile drawer menu component/components/ui/Button.jsxReusable button: variants (primary, secondary, outline, ghost)/components/ui/SectionHeading.jsxSection label + h2 heading + optional subtitle/components/ui/Card.jsxGeneric card wrapper with hover effects/components/ui/Badge.jsxSmall category/tag label chip/components/ui/Loader.jsxFull-page loading animation (optional)/components/sections/Hero.jsxReusable hero banner for inner pages/components/sections/ServicesGrid.jsx8 service cards grid used on homepage and services page/components/sections/StatsCounter.jsxAnimated number counter section/components/sections/Testimonials.jsxAuto-playing testimonial slider/components/sections/CTABanner.jsxFull-width call-to-action strip/components/sections/PortfolioGrid.jsxFilterable portfolio cards grid/components/sections/TeamGrid.jsxTeam members card grid/components/forms/ContactForm.jsxForm with Web3Forms integration and validation/components/animations/FadeIn.jsxFramer Motion fade-in wrapper/components/animations/SlideUp.jsxFramer Motion slide-up wrapper/components/animations/StaggerContainer.jsxStaggered children animation wrapper/components/animations/CounterAnimation.jsxNumber count-up animation component/data/services.jsArray of all 8 service objects (title, slug, icon, description, features, process, benefits)/data/portfolio.jsArray of all portfolio project objects/data/blog.jsArray of all blog post objects/data/testimonials.jsArray of testimonial objects/data/team.jsArray of team member objects/data/stats.jsAgency stats (projects, clients, years, retention rate)/public/logo.svgAgency logo file (provided by client)/public/images/All static images organized in subfolders/public/images/services/Service page images/public/images/portfolio/Portfolio project screenshots/public/images/team/Team member photos/public/images/blog/Blog post cover images/lib/utils.jsHelper functions: slugify(), formatDate(), truncateText()/tailwind.config.jsTailwind config: custom colors, fonts, safelist/next.config.jsNext.js config: static export, image domains/.env.localEnvironment variables. NEVER commit to Git./package.jsonProject dependencies and npm scripts
-
-PHASE 1: ENVIRONMENT SETUP & PROJECT INITIALIZATION
-Estimated Duration: 1 to 2 Days
-Phase 1.1 - Prerequisites
-Before creating the project, verify the following are installed on the development machine:
-• Node.js 18.x or 20.x LTS - download from nodejs.org and verify: node -v
-• npm - comes with Node.js - verify: npm -v
-• Git - download from git-scm.com - configure: git config --global user.name and user.email
-• VS Code - install extensions: Tailwind CSS IntelliSense, ESLint, Prettier
-• A GitHub account - for version control and Vercel integration
-• A Vercel account - sign up free at vercel.com using your GitHub account
-• A Web3Forms account - sign up free at web3forms.com - get the Access Key for the client email
-
-Phase 1.2 - Create the Next.js Project
-Run this command in your terminal to scaffold the project:
-npx create-next-app@latest agency-website --use-npm
-Select these answers when prompted during setup:
-• Would you like to use TypeScript? - No
-• Would you like to use ESLint? - Yes
-• Would you like to use Tailwind CSS? - Yes
-• Would you like your code inside a src/ directory? - No
-• Would you like to use App Router? - Yes
-• Would you like to customize the import alias? - No
-
-Phase 1.3 - Install All Required Packages
-Navigate to the project folder and install all dependencies in one command:
-cd agency-website
-npm install framer-motion aos lucide-react @tailwindcss/typography
-Then add the typography plugin to tailwind.config.js under the plugins array:
-plugins: [require('@tailwindcss/typography')]
-Phase 1.4 - Configure Tailwind CSS
-• Open tailwind.config.js and add the brand color palette under theme.extend.colors
-• Add fontFamily for the selected Google Font (e.g., Inter or Plus Jakarta Sans)
-• Ensure the content array includes: './app/**/*.{js,jsx}' and './components/**/*.{js,jsx}'
-• Add any custom animation keyframes if needed under theme.extend.animation
-
-Phase 1.5 - Set Up Environment Variables
-Create a .env.local file in the project root and add the Web3Forms key:
-NEXT_PUBLIC_WEB3FORMS_KEY=your_web3forms_access_key_here
-NOTE: .env.local must be listed in .gitignore - never commit it. When deploying to Vercel, add this same key manually in the project Settings > Environment Variables section of the Vercel dashboard.
-Phase 1.6 - Initialize Git and Push to GitHub
-• Run: git init inside the project folder
-• Create a new repository on GitHub (private recommended)
-• Add remote origin and push: git remote add origin <url> then git push -u origin main
-• Go to vercel.com and import this GitHub repository - Vercel auto-detects Next.js and creates a deployment
-• From this point, every git push to main will trigger an automatic Vercel deployment
-
-
-PHASE 2: GLOBAL LAYOUT, THEME & BASE COMPONENTS
-Estimated Duration: 2 to 3 Days
-This phase builds everything that appears across multiple pages. No page-specific content is built here. Complete all components in this phase before moving to Phase 3.
-
-Phase 2.1 - Root Layout (app/layout.js)
-• Import the chosen Google Font using next/font/google and apply it to the body
-• Set up default site metadata: title template, description, Open Graph image, Twitter card
-• Import globals.css
-• Create a Providers client component that initializes AOS inside useEffect - wrap children with it
-• Structure: <html> > <body> > <Providers> > <Navbar> + {children} + <Footer>
-
-Phase 2.2 - Global CSS (app/globals.css)
-• Add @tailwind base, @tailwind components, @tailwind utilities
-• Define CSS variables for brand colors under :root (primary, secondary, accent)
-• Add: html { scroll-behavior: smooth }
-• Style scrollbar using ::-webkit-scrollbar for a modern look
-• Add global base styles for headings, links, paragraph line-height
-
-Phase 2.3 - Navbar Component (components/layout/Navbar.jsx)
-The Navbar is critical. Build it carefully with all required behaviors.
-• Mark as use client to enable scroll detection and menu toggle state
-• Logo: Next.js Image component - links to homepage - scale on hover
-• Desktop links: Home, About, Services (dropdown), Portfolio, Blog, Contact
-• Services mega dropdown: appears on hover, shows all 8 service pages with icons
-• Sticky behavior: transparent on top, adds solid background + shadow on scroll using useEffect
-• Active link: use usePathname() from next/navigation to bold or underline the current page link
-• CTA button: Get a Quote - links to /contact - always visible, styled prominently
-• Mobile: hamburger icon (Menu/X from Lucide React) toggles the mobile drawer menu
-• MobileMenu component: full-width overlay with all links, accordion for services, and CTA button
-• Wrap mobile menu with Framer Motion AnimatePresence for smooth open/close animation
-
-Phase 2.4 - Footer Component (components/layout/Footer.jsx)
-• 4-column grid: Column 1 = Logo + tagline + social icons, Column 2 = Quick Links, Column 3 = Services, Column 4 = Contact Info
-• Quick links: Home, About, Portfolio, Blog, Contact, Privacy Policy, Terms
-• Services links: all 8 individual service page URLs
-• Contact info: email, phone, city/country, office hours
-• Social icons: LinkedIn, Instagram, Facebook, Twitter/X, YouTube - use Lucide React icons
-• Bottom bar: copyright text, Privacy Policy link, Terms link
-• Responsive: stacks to single column on mobile
-
-Phase 2.5 - Reusable UI Components (components/ui)
-• Button.jsx - Props: variant (primary/secondary/outline/ghost), size (sm/md/lg), href, onClick, disabled. Include Framer Motion hover/tap animations.
-• SectionHeading.jsx - Props: label (small tag above), title (main h2), subtitle (optional), align (center/left). Used on every page section.
-• Card.jsx - Generic wrapper with rounded corners, shadow, hover lift (translateY -4px), and padding props.
-• Badge.jsx - Small pill label for categories and service tags. Props: text, color variant.
-
-Phase 2.6 - Animation Wrapper Components (components/animations)
-• FadeIn.jsx - Framer Motion opacity 0 to 1 on viewport entry. Props: delay, duration.
-• SlideUp.jsx - Framer Motion y: 40 to 0 + opacity on viewport entry. Props: delay.
-• StaggerContainer.jsx - Wraps a list of children and staggers their animation with a 0.1s delay between each.
-• CounterAnimation.jsx - Uses useInView to detect viewport entry, then animates a number from 0 to a target value over 2 seconds using useEffect and setInterval.
-
-
-PHASE 3: PAGE-BY-PAGE DEVELOPMENT (ALL 18 PAGES)
-Estimated Duration: 7 to 10 Days
-Build all pages in the order listed below. Each page must be fully responsive on mobile, tablet, and desktop before moving to the next one.
-
-Phase 3.1 - Home Page (/)
-Hero Section
-• Full viewport height (min-h-screen) with gradient background or subtle animated shapes
-• Large bold headline (h1), subheadline paragraph, and two CTA buttons stacked or side-by-side
-• Primary CTA: Get Started - links to /contact. Secondary CTA: View Our Work - links to /portfolio
-• Framer Motion staggered entrance: headline fades in, subtext slides up, buttons fade in with 200ms delay increments
-• Trust strip below hero: 'Trusted by X+ brands' with placeholder client logos
-Services Overview Section
-• Centered SectionHeading with label 'What We Do' and title 'Our Core Services'
-• 8-card grid: 4 columns on desktop, 2 on tablet, 1 on mobile
-• Each card: icon (Lucide React), service name, one-line description, 'Learn More' link arrow
-• Hover effect: card lifts with shadow increase and icon animates
-• Data sourced from /data/services.js
-Why Choose Us Section
-• 3 to 4 differentiator items in a responsive grid with large icons and short descriptions
-• Examples: Data-Driven Results, Transparent Reporting, Dedicated Account Manager, Proven ROI
-Stats Counter Section
-• Dark or brand-colored full-width background section
-• 4 large animated numbers: 200+ Projects, 50+ Clients, 5+ Years, 98% Retention
-• Use CounterAnimation component - numbers count from 0 when section enters viewport
-How We Work Section
-• 4-step horizontal process: Discovery, Strategy, Execution, Optimize
-• Numbered circles connected by a line on desktop, vertical stack on mobile
-• Each step: number, title, and 2-line description
-Portfolio Highlights Section
-• 3 to 4 featured project cards in a grid - sourced from /data/portfolio.js (set featured: true)
-• Each card: project image, title, category badge, 1-line result stat, hover overlay with 'View Case Study' button
-• 'View All Work' button below the grid - links to /portfolio
-Testimonials Section
-• Auto-playing carousel cycling through 4 to 6 testimonials every 4 seconds
-• Each slide: star rating (5 stars), quote text, client photo (circle), name, and company
-• Dot navigation below for manual control
-CTA Banner Section
-• Full-width gradient banner: 'Ready to Grow Your Business?' headline and two buttons
-• Buttons: Get a Free Quote (primary) and View Our Work (outline)
-
-Phase 3.2 - About Page (/about)
-• Hero banner with page title and breadcrumb navigation
-• Our Story: 3 to 4 paragraph narrative about the agency's founding and mission
-• Mission & Vision: two-column layout, each with a large icon and paragraph
-• Core Values: 4 to 6 value cards in a grid (Integrity, Innovation, Results, Transparency, Collaboration, Excellence)
-• Team Section: grid of team member cards - photo, name, role, LinkedIn icon link - data from /data/team.js
-• Bottom CTA: 'Let's Work Together' button linking to /contact
-
-Phase 3.3 - Services Overview Page (/services)
-• Hero banner: 'Our Services - Everything You Need to Grow Online'
-• Brief 2-paragraph intro about the agency's service philosophy
-• Full grid of all 8 service cards - larger than homepage version, includes a short paragraph description
-• Each card links to its /services/[slug] page
-• Bottom CTA: 'Not sure which service you need? Let's talk.'
-
-Phase 3.4 - Individual Service Pages (/services/[slug])
-Build ONE reusable template. All 8 services use it, populated from /data/services.js using the slug param. Use generateStaticParams to pre-render all 8 routes.
-• Hero: service title (h1), subtitle, icon, and Get a Quote CTA button
-• What Is [Service Name]: 2 to 3 paragraph explanation with a relevant image using Next.js Image
-• What's Included: 6 to 8 feature bullets in a styled two-column list
-• Our Process: 4 to 6 numbered steps specific to this service
-• Why It Matters: benefits grid with icons (3 to 4 items)
-• Related Services: 3 other service cards linking to their pages
-• CTA: 'Ready to get started? Contact us today.'
-Service slugs for /data/services.js: seo, smm, sem, content-marketing, email-marketing, branding, web-development, analytics
-
-Phase 3.5 - Portfolio Page (/portfolio)
-• Hero banner: 'Our Work - Results That Speak For Themselves'
-• Category filter tabs: All, SEO, Social Media, Web Development, Branding, Content Marketing, SEM
-• Clicking a tab filters the grid dynamically using React useState - no page reload
-• Projects grid: 3 per row on desktop, 2 on tablet, 1 on mobile
-• Each card: cover image (Next.js Image), project name, client name, category badge, 1-line result stat
-• Hover effect: dark gradient overlay appears with 'View Case Study' button
-• Data from /data/portfolio.js
-
-Phase 3.6 - Case Study Detail Page (/portfolio/[slug])
-Reusable template populated from /data/portfolio.js. Use generateStaticParams to pre-render all project pages.
-• Hero: project name, client, category badge, services used (tag list)
-• Project Overview: client background, industry, and business context
-• The Challenge: what problem they faced - 2 to 3 paragraphs
-• Our Solution: detailed explanation of strategy and execution with screenshots or mockup images
-• Results: 3 to 4 large bold metric cards (e.g., +240% Organic Traffic, 3x ROI, -50% Cost Per Lead)
-• Client Testimonial: quote block with name and company (if available in data)
-• Prev / Next navigation between projects
-• CTA: 'Want results like this? Let's talk.'
-
-Phase 3.7 - Blog Page (/blog)
-• Hero: 'Insights & Resources - Stay Ahead in Digital Marketing'
-• Featured post at the top: large card spanning full width with cover image, title, excerpt, date, and read time
-• Category filter tabs: All, SEO, Social Media, PPC, Content Marketing, Branding
-• Blog post grid: 3 per row on desktop, card format with cover image, category badge, title, excerpt, date, read time
-• Data from /data/blog.js
-
-Phase 3.8 - Blog Post Page (/blog/[slug])
-• Cover image full-width at top using Next.js Image with priority prop
-• Post header: category badge, title (h1), author name, date, read time
-• Article body: apply Tailwind Typography prose class for proper heading, paragraph, list, blockquote, and code styling
-• Author bio card at bottom: photo (circle), name, role, short bio
-• Related posts: 3 posts from the same category below the bio
-• Social share buttons: Share on Twitter, Share on LinkedIn, Copy Link
-
-Phase 3.9 - Contact Page (/contact)
-• Hero: 'Get In Touch - Let's Start Something Great'
-• Two-column layout on desktop: left column = form (60%), right column = contact info (40%)
-• Form fields: Full Name (required), Email Address (required), Phone Number, Service Interested In (dropdown), Message (required)
-• Service dropdown options: SEO, Social Media Marketing, SEM / PPC, Content Marketing, Email Marketing, Branding & Design, Web Development, Analytics & Reporting, General Inquiry
-• Web3Forms integration - see Phase 5 for full implementation details
-• Right column content: email address, phone number, office location, working hours, and social media icons
-
-Phase 3.10 - Legal Pages
-• Create /app/privacy-policy/page.js with a complete privacy policy covering data collection, usage, cookies, third-party services, user rights, and contact for privacy concerns
-• Create /app/terms/page.js with terms of service covering use of services, intellectual property, payment terms, limitation of liability, and governing law
-• Both pages: clean typographic layout with h2 headings and prose paragraphs - no complex UI needed
-
-
-PHASE 4: ANIMATIONS & INTERACTIVITY
-Estimated Duration: 2 to 3 Days
-Apply animations after all pages are structurally complete. This prevents rework and makes it easier to test animation behavior in context.
-
-Phase 4.1 - Framer Motion Animations
-• Page transition: wrap each page's main content in a motion.main with initial opacity 0, animate opacity 1, exit opacity 0
-• Hero headline: motion.h1 with initial y: 30, opacity: 0 - animate to y: 0, opacity: 1 with 0.6s duration
-• Hero subtext: same animation with 0.2s delay
-• Hero buttons: same animation with 0.4s delay
-• Navbar: AnimatePresence wraps the mobile menu - animate height and opacity from 0 to full on open
-• Service cards: whileHover with scale: 1.03 and shadow increase - use transition type spring
-• Stats counter: useInView hook triggers CounterAnimation when section enters viewport
-• Portfolio hover overlay: motion.div with opacity 0 on idle, opacity 1 on parent hover
-• CTA banner: subtle pulsing gradient animation using keyframes in Tailwind config
-
-Phase 4.2 - AOS Scroll Animations
-• Initialize in root layout: AOS.init({ duration: 800, once: true, offset: 80 }) inside useEffect
-• Add data-aos='fade-up' to all major section containers
-• Stagger grid items: add data-aos-delay='0', '100', '200', '300' to successive items
-• Two-column sections: data-aos='fade-right' for left column, data-aos='fade-left' for right column
-• Stat cards: data-aos='zoom-in'
-• Service cards: data-aos='fade-up' with incremental delays
-
-Phase 4.3 - CSS Micro-interactions
-• All buttons: transition-all duration-300 - color and shadow change smoothly on hover
-• Navbar links: underline slides in from left to right on hover using CSS ::after pseudo-element with transform scaleX
-• Cards: hover:shadow-xl hover:-translate-y-1 transition-all duration-300
-• Form inputs: focus:ring-2 focus:ring-brand-color focus:border-transparent transition-all
-• Social icons in footer: hover:scale-110 hover:text-brand-color transition-all duration-200
-• Logo: hover:opacity-80 transition-opacity duration-200
-• Portfolio cards: group hover pattern - use Tailwind group class on parent, group-hover: on child overlay
-
-
-PHASE 5: WEB3FORMS CONTACT FORM INTEGRATION
-Estimated Duration: 1 Day
-Phase 5.1 - Web3Forms Setup
-• Sign up at web3forms.com using the client's email address
-• Copy the Access Key shown in the dashboard
-• Add to .env.local: NEXT_PUBLIC_WEB3FORMS_KEY=your_key
-• Add the same key in Vercel project Settings > Environment Variables (required for production)
-
-Phase 5.2 - ContactForm Component Implementation
-Build /components/forms/ContactForm.jsx with the following logic:
-• Mark as use client - this component uses state and browser APIs
-• Use useState to manage: formData object, isLoading boolean, isSuccess boolean, errorMessage string
-• On form submit: preventDefault, set isLoading to true
-• Send POST request to: https://api.web3forms.com/submit with Content-Type: application/json
-• Request body must include: access_key (from env var), name, email, phone, service, message, subject (custom email subject line), botcheck (honeypot - always send as empty string or false)
-• On success (response.data.success === true): set isSuccess to true, clear formData, hide form and show thank-you message
-• On error: set errorMessage, show error below the submit button
-• Always set isLoading to false in the finally block
-• Disable the submit button and replace its text with a spinner icon while isLoading is true
-
-Phase 5.3 - Form Validation
-• Validate on blur (when each field loses focus) and on submit attempt
-• Full Name: required, minimum 2 characters
-• Email: required, validate with regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-• Phone: optional, but if entered must have at least 10 digits
-• Message: required, minimum 20 characters
-• Service: required - must select an option other than the placeholder
-• Show red inline error messages below each field that fails validation
-• Submit button remains disabled until all required fields pass validation
-
-
-PHASE 6: PERFORMANCE, SEO & ACCESSIBILITY
-Estimated Duration: 2 Days
-Phase 6.1 - SEO Configuration
-• Add a unique metadata export to every page file - never reuse the same title or description
-• Root layout metadata: site name, default description, Open Graph image (1200x630px), Twitter card type summary_large_image
-• Dynamic service pages: use generateMetadata() to pull title and description from services.js data
-• Add JSON-LD structured data to the homepage: Organization and WebSite schema types
-• Add JSON-LD LocalBusiness schema to the contact page with address, phone, and email
-• Create /app/sitemap.js that exports a default function returning all static and dynamic page URLs
-• Create /app/robots.js that returns: allow all crawlers, disallow nothing, sitemap URL reference
-• Create /app/not-found.js: 404 page with friendly message, agency logo, and 'Back to Home' button
-
-Phase 6.2 - Image Optimization
-• Always use Next.js <Image> component - never plain <img> tags
-• Every image must have: width, height, and alt attributes
-• Set priority on hero images (above the fold) to preload them
-• Compress all images to under 200KB before adding to /public - use squoosh.app
-• Use WebP format for all project and blog images
-• Use the sizes prop for responsive images to serve the correct size per breakpoint
-
-Phase 6.3 - Performance Optimization
-• Default: all components are React Server Components - only add use client when needed for state or browser APIs
-• Use next/dynamic with { ssr: false } for any heavy third-party client-side components
-• Google Fonts are already optimized via next/font - no additional work needed
-• Target Lighthouse scores: Performance 90+, Accessibility 95+, Best Practices 95+, SEO 100
-• Avoid importing entire icon libraries - import individual icons: import { ArrowRight } from 'lucide-react'
-
-Phase 6.4 - Accessibility (a11y)
-• Use semantic HTML throughout: <header>, <nav>, <main>, <section>, <article>, <footer>, <h1> through <h6>
-• All images must have meaningful, descriptive alt text
-• All form inputs must have a visible <label> with htmlFor matching the input's id
-• All interactive elements must be keyboard accessible - verify by tabbing through the entire site
-• Color contrast: all body text must meet WCAG AA - minimum 4.5:1 ratio against its background
-• Icon buttons with no visible text must have aria-label attributes (e.g., aria-label='Close menu')
-• Focus styles must be visible on all interactive elements - do not remove them with outline: none without a replacement
-
-
-PHASE 7: TESTING & QUALITY ASSURANCE
-Estimated Duration: 2 Days
-Phase 7.1 - Cross-Browser Testing
-• Test on Chrome, Firefox, Safari, and Microsoft Edge on desktop
-• Test on Chrome for Android and Safari for iOS on mobile
-• Verify all Framer Motion and AOS animations play correctly on each browser
-• Confirm Web3Forms submission works in all browsers
-• Check font rendering is consistent
-
-Phase 7.2 - Responsive Testing Breakpoints
-Test at each of the following widths using browser DevTools (Chrome DevTools responsive mode):
-• 320px - Small mobile (iPhone SE)
-• 375px - Standard mobile (iPhone 14)
-• 428px - Large mobile (iPhone 14 Pro Max)
-• 768px - Tablet portrait (iPad)
-• 1024px - Tablet landscape / small laptop
-• 1280px - Standard desktop
-• 1440px - Large desktop
-• On every breakpoint: check for horizontal scroll overflow, text overflow, image distortion, and broken layouts
-
-Phase 7.3 - Functional Testing Checklist
-• Submit the contact form with valid data - verify email arrives at the client's inbox
-• Submit the form with invalid data - verify all validation error messages appear correctly
-• Test all 18 pages load without errors
-• Test every internal link - no 404 errors, no broken anchors
-• Test all CTA buttons point to the correct destination
-• Test Navbar active state on every page
-• Test Services dropdown on desktop hover and mobile tap
-• Test mobile menu open and close animation
-• Test Portfolio filter tabs - each category must show only matching projects
-• Test Testimonials slider autoplay and manual dot navigation
-• Test all dynamic routes: navigate to each /services/[slug] and /portfolio/[slug] page
-• Navigate to a non-existent URL (e.g., /xyz123) - verify 404 page appears
-
-Phase 7.4 - Performance Audit
-• Run Google Lighthouse audit in Chrome DevTools on the Vercel preview URL - use Incognito mode for accurate results
-• Fix all issues flagged in Accessibility and SEO sections (these should reach 95+ and 100)
-• Run Google PageSpeed Insights (pagespeed.web.dev) to check mobile performance score
-• Aim: Performance 90+, Accessibility 95+, Best Practices 95+, SEO 100
-
-Phase 7.5 - Content Review
-• Search for 'Lorem ipsum' in the entire codebase - remove all placeholder text
-• Verify all service descriptions, portfolio content, and team info are real and accurate
-• Confirm email address, phone number, and location in Footer and Contact page are correct
-• Verify all external links (social profiles) open correctly in a new tab
-• Read every page for typos and grammatical errors
-
-
-PHASE 8: DEPLOYMENT TO VERCEL & DOMAIN SETUP
-Estimated Duration: 1 Day
-Phase 8.1 - Pre-Deployment Checklist
-• Remove all console.log statements from the entire codebase
-• Verify .env.local is in .gitignore
-• Run: npm run build locally - all errors must be resolved before deploying
-• Run: npm run lint - resolve all ESLint errors and warnings
-• Verify all images exist in /public and are referenced with correct paths
-• Confirm generateStaticParams is exported from all dynamic route pages
-
-Phase 8.2 - Deploy to Vercel
-• Log into vercel.com - click 'Add New Project'
-• Import the GitHub repository
-• Vercel auto-detects Next.js - no build configuration needed
-• Before clicking Deploy: go to Environment Variables and add NEXT_PUBLIC_WEB3FORMS_KEY
-• Click Deploy - Vercel builds and hosts the site automatically
-• A .vercel.app preview URL is generated - share with client for initial review
-
-Phase 8.3 - Connect the Client's Custom Domain
-• In Vercel: go to project Settings > Domains > Add Domain
-• Enter the client's domain name (e.g., agencyname.com and www.agencyname.com)
-• Vercel will display the required DNS records (A record and/or CNAME record)
-• Log into the domain registrar (GoDaddy, Namecheap, etc.) and add the provided records in DNS settings
-• DNS propagation takes 10 minutes to 24 hours
-• Vercel automatically provisions a free SSL certificate via Let's Encrypt - no manual setup needed
-• Verify HTTPS works: https://agencyname.com must load the site with padlock icon
-
-Phase 8.4 - Post-Deployment Verification
-• Re-run all functional tests on the live domain (not the preview URL)
-• Re-test the contact form on the live URL specifically - confirm email is delivered
-• Submit sitemap to Google Search Console: Settings > Sitemaps > enter /sitemap.xml
-• Verify the domain in Google Search Console for future SEO monitoring
-• Enable Vercel Analytics (free) in the project dashboard for basic traffic tracking
-
-
-13. Post-Launch Checklist
-Complete all items within 48 hours of going live on the client's domain.
-
-#TaskStatus1Test live contact form - confirm email received at client's address2Run Lighthouse audit on live domain in Incognito mode3Verify all 18 pages load without error4Submit sitemap.xml to Google Search Console5Verify domain ownership in Google Search Console6Confirm SSL certificate is active (padlock in browser)7Test on a real mobile device - not just browser DevTools8Share Web3Forms dashboard access with client so they can monitor submissions9Share Vercel project access (read-only) with client if desired10Document content update process: how to update services.js, portfolio.js, blog.js11Set up Google Analytics 4 if client requests it (add GA4 script via next/script)12Set up Meta Pixel if client runs Facebook or Instagram ads13Confirm all social media links in Footer open the correct profiles14Final visual review on large monitor (1440px+) - check spacing and alignment
-
-14. Developer Notes, Best Practices & Timeline
-
-14.1 - Coding Standards
-• Component naming: PascalCase (e.g., HeroSection.jsx, ContactForm.jsx)
-• Variable and function naming: camelCase (e.g., handleSubmit, isLoading, formData)
-• Every component file has a single default export
-• Keep components under 150 lines - split into sub-components if they grow larger
-• Write comments above complex logic: API calls, animation triggers, dynamic data patterns
-
-14.2 - Tailwind Best Practices
-• Design mobile-first: write base classes for mobile, add sm:, md:, lg: prefixes to scale up
-• Avoid arbitrary values like w-[347px] - use the design system's spacing scale
-• Extract repeated long class strings into components or @apply rules in globals.css
-• Do not mix inline style and Tailwind for the same property on the same element
-
-14.3 - Next.js App Router Important Rules
-• Default: every component is a Server Component - only add 'use client' when you need useState, useEffect, event listeners, or browser APIs
-• use client components cannot be imported directly into server components - wrap them in a parent client component if needed
-• Always export generateStaticParams from dynamic route pages ([slug]) for static pre-rendering
-• Use loading.js and error.js files in route folders to handle loading states and errors gracefully
-
-14.4 - Git Workflow Recommendation
-• Commit at the end of every sub-phase with a clear message (e.g., 'feat: build testimonials slider component')
-• Use feature branches per phase: git checkout -b phase/3-pages
-• Open a Pull Request per phase - Vercel auto-generates a preview URL per PR for client review
-• Merge to main only after client approves the preview deployment
-
-14.5 - Estimated Timeline Summary
-PhaseEstimated DurationPhase 1 - Setup & Initialization1 to 2 Working DaysPhase 2 - Layout, Theme & Base Components2 to 3 Working DaysPhase 3 - Page-by-Page Development (18 pages)7 to 10 Working DaysPhase 4 - Animations & Interactivity2 to 3 Working DaysPhase 5 - Web3Forms Integration1 Working DayPhase 6 - SEO, Performance & Accessibility2 Working DaysPhase 7 - Testing & QA2 Working DaysPhase 8 - Deployment & Domain Setup1 Working DayTOTAL ESTIMATED DURATION18 to 24 Working Days
-NOTE: Timelines are estimates for one full-time developer. Actual duration depends on: content availability from the client (images, copy, portfolio data), number of revision rounds, and developer familiarity with Next.js and Tailwind CSS.
-
-END OF PROJECT PLAN GUIDE
-Digital Marketing Agency Website  |  Project Plan Guide  |  For Developer Use Only
-
-Project Plan Guide v1.0	Page 
-

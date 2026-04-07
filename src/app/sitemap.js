@@ -28,12 +28,6 @@ export default async function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date().toISOString(),
-      changeFrequency: 'daily',
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/contact`,
       lastModified: new Date().toISOString(),
       changeFrequency: 'monthly',
@@ -71,14 +65,5 @@ export default async function sitemap() {
     priority: 0.6,
   }));
 
-  // Dynamic blog routes
-  const { blog } = await import('@/data/blog');
-  const blogRoutes = blog.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: post.date,
-    changeFrequency: 'monthly',
-    priority: 0.6,
-  }));
-
-  return [...staticRoutes, ...serviceRoutes, ...portfolioRoutes, ...blogRoutes];
+  return [...staticRoutes, ...serviceRoutes, ...portfolioRoutes];
 }
