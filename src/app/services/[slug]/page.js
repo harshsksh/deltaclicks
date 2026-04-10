@@ -13,16 +13,17 @@ import ServiceSchema from '@/components/seo/ServiceSchema';
 import { services, getServiceBySlug } from '@/data/services';
 
 // Generate static params for all service slugs
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return services.map((service) => ({
     slug: service.slug,
   }));
 }
 
 // Generate metadata for each service page
-export function generateMetadata({ params }) {
-  const service = getServiceBySlug(params.slug);
-  
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const service = getServiceBySlug(slug);
+
   if (!service) {
     return {
       title: 'Service Not Found',
@@ -35,8 +36,9 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function ServicePage({ params }) {
-  const service = getServiceBySlug(params.slug);
+export default async function ServicePage({ params }) {
+  const { slug } = await params;
+  const service = getServiceBySlug(slug);
 
   if (!service) {
     notFound();

@@ -56,18 +56,10 @@ export default function ServicesPage() {
           <div className="max-w-4xl mx-auto text-center">
             <FadeIn>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Comprehensive Digital Marketing Solutions
+                Our Services
               </h2>
               <p className="text-foreground-muted text-lg leading-relaxed mb-6">
-                At DeltaClicks, we offer a full suite of digital marketing services designed to help
-                your business thrive in the online world. Whether you&apos;re looking to improve your search
-                rankings, engage customers on social media, or build a stunning website, our team of
-                experts has you covered.
-              </p>
-              <p className="text-foreground-muted text-lg leading-relaxed">
-                Our integrated approach ensures that all your digital marketing efforts work together 
-                seamlessly, amplifying results and maximizing your return on investment. Let us help 
-                you navigate the complex digital landscape with confidence.
+                At DeltaClicks, we blend creativity, strategy, in-depth research, and technology to deliver powerful digital solutions that help brands grow, engage, and convert.
               </p>
             </FadeIn>
           </div>

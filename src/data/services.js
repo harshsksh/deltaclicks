@@ -1,246 +1,305 @@
 // Services Data
 export const services = [
   {
-    title: "SEO Services",
-    slug: "seo",
-    icon: "Search",
-    shortDescription: "Boost your organic rankings and drive qualified traffic",
-    description: "Search Engine Optimization (SEO) is the foundation of sustainable online visibility. Our data-driven SEO strategies help you rank higher, attract more organic traffic, and convert visitors into customers.",
-    features: [
-      "Comprehensive SEO Audit",
-      "Keyword Research & Strategy",
-      "On-Page Optimization",
-      "Technical SEO Fixes",
-      "Link Building Campaigns",
-      "Local SEO Optimization",
-      "Content Strategy & Creation",
-      "Monthly Performance Reports"
-    ],
-    process: [
-      { step: 1, title: "Discovery & Audit", description: "We analyze your current website, competitors, and industry to identify opportunities." },
-      { step: 2, title: "Keyword Strategy", description: "Research and select high-value keywords that drive qualified traffic." },
-      { step: 3, title: "On-Page Optimization", description: "Optimize content, meta tags, headers, and internal linking structure." },
-      { step: 4, title: "Technical SEO", description: "Fix crawl errors, improve site speed, and ensure mobile-friendliness." },
-      { step: 5, title: "Link Building", description: "Earn high-quality backlinks from authoritative websites in your industry." },
-      { step: 6, title: "Monitor & Optimize", description: "Track rankings, traffic, and conversions with continuous optimization." }
-    ],
-    benefits: [
-      { title: "Sustainable Growth", description: "Build long-term organic visibility that compounds over time." },
-      { title: "Cost-Effective", description: "Earn free traffic without paying for every click." },
-      { title: "Higher ROI", description: "SEO traffic converts at higher rates than paid advertising." },
-      { title: "Brand Authority", description: "Ranking #1 establishes trust and credibility in your industry." }
-    ]
-  },
-  {
-    title: "Social Media Marketing",
-    slug: "smm",
-    icon: "Users",
-    shortDescription: "Engage your audience and build brand loyalty",
-    description: "Social Media Marketing (SMM) connects your brand with millions of active users across platforms. We create engaging content, manage communities, and run targeted ad campaigns that drive real business results.",
-    features: [
-      "Social Media Strategy",
-      "Content Creation & Curation",
-      "Community Management",
-      "Paid Social Advertising",
-      "Influencer Partnerships",
-      "Analytics & Reporting",
-      "Crisis Management",
-      "Platform-Specific Optimization"
-    ],
-    process: [
-      { step: 1, title: "Platform Selection", description: "Identify which social platforms your audience uses most." },
-      { step: 2, title: "Content Calendar", description: "Plan and schedule engaging posts tailored to each platform." },
-      { step: 3, title: "Community Engagement", description: "Respond to comments, messages, and build relationships." },
-      { step: 4, title: "Paid Campaigns", description: "Run targeted ads to expand reach and drive conversions." },
-      { step: 5, title: "Analyze & Optimize", description: "Track engagement metrics and refine strategy based on data." }
-    ],
-    benefits: [
-      { title: "Brand Awareness", description: "Reach millions of potential customers on their favorite platforms." },
-      { title: "Customer Engagement", description: "Build direct relationships and loyalty with your audience." },
-      { title: "Targeted Advertising", description: "Precision targeting based on demographics, interests, and behaviors." },
-      { title: "Real-Time Feedback", description: "Get instant insights into customer preferences and sentiment." }
-    ]
-  },
-  {
-    title: "Search Engine Marketing",
-    slug: "sem",
-    icon: "TrendingUp",
-    shortDescription: "Get instant visibility with paid search ads",
-    description: "Search Engine Marketing (SEM) puts your business at the top of search results instantly. Our PPC experts create high-converting campaigns on Google Ads, Bing Ads, and other platforms to maximize your ROI.",
-    features: [
-      "Google Ads Management",
-      "Bing Ads Campaigns",
-      "Keyword Research",
-      "Ad Copy Writing",
-      "Landing Page Optimization",
-      "Bid Management",
-      "A/B Testing",
-      "Conversion Tracking"
-    ],
-    process: [
-      { step: 1, title: "Campaign Setup", description: "Define goals, target audience, and budget allocation." },
-      { step: 2, title: "Keyword Research", description: "Identify high-intent keywords with optimal cost-per-click." },
-      { step: 3, title: "Ad Creation", description: "Write compelling ad copy that drives clicks and conversions." },
-      { step: 4, title: "Landing Pages", description: "Optimize landing pages for maximum conversion rates." },
-      { step: 5, title: "Launch & Monitor", description: "Go live and continuously monitor performance metrics." },
-      { step: 6, title: "Optimize & Scale", description: "Refine bids, test new ads, and scale winning campaigns." }
-    ],
-    benefits: [
-      { title: "Instant Results", description: "Appear at the top of search results immediately after launch." },
-      { title: "Precise Targeting", description: "Target users by location, device, time, and search intent." },
-      { title: "Measurable ROI", description: "Track every click, conversion, and dollar spent with precision." },
-      { title: "Scalable Growth", description: "Increase budget on winning campaigns to scale results." }
-    ]
-  },
-  {
     title: "Content Marketing",
     slug: "content-marketing",
     icon: "FileText",
-    shortDescription: "Tell your story and attract customers with valuable content",
-    description: "Content Marketing attracts and engages your target audience with valuable, relevant content. From blog posts to videos, we create content that educates, entertains, and converts readers into customers.",
+    shortDescription: "Make content that helps people trust you and interact with you",
+    description: "We make content that helps people trust you and want to interact with you. This can be a blog or a story about your brand. We want to make sure that your content talks directly to the people you want to reach and helps you be seen online.",
     features: [
-      "Content Strategy Development",
       "Blog Writing & Articles",
-      "Video Content Production",
-      "Infographic Design",
-      "E-books & Whitepapers",
-      "Case Studies",
+      "Brand Storytelling",
+      "Content Strategy",
+      "SEO-Optimized Content",
+      "Audience Targeting",
       "Content Distribution",
-      "SEO-Optimized Content"
+      "Performance Tracking",
+      "Brand Visibility"
     ],
     process: [
-      { step: 1, title: "Audience Research", description: "Understand your audience's pain points and content preferences." },
-      { step: 2, title: "Content Strategy", description: "Develop a content calendar aligned with business goals." },
-      { step: 3, title: "Content Creation", description: "Produce high-quality, engaging content in various formats." },
-      { step: 4, title: "Distribution", description: "Share content across owned, earned, and paid channels." },
-      { step: 5, title: "Measure & Refine", description: "Track engagement and adjust strategy based on performance." }
+      { step: 1, title: "Research", description: "Understand your audience, industry, and competitors." },
+      { step: 2, title: "Strategy", description: "Develop a content strategy aligned with your goals." },
+      { step: 3, title: "Content Planning", description: "Plan topics, formats, and publishing schedule." },
+      { step: 4, title: "Content Creation", description: "Write and produce high-quality, engaging content." },
+      { step: 5, title: "Design & Optimization", description: "Add visuals and optimize for SEO and readability." },
+      { step: 6, title: "Publishing & Promotion", description: "Publish and promote across relevant channels." },
+      { step: 7, title: "Performance Tracking", description: "Monitor metrics and refine strategy based on data." }
     ],
     benefits: [
-      { title: "Thought Leadership", description: "Establish your brand as an industry authority." },
-      { title: "SEO Benefits", description: "Fresh, quality content improves search engine rankings." },
-      { title: "Lead Generation", description: "Gated content captures leads and nurtures prospects." },
-      { title: "Customer Retention", description: "Valuable content keeps existing customers engaged." }
+      { title: "Build Trust", description: "Valuable content establishes credibility and authority." },
+      { title: "Drive Engagement", description: "Content that resonates encourages audience interaction." },
+      { title: "Improve SEO", description: "Fresh, quality content boosts search engine rankings." },
+      { title: "Generate Leads", description: "Strategic content attracts and converts potential customers." }
     ]
   },
   {
-    title: "Email Marketing",
-    slug: "email-marketing",
-    icon: "Mail",
-    shortDescription: "Nurture leads and drive repeat business",
-    description: "Email Marketing delivers personalized messages directly to your audience's inbox. We design campaigns that nurture leads, retain customers, and drive repeat purchases with automation and segmentation.",
+    title: "Website Copywriting",
+    slug: "website-copywriting",
+    icon: "PenTool",
+    shortDescription: "SEO-friendly, compelling websites that convert clicks into customers",
+    description: "Nowadays, a website is the digital identity of any business. We make SEO-friendly, compelling, user-interaction websites that not only inform but convert clicks into customers.",
     features: [
-      "Email Strategy & Planning",
-      "List Building & Segmentation",
-      "Email Design & Copywriting",
-      "Marketing Automation",
-      "A/B Testing",
-      "Deliverability Optimization",
-      "Performance Analytics",
-      "Compliance Management"
+      "SEO-Friendly Copy",
+      "Compelling Headlines",
+      "User-Focused Content",
+      "Conversion Optimization",
+      "Brand Voice Development",
+      "Call-to-Action Writing",
+      "Landing Page Copy",
+      "Product Descriptions"
     ],
     process: [
-      { step: 1, title: "List Strategy", description: "Build and segment your email list for targeted messaging." },
-      { step: 2, title: "Campaign Design", description: "Create visually appealing, mobile-responsive email templates." },
-      { step: 3, title: "Copywriting", description: "Write compelling subject lines and body copy that converts." },
-      { step: 4, title: "Automation Setup", description: "Build automated sequences for welcome, nurture, and re-engagement." },
-      { step: 5, title: "Test & Optimize", description: "A/B test subject lines, content, and send times." },
-      { step: 6, title: "Analyze Results", description: "Track opens, clicks, conversions, and revenue per email." }
+      { step: 1, title: "Discovery", description: "Understand your brand, audience, and goals." },
+      { step: 2, title: "Research", description: "Analyze competitors and industry best practices." },
+      { step: 3, title: "Wireframing", description: "Plan content structure and user flow." },
+      { step: 4, title: "Copywriting", description: "Write persuasive, SEO-optimized copy." },
+      { step: 5, title: "Review & Refine", description: "Test and refine for maximum conversions." }
     ],
     benefits: [
-      { title: "High ROI", description: "Email marketing delivers one of the highest ROIs of any channel." },
-      { title: "Direct Communication", description: "Reach your audience directly in their inbox." },
-      { title: "Personalization", description: "Segment and personalize messages for maximum relevance." },
-      { title: "Automation", description: "Set up evergreen campaigns that run on autopilot." }
+      { title: "Higher Conversions", description: "Persuasive copy turns visitors into customers." },
+      { title: "Better SEO", description: "Optimized copy improves search engine visibility." },
+      { title: "Brand Clarity", description: "Clear messaging communicates your value proposition." },
+      { title: "User Engagement", description: "Compelling content keeps users on your site longer." }
     ]
   },
   {
-    title: "Branding & Design",
-    slug: "branding",
-    icon: "Palette",
-    shortDescription: "Create a memorable brand identity",
-    description: "Branding & Design shapes how your audience perceives your business. From logo design to brand guidelines, we create cohesive visual identities that resonate with your target market and stand out from competitors.",
+    title: "Social Media Content",
+    slug: "social-media-content",
+    icon: "Users",
+    shortDescription: "Content that makes people stop, look, and remember your brand",
+    description: "We make content that people stop and look at. This content helps people remember your brand. We draft the content for Instagram, Facebook, X, LinkedIn, and other platforms.",
     features: [
-      "Brand Strategy",
-      "Logo Design",
-      "Visual Identity System",
-      "Brand Guidelines",
-      "Business Card & Stationery",
-      "Marketing Collateral Design",
-      "Packaging Design",
-      "Brand Refresh & Rebranding"
+      "Instagram Content",
+      "Facebook Posts & Ads",
+      "X (Twitter) Content",
+      "LinkedIn Articles",
+      "Social Media Strategy",
+      "Content Calendar",
+      "Engagement Posts",
+      "Brand Awareness Campaigns"
     ],
     process: [
-      { step: 1, title: "Brand Discovery", description: "Understand your business, values, audience, and competitors." },
-      { step: 2, title: "Strategy Development", description: "Define brand positioning, personality, and messaging." },
-      { step: 3, title: "Visual Design", description: "Create logo, color palette, typography, and visual elements." },
-      { step: 4, title: "Brand Guidelines", description: "Document usage rules to ensure consistent brand application." },
-      { step: 5, title: "Asset Delivery", description: "Provide all final files in various formats for immediate use." }
+      { step: 1, title: "Platform Research", description: "Identify best practices for each platform." },
+      { step: 2, title: "Content Strategy", description: "Develop a platform-specific content plan." },
+      { step: 3, title: "Content Creation", description: "Design and write engaging posts." },
+      { step: 4, title: "Scheduling", description: "Plan and schedule posts for optimal timing." },
+      { step: 5, title: "Monitor & Engage", description: "Track performance and engage with audience." }
     ],
     benefits: [
-      { title: "Brand Recognition", description: "A strong visual identity makes your brand instantly recognizable." },
-      { title: "Trust & Credibility", description: "Professional design builds trust with potential customers." },
-      { title: "Competitive Edge", description: "Stand out from competitors with a unique brand identity." },
-      { title: "Consistency", description: "Guidelines ensure your brand looks consistent across all touchpoints." }
+      { title: "Brand Recall", description: "Memorable content keeps your brand top-of-mind." },
+      { title: "Audience Growth", description: "Engaging content attracts new followers." },
+      { title: "Multi-Platform Reach", description: "Content tailored for each social platform." },
+      { title: "Community Building", description: "Consistent posting builds a loyal following." }
     ]
   },
   {
-    title: "Web Development",
+    title: "Video Production",
+    slug: "video-production",
+    icon: "Video",
+    shortDescription: "High-quality videos that tell your brand story and engage audiences",
+    description: "From scripting to final editing, we create high-quality videos with in-depth research and user engagement that tell your brand story, promote your services, and engage your audience effectively.",
+    features: [
+      "Script Writing",
+      "Video Shooting",
+      "Professional Editing",
+      "Brand Storytelling",
+      "Product Promotions",
+      "Social Media Videos",
+      "Explainer Videos",
+      "Motion Graphics"
+    ],
+    process: [
+      { step: 1, title: "Concept Development", description: "Define the video's purpose and message." },
+      { step: 2, title: "Scripting", description: "Write a compelling script and storyboard." },
+      { step: 3, title: "Production", description: "Shoot or animate the video content." },
+      { step: 4, title: "Editing", description: "Edit, add effects, music, and finalize." },
+      { step: 5, title: "Distribution", description: "Optimize and publish across platforms." }
+    ],
+    benefits: [
+      { title: "High Engagement", description: "Video content generates the highest engagement rates." },
+      { title: "Brand Storytelling", description: "Bring your brand story to life visually." },
+      { title: "Versatile Use", description: "Use across website, social media, and ads." },
+      { title: "Professional Quality", description: "High production value builds credibility." }
+    ]
+  },
+  {
+    title: "Photography",
+    slug: "photography",
+    icon: "Camera",
+    shortDescription: "Professional photography that enhances your brand image",
+    description: "We also provide professional photography services that enhance your brand image, whether it's a product photoshoot, service, corporate profiles, or lifestyle visuals.",
+    features: [
+      "Product Photography",
+      "Corporate Profiles",
+      "Lifestyle Visuals",
+      "Service Photography",
+      "Event Photography",
+      "Photo Editing",
+      "Brand Photography",
+      "Social Media Photos"
+    ],
+    process: [
+      { step: 1, title: "Briefing", description: "Understand your brand aesthetic and needs." },
+      { step: 2, title: "Planning", description: "Plan locations, props, and shot list." },
+      { step: 3, title: "Shoot", description: "Professional photography session." },
+      { step: 4, title: "Post-Production", description: "Edit and retouch all selected photos." },
+      { step: 5, title: "Delivery", description: "Provide final images in required formats." }
+    ],
+    benefits: [
+      { title: "Brand Enhancement", description: "Professional photos elevate your brand image." },
+      { title: "Versatile Content", description: "Use photos across website, social, and print." },
+      { title: "Product Showcase", description: "Beautiful product photos drive sales." },
+      { title: "Authentic Visuals", description: "Real photos build trust over stock images." }
+    ]
+  },
+  {
+    title: "Event Management",
+    slug: "event-management",
+    icon: "Calendar",
+    shortDescription: "Impactful events that create memorable brand experiences",
+    description: "We plan and execute impactful events that create memorable brand experiences and strong audience connections.",
+    features: [
+      "Event Planning",
+      "Venue Coordination",
+      "Brand Activation",
+      "Audience Engagement",
+      "Event Marketing",
+      "On-Site Management",
+      "Post-Event Coverage",
+      "ROI Tracking"
+    ],
+    process: [
+      { step: 1, title: "Concept", description: "Define event goals and theme." },
+      { step: 2, title: "Planning", description: "Coordinate logistics, venue, and vendors." },
+      { step: 3, title: "Marketing", description: "Promote the event to target audience." },
+      { step: 4, title: "Execution", description: "Manage the event seamlessly on the day." },
+      { step: 5, title: "Follow-Up", description: "Post-event coverage and analysis." }
+    ],
+    benefits: [
+      { title: "Brand Experiences", description: "Create lasting impressions with your audience." },
+      { title: "Audience Connection", description: "Build strong relationships through live events." },
+      { title: "Media Coverage", description: "Generate buzz and press coverage." },
+      { title: "Lead Generation", description: "Connect with potential customers in person." }
+    ]
+  },
+  {
+    title: "Podcast Production",
+    slug: "podcast-production",
+    icon: "Mic",
+    shortDescription: "Professional podcasts that amplify your voice",
+    description: "We turn your creative ideas into impactful audio or video content. We help to create, produce, and distribute professional podcasts that amplify your voice.",
+    features: [
+      "Concept Development",
+      "Audio Recording",
+      "Video Podcasts",
+      "Professional Editing",
+      "Show Notes & Descriptions",
+      "Distribution Setup",
+      "Interview Sessions",
+      "Podcast Marketing"
+    ],
+    process: [
+      { step: 1, title: "Ideation", description: "Develop podcast concept and format." },
+      { step: 2, title: "Setup", description: "Configure recording equipment and software." },
+      { step: 3, title: "Recording", description: "Record episodes with professional quality." },
+      { step: 4, title: "Editing", description: "Edit audio, add intros/outros, and finalize." },
+      { step: 5, title: "Distribution", description: "Publish across all major podcast platforms." }
+    ],
+    benefits: [
+      { title: "Thought Leadership", description: "Position yourself as an industry expert." },
+      { title: "Audience Growth", description: "Tap into the growing podcast listener base." },
+      { title: "Content Repurposing", description: "Turn episodes into blogs, social posts, and more." },
+      { title: "Brand Authority", description: "Professional podcasts build credibility." }
+    ]
+  },
+  {
+    title: "Multimedia Production",
+    slug: "multimedia-production",
+    icon: "Layers",
+    shortDescription: "Complete visual, audio, and storytelling solutions",
+    description: "A complete solution combining visuals, audio, and storytelling to deliver engaging multimedia content for your brand.",
+    features: [
+      "Visual Content Creation",
+      "Audio Production",
+      "Storytelling Strategy",
+      "Interactive Media",
+      "Animated Content",
+      "Multi-Format Delivery",
+      "Cross-Platform Optimization",
+      "Brand Integration"
+    ],
+    process: [
+      { step: 1, title: "Brief", description: "Understand your multimedia needs and goals." },
+      { step: 2, title: "Creative Direction", description: "Develop a cohesive creative vision." },
+      { step: 3, title: "Production", description: "Create visuals, audio, and interactive elements." },
+      { step: 4, title: "Integration", description: "Combine all elements into polished content." },
+      { step: 5, title: "Delivery", description: "Optimize and deliver across all platforms." }
+    ],
+    benefits: [
+      { title: "Complete Solution", description: "All multimedia needs handled under one roof." },
+      { title: "Engaging Content", description: "Multi-format content captures more attention." },
+      { title: "Brand Consistency", description: "Unified look and feel across all media." },
+      { title: "Maximum Impact", description: "Combined media creates stronger brand presence." }
+    ]
+  },
+  {
+    title: "SEO Services",
+    slug: "seo",
+    icon: "Search",
+    shortDescription: "Rank higher on search engines and drive organic traffic",
+    description: "We enhance your online presence to rank higher on search engines, drive organic traffic, and generate quality leads for long-term growth.",
+    features: [
+      "SEO Audit & Analysis",
+      "Keyword Research",
+      "On-Page Optimization",
+      "Technical SEO",
+      "Link Building",
+      "Local SEO",
+      "Content Strategy",
+      "Monthly Reports"
+    ],
+    process: [
+      { step: 1, title: "Audit", description: "Analyze current website and competitor landscape." },
+      { step: 2, title: "Strategy", description: "Develop a customized SEO plan." },
+      { step: 3, title: "Optimization", description: "Implement on-page and technical improvements." },
+      { step: 4, title: "Link Building", description: "Earn quality backlinks from authoritative sites." },
+      { step: 5, title: "Monitor", description: "Track rankings and continuously optimize." }
+    ],
+    benefits: [
+      { title: "Organic Traffic", description: "Drive free, qualified traffic from search engines." },
+      { title: "Long-Term Growth", description: "SEO results compound over time." },
+      { title: "Higher Rankings", description: "Appear where your customers are searching." },
+      { title: "Quality Leads", description: "SEO traffic converts at higher rates." }
+    ]
+  },
+  {
+    title: "Website Development",
     slug: "web-development",
     icon: "Code",
-    shortDescription: "Build fast, secure, and scalable web solutions",
-    description: "Web Development brings your digital vision to life. We build custom websites and web applications using modern technologies that are fast, secure, scalable, and optimized for conversions.",
+    shortDescription: "Modern, responsive websites with seamless user experience",
+    description: "We build modern, responsive, and user-friendly websites that reflect your brand and deliver seamless user experience.",
     features: [
-      "Custom Website Development",
+      "Custom Website Design",
+      "Responsive Development",
+      "CMS Integration",
       "E-commerce Solutions",
-      "Web Application Development",
-      "CMS Development",
-      "API Integration",
       "Performance Optimization",
       "Security Implementation",
+      "SEO-Friendly Structure",
       "Ongoing Maintenance"
     ],
     process: [
-      { step: 1, title: "Requirements Gathering", description: "Understand your goals, features, and technical requirements." },
-      { step: 2, title: "Design & Prototyping", description: "Create wireframes and designs for approval before development." },
-      { step: 3, title: "Development", description: "Build the solution using modern, scalable technologies." },
-      { step: 4, title: "Testing", description: "Rigorous testing for functionality, performance, and security." },
-      { step: 5, title: "Launch & Support", description: "Deploy the solution and provide ongoing maintenance." }
+      { step: 1, title: "Discovery", description: "Understand your goals and requirements." },
+      { step: 2, title: "Design", description: "Create wireframes and visual designs." },
+      { step: 3, title: "Development", description: "Build the website with modern technologies." },
+      { step: 4, title: "Testing", description: "Test across devices and browsers." },
+      { step: 5, title: "Launch", description: "Deploy and provide ongoing support." }
     ],
     benefits: [
-      { title: "Custom Solutions", description: "Tailored development that meets your exact business needs." },
-      { title: "Modern Technology", description: "Built with the latest frameworks for performance and scalability." },
-      { title: "Conversion Focused", description: "Designed and developed to maximize conversions." },
-      { title: "Future-Proof", description: "Scalable architecture that grows with your business." }
-    ]
-  },
-  {
-    title: "Analytics & Reporting",
-    slug: "analytics",
-    icon: "BarChart3",
-    shortDescription: "Make data-driven decisions with actionable insights",
-    description: "Analytics & Reporting transforms raw data into actionable insights. We set up tracking, create custom dashboards, and provide regular reports that help you understand performance and make informed decisions.",
-    features: [
-      "Google Analytics Setup",
-      "Google Tag Manager",
-      "Conversion Tracking",
-      "Custom Dashboard Creation",
-      "Data Visualization",
-      "Performance Reporting",
-      "Attribution Modeling",
-      "Predictive Analytics"
-    ],
-    process: [
-      { step: 1, title: "Audit & Planning", description: "Review current tracking setup and identify gaps." },
-      { step: 2, title: "Implementation", description: "Set up tracking codes, events, and conversion goals." },
-      { step: 3, title: "Dashboard Creation", description: "Build custom dashboards for real-time performance visibility." },
-      { step: 4, title: "Reporting", description: "Deliver regular reports with insights and recommendations." },
-      { step: 5, title: "Optimization", description: "Use data insights to refine marketing strategies." }
-    ],
-    benefits: [
-      { title: "Data-Driven Decisions", description: "Make informed decisions based on accurate data." },
-      { title: "Performance Visibility", description: "See exactly how your marketing is performing." },
-      { title: "ROI Tracking", description: "Measure the return on investment for every campaign." },
-      { title: "Continuous Improvement", description: "Identify opportunities for optimization and growth." }
+      { title: "Professional Presence", description: "A modern website reflects your brand quality." },
+      { title: "User Experience", description: "Seamless navigation keeps visitors engaged." },
+      { title: "Mobile-First", description: "Responsive design for all devices." },
+      { title: "Conversion Ready", description: "Built to turn visitors into customers." }
     ]
   }
 ];

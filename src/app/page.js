@@ -21,23 +21,23 @@ export default function Home() {
   const whyChooseUs = [
     {
       icon: CheckCircle2,
-      title: 'Data-Driven Results',
-      description: 'Every strategy is backed by data and analytics for maximum ROI.',
+      title: 'Result-Oriented Strategy',
+      description: 'We use creativity and data to make marketing plans that really work for your business growth.',
     },
     {
       icon: CheckCircle2,
-      title: 'Transparent Reporting',
-      description: 'Real-time dashboards and regular reports keep you informed.',
+      title: 'SEO Expertise',
+      description: 'From SEO services to content marketing, we handle all aspects of your digital presence.',
     },
     {
       icon: CheckCircle2,
-      title: 'Dedicated Account Manager',
-      description: 'A single point of contact who knows your business inside out.',
+      title: 'Creative Storytelling',
+      description: 'We are honest, we try things, and we work hard to get good results for your brand.',
     },
     {
       icon: CheckCircle2,
-      title: 'Proven ROI',
-      description: 'Our clients see an average of 3x return within the first 6 months.',
+      title: 'Customized Solutions',
+      description: 'A plan that is just for you — helps your business grow and makes your brand known to people.',
     },
   ];
 
@@ -53,7 +53,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <Hero
-        title="Grow Your Business with Data-Driven Digital Marketing"
+        title="Turning clicks into customers"
         subtitle="We help businesses scale through strategic SEO, PPC, social media, and web development services that deliver measurable results."
         primaryCTA={{ href: '/contact', text: 'Get Started' }}
         secondaryCTA={{ href: '/portfolio', text: 'View Our Work' }}
@@ -85,8 +85,8 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Why Choose Us"
-            title="What Sets Us Apart"
-            subtitle="We're not just another agency. Here's why businesses trust us with their growth."
+            title="Why Should You Choose DeltaClicks?"
+            subtitle="We don't just write content and make promises, but we create impact."
             light
           />
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -139,7 +139,7 @@ export default function Home() {
       <CTABanner
         title="Ready to Grow Your Business?"
         subtitle="Let's discuss how we can help you achieve your digital marketing goals."
-        primaryCTA={{ href: '/contact', text: 'Get a Free Quote' }}
+        primaryCTA={{ href: '/contact', text: 'Book an Appointment' }}
         secondaryCTA={{ href: '/portfolio', text: 'View Our Work' }}
       />
     </>

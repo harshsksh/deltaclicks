@@ -11,16 +11,17 @@ import FadeIn from '@/components/animations/FadeIn';
 import { portfolio, getProjectBySlug } from '@/data/portfolio';
 
 // Generate static params for all portfolio slugs
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return portfolio.map((project) => ({
     slug: project.slug,
   }));
 }
 
 // Generate metadata for each project page
-export function generateMetadata({ params }) {
-  const project = getProjectBySlug(params.slug);
-  
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
+
   if (!project) {
     return {
       title: 'Project Not Found',
@@ -33,8 +34,9 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function ProjectPage({ params }) {
-  const project = getProjectBySlug(params.slug);
+export default async function ProjectPage({ params }) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     notFound();
