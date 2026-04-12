@@ -104,6 +104,9 @@ export default function AboutPage() {
                   At DeltaClicks, our goal is to change how digital marketing works. We create plans that really help businesses grow in a trackable way. We think each business is different and its growth should come from solutions, not generic methods. We want to create an online environment where content, tech, and data-driven plans work together to get real results. We focus on campaigns that convert well and solutions that can grow. Our main priorities are performance, openness, and long-term success at DeltaClicks.
                 </p>
                 <p className="text-white/90 text-lg leading-relaxed mt-4">
+                  DeltaClicks helps brands build an online presence. We make sure businesses get the most out of our investments. We want businesses to achieve results that are more than just numbers. We want to help businesses make an impact.
+                </p>
+                <p className="text-white/90 text-lg leading-relaxed mt-4">
                   Through innovation and hard work, DeltaClicks envisions a future where businesses grow with clarity and confidence. We want businesses to succeed in a way that they can measure.
                 </p>
               </Card>
@@ -129,13 +132,12 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Why Choose Us"
-            title="Why Should You Choose Us?"
-            subtitle="At DeltaClicks we use creativity and data to make marketing plans that really work"
+            title="Why should you choose us?"
           />
           <FadeIn delay={0.1}>
             <Card className="p-8 h-full bg-background-card border border-white/5 max-w-4xl mx-auto">
               <p className="text-foreground-muted text-lg leading-relaxed">
-                Our team tries to understand what you want to achieve with your business. Then makes a plan that is just for you. This plan helps your business grow, makes your brand known to people, and gets you good leads. We do lots of things, like SEO services, content marketing, managing media, and making websites. You can get all these services from us. What makes us different is that we are honest, we try things, and we work hard to get good results. We make sure you get the most out of your money. If you are just starting out or if you are a brand, DeltaClicks is here to help you make a strong digital presence that will last.
+                At DeltaClicks we use creativity and data to make marketing plans that really work. Our team tries to understand what you want to achieve with your business. Then makes a plan that is just for you. This plan helps your business grow makes your brand known to people and gets you good leads. We do lots of things, like SEO services, content marketing, managing media and making websites. You can get all these services from us. What makes us different is that we are honest we try things and we work hard to get good results. We make sure you get the most out of your money. If you are just starting out or if you are a brand DeltaClicks is here to help you make a strong digital presence that will last.
               </p>
             </Card>
           </FadeIn>

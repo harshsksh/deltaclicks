@@ -4,303 +4,280 @@ export const services = [
     title: "Content Marketing",
     slug: "content-marketing",
     icon: "FileText",
-    shortDescription: "Make content that helps people trust you and interact with you",
+    shortDescription: "We make content that helps people trust you and interact with you",
     description: "We make content that helps people trust you and want to interact with you. This can be a blog or a story about your brand. We want to make sure that your content talks directly to the people you want to reach and helps you be seen online.",
+    whatIs: "Content Marketing is a strategic approach that focuses on valuable, relevant, and consistent content to attract and engage the target audience. It focuses on building trust rather than promoting or advertising the service. Content Marketing can take the form of blogs, posts, videos, social media, infographics, podcasts, and more.",
+    whyNeed: [
+      "Drives organic traffic",
+      "Builds trust & authority",
+      "Generate leads",
+      "Improves SEO performance",
+      "Supports social media & ads"
+    ],
     features: [
-      "Blog Writing & Articles",
-      "Brand Storytelling",
-      "Content Strategy",
-      "SEO-Optimized Content",
-      "Audience Targeting",
-      "Content Distribution",
-      "Performance Tracking",
-      "Brand Visibility"
+      "Result-Oriented Strategy",
+      "SEO Expertise",
+      "Creative Storytelling",
+      "Customized Solutions",
+      "Consistent Delivery"
     ],
     process: [
-      { step: 1, title: "Research", description: "Understand your audience, industry, and competitors." },
-      { step: 2, title: "Strategy", description: "Develop a content strategy aligned with your goals." },
-      { step: 3, title: "Content Planning", description: "Plan topics, formats, and publishing schedule." },
-      { step: 4, title: "Content Creation", description: "Write and produce high-quality, engaging content." },
-      { step: 5, title: "Design & Optimization", description: "Add visuals and optimize for SEO and readability." },
-      { step: 6, title: "Publishing & Promotion", description: "Publish and promote across relevant channels." },
-      { step: 7, title: "Performance Tracking", description: "Monitor metrics and refine strategy based on data." }
+      { step: 1, title: "Research", description: "" },
+      { step: 2, title: "Make a strategy", description: "" },
+      { step: 3, title: "Content planning", description: "" },
+      { step: 4, title: "Content creation", description: "" },
+      { step: 5, title: "Design & Optimization", description: "" },
+      { step: 6, title: "Publishing & Promotion", description: "" },
+      { step: 7, title: "Performance Tracking", description: "" }
     ],
-    benefits: [
-      { title: "Build Trust", description: "Valuable content establishes credibility and authority." },
-      { title: "Drive Engagement", description: "Content that resonates encourages audience interaction." },
-      { title: "Improve SEO", description: "Fresh, quality content boosts search engine rankings." },
-      { title: "Generate Leads", description: "Strategic content attracts and converts potential customers." }
-    ]
-  },
-  {
-    title: "Website Copywriting",
-    slug: "website-copywriting",
-    icon: "PenTool",
-    shortDescription: "SEO-friendly, compelling websites that convert clicks into customers",
-    description: "Nowadays, a website is the digital identity of any business. We make SEO-friendly, compelling, user-interaction websites that not only inform but convert clicks into customers.",
-    features: [
-      "SEO-Friendly Copy",
-      "Compelling Headlines",
-      "User-Focused Content",
-      "Conversion Optimization",
-      "Brand Voice Development",
-      "Call-to-Action Writing",
-      "Landing Page Copy",
-      "Product Descriptions"
-    ],
-    process: [
-      { step: 1, title: "Discovery", description: "Understand your brand, audience, and goals." },
-      { step: 2, title: "Research", description: "Analyze competitors and industry best practices." },
-      { step: 3, title: "Wireframing", description: "Plan content structure and user flow." },
-      { step: 4, title: "Copywriting", description: "Write persuasive, SEO-optimized copy." },
-      { step: 5, title: "Review & Refine", description: "Test and refine for maximum conversions." }
-    ],
-    benefits: [
-      { title: "Higher Conversions", description: "Persuasive copy turns visitors into customers." },
-      { title: "Better SEO", description: "Optimized copy improves search engine visibility." },
-      { title: "Brand Clarity", description: "Clear messaging communicates your value proposition." },
-      { title: "User Engagement", description: "Compelling content keeps users on your site longer." }
-    ]
-  },
-  {
-    title: "Social Media Content",
-    slug: "social-media-content",
-    icon: "Users",
-    shortDescription: "Content that makes people stop, look, and remember your brand",
-    description: "We make content that people stop and look at. This content helps people remember your brand. We draft the content for Instagram, Facebook, X, LinkedIn, and other platforms.",
-    features: [
-      "Instagram Content",
-      "Facebook Posts & Ads",
-      "X (Twitter) Content",
-      "LinkedIn Articles",
-      "Social Media Strategy",
-      "Content Calendar",
-      "Engagement Posts",
-      "Brand Awareness Campaigns"
-    ],
-    process: [
-      { step: 1, title: "Platform Research", description: "Identify best practices for each platform." },
-      { step: 2, title: "Content Strategy", description: "Develop a platform-specific content plan." },
-      { step: 3, title: "Content Creation", description: "Design and write engaging posts." },
-      { step: 4, title: "Scheduling", description: "Plan and schedule posts for optimal timing." },
-      { step: 5, title: "Monitor & Engage", description: "Track performance and engage with audience." }
-    ],
-    benefits: [
-      { title: "Brand Recall", description: "Memorable content keeps your brand top-of-mind." },
-      { title: "Audience Growth", description: "Engaging content attracts new followers." },
-      { title: "Multi-Platform Reach", description: "Content tailored for each social platform." },
-      { title: "Community Building", description: "Consistent posting builds a loyal following." }
-    ]
+    cta: "Book an appointment"
   },
   {
     title: "Video Production",
     slug: "video-production",
     icon: "Video",
-    shortDescription: "High-quality videos that tell your brand story and engage audiences",
-    description: "From scripting to final editing, we create high-quality videos with in-depth research and user engagement that tell your brand story, promote your services, and engage your audience effectively.",
+    shortDescription: "From an idea ot final cut, DeltaClicks draft engaged and high-quality content",
+    description: "From an idea ot final cut, DeltaClicks draft engaged and high-quality content that doesn't look just good, but it also communicates with the audience. We make any content with proper research, a story idea, and according to interest.",
+    whatWeRequire: [
+      "Your objective",
+      "Your target audience",
+      "Key message",
+      "Brand guidelines",
+      "Budget"
+    ],
     features: [
-      "Script Writing",
-      "Video Shooting",
-      "Professional Editing",
-      "Brand Storytelling",
-      "Product Promotions",
-      "Social Media Videos",
-      "Explainer Videos",
-      "Motion Graphics"
+      "Corporate videos",
+      "Social media videos",
+      "Promotional videos",
+      "Explainer videos",
+      "Brand- story videos",
+      "Event coverage"
+    ],
+    whyChooseUs: [
+      "Strategic approach",
+      "In-depth research",
+      "Creative story drafting",
+      "End-to-end solution",
+      "Audience engagement",
+      "Deliver on time"
     ],
     process: [
-      { step: 1, title: "Concept Development", description: "Define the video's purpose and message." },
-      { step: 2, title: "Scripting", description: "Write a compelling script and storyboard." },
-      { step: 3, title: "Production", description: "Shoot or animate the video content." },
-      { step: 4, title: "Editing", description: "Edit, add effects, music, and finalize." },
-      { step: 5, title: "Distribution", description: "Optimize and publish across platforms." }
+      { step: 1, title: "Research", description: "" },
+      { step: 2, title: "Plan a strategy", description: "" },
+      { step: 3, title: "Scriptwriting & Storyboarding", description: "" },
+      { step: 4, title: "Pre-production planning", description: "" },
+      { step: 5, title: "Shooting", description: "" },
+      { step: 6, title: "Post-production planning", description: "" },
+      { step: 7, title: "Review", description: "" },
+      { step: 8, title: "Deliver to the audience", description: "" }
     ],
-    benefits: [
-      { title: "High Engagement", description: "Video content generates the highest engagement rates." },
-      { title: "Brand Storytelling", description: "Bring your brand story to life visually." },
-      { title: "Versatile Use", description: "Use across website, social media, and ads." },
-      { title: "Professional Quality", description: "High production value builds credibility." }
-    ]
+    cta: "Let's create something impactful- Contact us"
   },
   {
     title: "Photography",
     slug: "photography",
     icon: "Camera",
-    shortDescription: "Professional photography that enhances your brand image",
-    description: "We also provide professional photography services that enhance your brand image, whether it's a product photoshoot, service, corporate profiles, or lifestyle visuals.",
+    shortDescription: "Photography approached as a strategic communication tool that builds trust and drives action",
+    description: "In a crowded digital market, average visuals get ignored. At DeltaClicks, photography is approached as a strategic communication tool that builds trust and drives action.",
     features: [
-      "Product Photography",
-      "Corporate Profiles",
-      "Lifestyle Visuals",
-      "Service Photography",
-      "Event Photography",
-      "Photo Editing",
-      "Brand Photography",
-      "Social Media Photos"
+      "Product photography",
+      "Brand & Corporate Photography",
+      "Campaign & Advertising Shoots",
+      "Fashion & Lifestyle Photography",
+      "Social Media Content Photography"
     ],
+    featureDescriptions: {
+      "Product photography": "Clean, high-detail visuals to improve buying decisions across eCommerce platforms.",
+      "Brand & Corporate Photography": "Visual identity assets that position your business as credible, modern, and trustworthy.",
+      "Campaign & Advertising Shoots": "Shoots for ads, banners, and digital campaigns.",
+      "Fashion & Lifestyle Photography": "Narrative-led shoots that align with trends while preserving brand uniqueness.",
+      "Social Media Content Photography": "Scroll-stopping visuals optimized for engagement, not just presence."
+    },
     process: [
-      { step: 1, title: "Briefing", description: "Understand your brand aesthetic and needs." },
-      { step: 2, title: "Planning", description: "Plan locations, props, and shot list." },
-      { step: 3, title: "Shoot", description: "Professional photography session." },
-      { step: 4, title: "Post-Production", description: "Edit and retouch all selected photos." },
-      { step: 5, title: "Delivery", description: "Provide final images in required formats." }
+      { step: 1, title: "Define objective", description: "" },
+      { step: 2, title: "Visual strategy & mood architecture", description: "" },
+      { step: 3, title: "Shoot environment", description: "" },
+      { step: 4, title: "Precision capture", description: "" },
+      { step: 5, title: "Post-production intelligence", description: "" },
+      { step: 6, title: "Platform optimization", description: "" }
     ],
-    benefits: [
-      { title: "Brand Enhancement", description: "Professional photos elevate your brand image." },
-      { title: "Versatile Content", description: "Use photos across website, social, and print." },
-      { title: "Product Showcase", description: "Beautiful product photos drive sales." },
-      { title: "Authentic Visuals", description: "Real photos build trust over stock images." }
-    ]
+    whyChooseUs: [
+      "Because We Think Beyond the Camera",
+      "Because Visuals Must Perform",
+      "Because Strategy Drives Creativity",
+      "Because Consistency Builds Trust",
+      "Because Execution Matters"
+    ],
+    cta: "Start Your Next Shoot with DeltaClicks- Connect with DeltaClicks today"
   },
   {
     title: "Event Management",
     slug: "event-management",
     icon: "Calendar",
     shortDescription: "Impactful events that create memorable brand experiences",
-    description: "We plan and execute impactful events that create memorable brand experiences and strong audience connections.",
+    description: "An event is not just a gathering, but it's a strategic touchpoint between your brand and your audience. At DeltaClicks, we approach event management as a blend of planning, psychology, and precision execution. From corporate functions to brand activations, every event we manage is built to create lasting impressions and measurable outcomes.",
     features: [
-      "Event Planning",
-      "Venue Coordination",
-      "Brand Activation",
-      "Audience Engagement",
-      "Event Marketing",
-      "On-Site Management",
-      "Post-Event Coverage",
-      "ROI Tracking"
+      "Corporate event",
+      "Brand activity and promotion",
+      "Product launch event",
+      "Social & private events",
+      "Exhibition and Trade shows",
+      "College & culture events"
     ],
     process: [
-      { step: 1, title: "Concept", description: "Define event goals and theme." },
-      { step: 2, title: "Planning", description: "Coordinate logistics, venue, and vendors." },
-      { step: 3, title: "Marketing", description: "Promote the event to target audience." },
-      { step: 4, title: "Execution", description: "Manage the event seamlessly on the day." },
-      { step: 5, title: "Follow-Up", description: "Post-event coverage and analysis." }
+      { step: 1, title: "Object mapping", description: "" },
+      { step: 2, title: "Concept design", description: "" },
+      { step: 3, title: "Planning", description: "" },
+      { step: 4, title: "Execution control", description: "" },
+      { step: 5, title: "Audience management", description: "" },
+      { step: 6, title: "Post- event analysis", description: "" }
     ],
-    benefits: [
-      { title: "Brand Experiences", description: "Create lasting impressions with your audience." },
-      { title: "Audience Connection", description: "Build strong relationships through live events." },
-      { title: "Media Coverage", description: "Generate buzz and press coverage." },
-      { title: "Lead Generation", description: "Connect with potential customers in person." }
-    ]
+    whyChooseUs: [
+      "Because we plan before executing",
+      "Because we make a complete map",
+      "Because we take care of every little thing",
+      "Because we keep you pocket-friendly"
+    ],
+    cta: "Let's plan an event together- Connect with us- we are here :)"
   },
   {
-    title: "Podcast Production",
-    slug: "podcast-production",
+    title: "Podcast",
+    slug: "podcast",
     icon: "Mic",
-    shortDescription: "Professional podcasts that amplify your voice",
-    description: "We turn your creative ideas into impactful audio or video content. We help to create, produce, and distribute professional podcasts that amplify your voice.",
+    shortDescription: "Podcasting treated as a long-form influence channel",
+    description: "In an era of constant scrolling, podcasts create something rare attention without distraction. At DeltaClicks, podcasting isn't treated as content volume; it's treated as a long-form influence channel. We help brands, creators, and professionals turn ideas into structured conversations that build credibility, connection, and consistency.",
     features: [
-      "Concept Development",
-      "Audio Recording",
-      "Video Podcasts",
-      "Professional Editing",
-      "Show Notes & Descriptions",
-      "Distribution Setup",
-      "Interview Sessions",
-      "Podcast Marketing"
+      "Brand podcast",
+      "Interview-based podcast",
+      "Leadership podcast",
+      "Storytelling & narrative podcast",
+      "Vodcast (Video- based podcast)"
     ],
     process: [
-      { step: 1, title: "Ideation", description: "Develop podcast concept and format." },
-      { step: 2, title: "Setup", description: "Configure recording equipment and software." },
-      { step: 3, title: "Recording", description: "Record episodes with professional quality." },
-      { step: 4, title: "Editing", description: "Edit audio, add intros/outros, and finalize." },
-      { step: 5, title: "Distribution", description: "Publish across all major podcast platforms." }
+      { step: 1, title: "Podcast strategy & positioning", description: "" },
+      { step: 2, title: "Format & episode structuring", description: "" },
+      { step: 3, title: "Pre-production planning", description: "" },
+      { step: 4, title: "Recording & production", description: "" },
+      { step: 5, title: "Editing & sound design", description: "" },
+      { step: 6, title: "Distribution and analysis", description: "" }
     ],
-    benefits: [
-      { title: "Thought Leadership", description: "Position yourself as an industry expert." },
-      { title: "Audience Growth", description: "Tap into the growing podcast listener base." },
-      { title: "Content Repurposing", description: "Turn episodes into blogs, social posts, and more." },
-      { title: "Brand Authority", description: "Professional podcasts build credibility." }
-    ]
+    whyChooseUs: [
+      "Because consistency builds authority",
+      "Because structure drives retention",
+      "Because content should multiply"
+    ],
+    cta: "Start your podcast with DeltaClicks- Contact us today"
   },
   {
     title: "Multimedia Production",
     slug: "multimedia-production",
     icon: "Layers",
-    shortDescription: "Complete visual, audio, and storytelling solutions",
-    description: "A complete solution combining visuals, audio, and storytelling to deliver engaging multimedia content for your brand.",
+    shortDescription: "Building a unified content ecosystem where every format works together",
+    description: "In today's fragmented digital landscape, single-format content is no longer enough. Brands need cohesive, multi-platform storytelling that works across video, audio, visuals, and digital channels. At DeltaClicks, multimedia production is not about isolated outputs but it's about building a unified content ecosystem where every format works together to amplify your message.",
     features: [
-      "Visual Content Creation",
-      "Audio Production",
-      "Storytelling Strategy",
-      "Interactive Media",
-      "Animated Content",
-      "Multi-Format Delivery",
-      "Cross-Platform Optimization",
-      "Brand Integration"
+      "Integrated brand content",
+      "Vidoe+ photography",
+      "Corporate multimedia solutions",
+      "Social media content"
     ],
     process: [
-      { step: 1, title: "Brief", description: "Understand your multimedia needs and goals." },
-      { step: 2, title: "Creative Direction", description: "Develop a cohesive creative vision." },
-      { step: 3, title: "Production", description: "Create visuals, audio, and interactive elements." },
-      { step: 4, title: "Integration", description: "Combine all elements into polished content." },
-      { step: 5, title: "Delivery", description: "Optimize and deliver across all platforms." }
+      { step: 1, title: "Content planning", description: "" },
+      { step: 2, title: "Brand narrative", description: "" },
+      { step: 3, title: "Multi-format creation", description: "" },
+      { step: 4, title: "Post-production", description: "" }
     ],
-    benefits: [
-      { title: "Complete Solution", description: "All multimedia needs handled under one roof." },
-      { title: "Engaging Content", description: "Multi-format content captures more attention." },
-      { title: "Brand Consistency", description: "Unified look and feel across all media." },
-      { title: "Maximum Impact", description: "Combined media creates stronger brand presence." }
-    ]
+    whyChooseUs: [
+      "Because content should work together",
+      "Because strategy comes first",
+      "Because efficiency matters",
+      "Because consistency builds recognition"
+    ],
+    cta: "Build a smarter content system- Connect with DeltaClicks Today"
   },
   {
-    title: "SEO Services",
-    slug: "seo",
-    icon: "Search",
-    shortDescription: "Rank higher on search engines and drive organic traffic",
-    description: "We enhance your online presence to rank higher on search engines, drive organic traffic, and generate quality leads for long-term growth.",
+    title: "Social Media Content",
+    slug: "social-media-content",
+    icon: "Users",
+    shortDescription: "Social media content as a combination of strategy, psychology, and consistency",
+    description: "Social media today is not about presence but it's about performance. Random posts don't build brands; structured content systems do. At DeltaClicks, we approach social media content as a combination of strategy, psychology, and consistency—designed to capture attention, sustain engagement, and drive measurable outcomes.",
     features: [
-      "SEO Audit & Analysis",
-      "Keyword Research",
-      "On-Page Optimization",
-      "Technical SEO",
-      "Link Building",
-      "Local SEO",
-      "Content Strategy",
-      "Monthly Reports"
+      "Content strategy planning",
+      "Short-form video content",
+      "Static & carousel creatives",
+      "Captions & copywriting"
     ],
     process: [
-      { step: 1, title: "Audit", description: "Analyze current website and competitor landscape." },
-      { step: 2, title: "Strategy", description: "Develop a customized SEO plan." },
-      { step: 3, title: "Optimization", description: "Implement on-page and technical improvements." },
-      { step: 4, title: "Link Building", description: "Earn quality backlinks from authoritative sites." },
-      { step: 5, title: "Monitor", description: "Track rankings and continuously optimize." }
+      { step: 1, title: "Audience and platform analysis", description: "" },
+      { step: 2, title: "Content strategy", description: "" },
+      { step: 3, title: "Creative production", description: "" },
+      { step: 4, title: "Performance monitoring", description: "" },
+      { step: 5, title: "Optimization & scaling", description: "" }
     ],
-    benefits: [
-      { title: "Organic Traffic", description: "Drive free, qualified traffic from search engines." },
-      { title: "Long-Term Growth", description: "SEO results compound over time." },
-      { title: "Higher Rankings", description: "Appear where your customers are searching." },
-      { title: "Quality Leads", description: "SEO traffic converts at higher rates." }
-    ]
+    whyChooseUs: [
+      "Because content must perform",
+      "Random posting fails",
+      "Consistency wins",
+      "Growth needs a strategy"
+    ],
+    cta: "Turn your Social Media into a Growth Engine- Connect with DeltaClick today"
   },
   {
-    title: "Website Development",
-    slug: "web-development",
-    icon: "Code",
-    shortDescription: "Modern, responsive websites with seamless user experience",
-    description: "We build modern, responsive, and user-friendly websites that reflect your brand and deliver seamless user experience.",
+    title: "Documentary",
+    slug: "documentary",
+    icon: "Film",
+    shortDescription: "A documentary is not content, it's credibility in motion",
+    description: "A documentary is not content, it's credibility in motion. It demands depth, accuracy, and narrative discipline. At DeltaClicks, documentary production is treated as a process of research, interpretation, and storytelling precision. We transform real-world subjects into compelling narratives that inform, engage, and leave a lasting intellectual and emotional impact.",
     features: [
-      "Custom Website Design",
-      "Responsive Development",
-      "CMS Integration",
-      "E-commerce Solutions",
-      "Performance Optimization",
-      "Security Implementation",
-      "SEO-Friendly Structure",
-      "Ongoing Maintenance"
+      "Brand documentaries",
+      "Social and issue-based documentaries",
+      "Corporate and institutional documentaries",
+      "Profile documentaries",
+      "Short-term documentaries",
+      "Research-based films"
     ],
     process: [
-      { step: 1, title: "Discovery", description: "Understand your goals and requirements." },
-      { step: 2, title: "Design", description: "Create wireframes and visual designs." },
-      { step: 3, title: "Development", description: "Build the website with modern technologies." },
-      { step: 4, title: "Testing", description: "Test across devices and browsers." },
-      { step: 5, title: "Launch", description: "Deploy and provide ongoing support." }
+      { step: 1, title: "Research and subject exploration", description: "" },
+      { step: 2, title: "Narrative structure", description: "" },
+      { step: 3, title: "Pre-production planning", description: "" },
+      { step: 4, title: "Documentary filming", description: "" },
+      { step: 5, title: "Editing and story construction", description: "" },
+      { step: 6, title: "Post-production", description: "" }
     ],
-    benefits: [
-      { title: "Professional Presence", description: "A modern website reflects your brand quality." },
-      { title: "User Experience", description: "Seamless navigation keeps visitors engaged." },
-      { title: "Mobile-First", description: "Responsive design for all devices." },
-      { title: "Conversion Ready", description: "Built to turn visitors into customers." }
-    ]
+    whyChooseUs: [
+      "Because accuracy matters",
+      "Structure drives engagement",
+      "Depth creates impact",
+      "Execution defines credibility"
+    ],
+    cta: "Tell stories that matter- Connect with DeltaClicks today"
+  },
+  {
+    title: "Website Design",
+    slug: "website-design",
+    icon: "Monitor",
+    shortDescription: "Website design as a combination of user psychology, structured design, and performance optimization",
+    description: "A website is not a digital brochure; it's your most important business asset online. It should not only look good but also guide, persuade, and convert. At DeltaClicks, website design is approached as a combination of user psychology, structured design, and performance optimization—ensuring your website works as a 24/7 growth engine.",
+    features: [
+      "Business and corporate website",
+      "Landing pages",
+      "E-commerce website",
+      "Personal branding website"
+    ],
+    process: [
+      { step: 1, title: "Business and user analysis", description: "" },
+      { step: 2, title: "Structure and wireframing", description: "" },
+      { step: 3, title: "UX/UI design", description: "" },
+      { step: 4, title: "Development/implantation", description: "" },
+      { step: 5, title: "Performance optimization", description: "" },
+      { step: 6, title: "Testing and launch", description: "" }
+    ],
+    whyChooseUs: [
+      "Because design without strategy fails",
+      "User experience drives results",
+      "Speed matters",
+      "Every click counts"
+    ],
+    cta: "Build a website that works for you- Connect with deltaclicks today"
   }
 ];
 

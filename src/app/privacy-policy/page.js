@@ -126,7 +126,7 @@ export default function PrivacyPolicyPage() {
                   </ul>
                   <p>
                     To exercise these rights, please contact us at{' '}
-                    <a href="mailto:privacy@deltaclicks.com" className="text-primary-light">privacy@deltaclicks.com</a>
+                    <a href="mailto:Connect@deltclicks.com" className="text-primary-light">Connect@deltclicks.com</a>
                   </p>
 
                   <h2>6. Third-Party Links</h2>
@@ -163,8 +163,8 @@ export default function PrivacyPolicyPage() {
                     practices, please contact us:
                   </p>
                   <ul>
-                    <li><strong>Email:</strong> privacy@deltaclicks.com</li>
-                    <li><strong>Address:</strong> 123 Digital Avenue, New York, NY 10001</li>
+                    <li><strong>Email:</strong> Connect@deltclicks.com</li>
+                    <li><strong>Address:</strong> A 501, Shree Ram South Court, Jagatpura, Jaipur, 302017</li>
                   </ul>
                   <p>
                     By using our website and services, you acknowledge that you have read and 
