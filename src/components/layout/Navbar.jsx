@@ -54,6 +54,7 @@ export default function Navbar() {
                   sizes="(max-width: 640px) 256px, 320px"
                   className="object-contain transition-transform group-hover:scale-105"
                   priority
+                  loading="eager"
                 />
               </div>
             </Link>

@@ -184,10 +184,9 @@ export default function TermsPage() {
 
                   <h2>11. Governing Law</h2>
                   <p>
-                    These Terms shall be governed by and construed in accordance with the laws of 
-                    the State of New York, United States, without regard to its conflict of law 
-                    provisions. Any disputes arising under these Terms shall be subject to the 
-                    exclusive jurisdiction of the courts located in New York.
+                    These Terms shall be governed by and construed in accordance with the laws of
+                    India, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be subject to the
+                    exclusive jurisdiction of the courts located in Jaipur, Rajasthan.
                   </p>
 
                   <h2>12. Changes to Terms</h2>
@@ -203,14 +202,14 @@ export default function TermsPage() {
                     If you have any questions about these Terms, please contact us:
                   </p>
                   <ul>
-                    <li><strong>Email:</strong> legal@deltaclicks.com</li>
-                    <li><strong>Address:</strong> 123 Digital Avenue, New York, NY 10001</li>
+                    <li><strong>Email:</strong> Connect@deltclicks.com</li>
+                    <li><strong>Address:</strong> A 501, Shree Ram South Court, Jagatpura, Jaipur, 302017</li>
                   </ul>
 
                   <h2>14. Entire Agreement</h2>
                   <p>
-                    These Terms, together with our Privacy Policy and any separate service 
-                    agreements, constitute the entire agreement between you and DeltaClicks 
+                    These Terms, together with our Privacy Policy and any separate service
+                    agreements, constitute the entire agreement between you and KUFLON COMMUNICATIONS LLP
                     regarding our services and supersede any prior agreements.
                   </p>
                 </div>

@@ -1,200 +1,122 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Hero from '@/components/sections/Hero';
 import SectionHeading from '@/components/ui/SectionHeading';
 import Card from '@/components/ui/Card';
-import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 import FadeIn from '@/components/animations/FadeIn';
-import StaggerContainer from '@/components/animations/StaggerContainer';
-import { blog, getFeaturedPost, getBlogCategories } from '@/data/blog';
+
+export const metadata = {
+  title: 'DeltaClicks: Crafting Stories, Creating Impact',
+  description: 'DeltaClicks stands at the forefront of digital transformation, offering creative and marketing solutions designed to help businesses thrive.',
+};
 
 export default function BlogPage() {
-  const featuredPost = getFeaturedPost();
-  const categories = getBlogCategories();
-  const [activeCategory, setActiveCategory] = useState('All');
-
-  const filteredPosts = activeCategory === 'All'
-    ? blog
-    : blog.filter(post => post.category === activeCategory);
-
-  // Exclude featured post from grid
-  const gridPosts = featuredPost && activeCategory === 'All'
-    ? filteredPosts.filter(post => post.slug !== featuredPost.slug)
-    : filteredPosts;
-
   return (
     <>
       {/* Hero Section */}
       <Hero
-        title="Insights & Resources"
-        subtitle="Stay ahead in digital marketing with expert tips, industry trends, and actionable strategies."
+        title="DeltaClicks: Crafting Stories, Creating Impact"
+        subtitle="Blending storytelling with strategy to empower brands in the digital world"
         primaryCTA={{ href: '/contact', text: 'Work With Us' }}
-        secondaryCTA={{ href: '/services', text: 'Our Services' }}
+        secondaryCTA={{ href: '/services', text: 'Explore Services' }}
         background="gradient"
         align="center"
       />
 
-      {/* Featured Post */}
-      {featuredPost && activeCategory === 'All' && (
-        <section className="py-20 bg-background-light">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <FadeIn>
-              <div className="mb-8">
-                <Badge text="Featured Post" variant="accent" />
-              </div>
-              <Card className="overflow-hidden bg-background-card border border-white/10">
-                <div className="grid grid-cols-1 lg:grid-cols-2">
-                  <div className="relative h-64 lg:h-auto">
-                    <Image
-                      src={featuredPost.image}
-                      alt={featuredPost.title}
-                      fill
-                      className="object-cover"
-                      priority
-                    />
-                  </div>
-                  <div className="p-8 lg:p-12 flex flex-col justify-center">
-                    <div className="flex items-center gap-4 text-foreground-muted text-sm mb-4">
-                      <span className="flex items-center">
-                        <Calendar className="w-4 h-4 mr-1" />
-                        {new Date(featuredPost.date).toLocaleDateString('en-US', { 
-                          year: 'numeric', 
-                          month: 'long', 
-                          day: 'numeric' 
-                        })}
-                      </span>
-                      <span className="flex items-center">
-                        <Clock className="w-4 h-4 mr-1" />
-                        {featuredPost.readTime}
-                      </span>
-                    </div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                      {featuredPost.title}
-                    </h2>
-                    <p className="text-foreground-muted text-lg mb-6">
-                      {featuredPost.excerpt}
-                    </p>
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
-                        {featuredPost.author.charAt(0)}
-                      </div>
-                      <div>
-                        <div className="text-foreground font-medium">{featuredPost.author}</div>
-                        <div className="text-foreground-muted text-sm">{featuredPost.authorRole}</div>
-                      </div>
-                    </div>
-                    <Link
-                      href={`/blog/${featuredPost.slug}`}
-                      className="inline-flex items-center text-primary-light font-semibold hover:text-primary transition-colors group w-fit"
-                    >
-                      Read Full Article
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
-                </div>
-              </Card>
-            </FadeIn>
-          </div>
-        </section>
-      )}
-
-      {/* Category Filter */}
-      <section className="py-12 sticky top-24 z-30 border-b border-white/10 bg-background/95 backdrop-blur-md">
+      {/* Introduction */}
+      <section className="py-20 bg-background-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-3">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-5 py-2.5 rounded-full font-medium transition-all duration-300 ${
-                  activeCategory === category
-                    ? 'gradient-bg text-white glow'
-                    : 'bg-background-card text-foreground-muted hover:text-foreground border border-white/10 hover:border-primary/30'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <FadeIn>
+              <div className="space-y-4 text-foreground-muted text-lg leading-relaxed">
+                <p>
+                  In today&apos;s fast-evolving digital landscape, brands need more than just visibility—they need meaningful engagement. DeltaClicks stands at the forefront of this transformation, offering a comprehensive suite of creative and marketing solutions designed to help businesses thrive.
+                </p>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* Blog Posts Grid */}
+      {/* Video & Podcast Production */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="Latest Articles"
-            title={activeCategory === 'All' ? 'All Blog Posts' : activeCategory}
-            subtitle={`${gridPosts.length} article${gridPosts.length !== 1 ? 's' : ''} ${activeCategory === 'All' ? 'in our blog' : `in ${activeCategory}`}`}
-          />
-          
-          {gridPosts.length === 0 ? (
-            <div className="text-center py-20">
-              <p className="text-foreground-muted text-xl">No posts found in this category.</p>
-            </div>
-          ) : (
-            <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-              {gridPosts.map((post, index) => (
-                <FadeIn key={post.slug} delay={index * 0.1}>
-                  <Card className="group overflow-hidden bg-background-card border border-white/5 hover:border-primary/30 transition-colors h-full flex flex-col">
-                    <div className="relative h-48 overflow-hidden">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute top-4 left-4">
-                        <Badge text={post.category} variant="primary" />
-                      </div>
-                    </div>
-                    <div className="p-6 flex-1 flex flex-col">
-                      <div className="flex items-center gap-4 text-foreground-muted text-sm mb-3">
-                        <span className="flex items-center">
-                          <Calendar className="w-3 h-3 mr-1" />
-                          {new Date(post.date).toLocaleDateString('en-US', { 
-                            month: 'short', 
-                            day: 'numeric',
-                            year: 'numeric'
-                          })}
-                        </span>
-                        <span className="flex items-center">
-                          <Clock className="w-3 h-3 mr-1" />
-                          {post.readTime}
-                        </span>
-                      </div>
-                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary-light transition-colors line-clamp-2">
-                        {post.title}
-                      </h3>
-                      <p className="text-foreground-muted mb-4 line-clamp-3 flex-1">
-                        {post.excerpt}
-                      </p>
-                      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
-                        <div className="w-8 h-8 rounded-full gradient-bg flex items-center justify-center text-white text-sm font-bold">
-                          {post.author.charAt(0)}
-                        </div>
-                        <div className="text-sm">
-                          <div className="text-foreground font-medium">{post.author}</div>
-                        </div>
-                      </div>
-                      <Link
-                        href={`/blog/${post.slug}`}
-                        className="inline-flex items-center text-primary-light font-semibold hover:text-primary transition-colors group mt-4"
-                      >
-                        Read More
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </div>
-                  </Card>
-                </FadeIn>
-              ))}
-            </StaggerContainer>
-          )}
+          <div className="max-w-4xl mx-auto">
+            <FadeIn>
+              <div>
+                <SectionHeading
+                  label="Our Expertise"
+                  title="Video & Podcast Production"
+                  align="left"
+                />
+                <div className="space-y-4 text-foreground-muted text-lg leading-relaxed">
+                  <p>
+                    At its core, DeltaClicks specializes in high-quality video production that captures attention and communicates stories with clarity and emotion. Whether it&apos;s promotional content, brand films, or social media videos, the team ensures every frame reflects creativity and purpose. Complementing this is their expertise in podcast production, enabling brands and individuals to share their voice, build authority, and connect deeply with their audience in an increasingly audio-driven world.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Event Management */}
+      <section className="py-20 bg-focus/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <FadeIn>
+              <div>
+                <SectionHeading
+                  label="Event Management"
+                  title="Turning Ideas Into Memorable Experiences"
+                  align="left"
+                />
+                <div className="space-y-4 text-foreground-muted text-lg leading-relaxed">
+                  <p>
+                    Beyond content creation, DeltaClicks excels in event management, turning ideas into memorable experiences. From corporate events to brand activations, the company handles every detail with precision, ensuring seamless execution and lasting impressions.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Digital Marketing */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <FadeIn>
+              <div>
+                <SectionHeading
+                  label="Digital Marketing"
+                  title="Strategic Approach to Growth"
+                  align="left"
+                />
+                <div className="space-y-4 text-foreground-muted text-lg leading-relaxed">
+                  <p>
+                    What truly sets DeltaClicks apart is its strategic approach to digital marketing. By combining data-driven insights with innovative campaigns, the company helps clients enhance their online presence, reach the right audience, and achieve measurable growth. From social media management to performance marketing, DeltaClicks delivers solutions that are both creative and results-oriented.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Conclusion */}
+      <section className="py-20 bg-focus/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <FadeIn>
+              <div className="space-y-4 text-foreground-muted text-lg leading-relaxed">
+                <p>
+                  Driven by passion, innovation, and a commitment to excellence, DeltaClicks is more than just a service provider—it is a partner in growth. By blending storytelling with strategy, the company empowers brands to stand out, engage effectively, and leave a lasting impact in the digital world.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -203,11 +125,10 @@ export default function BlogPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="gradient-bg p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Need Help With Your Digital Marketing?
+              Ready to Create Something Impactful?
             </h2>
             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-              Our experts are here to help you implement these strategies and achieve real results 
-              for your business.
+              Let&apos;s discuss how DeltaClicks can help your brand tell its story and make a lasting impact.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -216,7 +137,7 @@ export default function BlogPage() {
                 size="lg"
                 className="bg-white text-primary hover:bg-white/90"
               >
-                Get a Free Consultation
+                Get in Touch
               </Button>
               <Button
                 href="/services"
@@ -225,6 +146,7 @@ export default function BlogPage() {
                 className="border-white text-white hover:bg-white/10"
               >
                 Explore Services
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
           </Card>

@@ -95,10 +95,6 @@ export default function NotFound() {
                 Portfolio
               </Link>
               <span className="text-foreground-muted">•</span>
-              <Link href="/blog" className="text-primary-light hover:text-primary transition-colors">
-                Blog
-              </Link>
-              <span className="text-foreground-muted">•</span>
               <Link href="/contact" className="text-primary-light hover:text-primary transition-colors">
                 Contact Us
               </Link>

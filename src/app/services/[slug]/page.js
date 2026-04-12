@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { ArrowRight, CheckCircle, ArrowLeft } from 'lucide-react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
 import * as Icons from 'lucide-react';
 import Hero from '@/components/sections/Hero';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -13,16 +12,17 @@ import ServiceSchema from '@/components/seo/ServiceSchema';
 import { services, getServiceBySlug } from '@/data/services';
 
 // Generate static params for all service slugs
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return services.map((service) => ({
     slug: service.slug,
   }));
 }
 
 // Generate metadata for each service page
-export function generateMetadata({ params }) {
-  const service = getServiceBySlug(params.slug);
-  
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const service = getServiceBySlug(slug);
+
   if (!service) {
     return {
       title: 'Service Not Found',
@@ -35,8 +35,9 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function ServicePage({ params }) {
-  const service = getServiceBySlug(params.slug);
+export default async function ServicePage({ params }) {
+  const { slug } = await params;
+  const service = getServiceBySlug(slug);
 
   if (!service) {
     notFound();
@@ -64,29 +65,36 @@ export default function ServicePage({ params }) {
         align="center"
       />
 
-      {/* What Is Section */}
+      {/* Description Section */}
       <section className="py-20 bg-background-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn>
               <div>
-                <SectionHeading
-                  label={`What Is ${service.title}?`}
-                  title={service.title}
-                  align="left"
-                />
-                <div className="space-y-4 text-foreground-muted text-lg leading-relaxed">
-                  <p>{service.description}</p>
-                  <p>
-                    Our {service.title.toLowerCase()} solutions are designed to deliver measurable 
-                    results. We combine industry best practices with innovative strategies to help 
-                    your business stand out in the competitive digital landscape.
-                  </p>
-                  <p>
-                    Whether you&apos;re just getting started or looking to optimize existing campaigns,
-                    our team of experts will work closely with you to achieve your goals.
-                  </p>
-                </div>
+                {service.whatIs && (
+                  <>
+                    <SectionHeading
+                      label="What is content marketing??"
+                      title="What is content marketing??"
+                      align="left"
+                    />
+                    <div className="space-y-4 text-foreground-muted text-lg leading-relaxed">
+                      <p>{service.whatIs}</p>
+                    </div>
+                  </>
+                )}
+                {!service.whatIs && (
+                  <>
+                    <SectionHeading
+                      label={service.title}
+                      title={service.title}
+                      align="left"
+                    />
+                    <div className="space-y-4 text-foreground-muted text-lg leading-relaxed">
+                      <p>{service.description}</p>
+                    </div>
+                  </>
+                )}
               </div>
             </FadeIn>
 
@@ -97,7 +105,6 @@ export default function ServicePage({ params }) {
                     <IconComponent className="w-32 h-32 text-primary/50" />
                   </div>
                 </div>
-                {/* Decorative elements */}
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/20 rounded-full blur-2xl" />
                 <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
               </div>
@@ -106,35 +113,151 @@ export default function ServicePage({ params }) {
         </div>
       </section>
 
-      {/* What's Included Section */}
+      {/* Why does your website need content marketing? */}
+      {service.whyNeed && (
+        <section className="py-16">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <FadeIn>
+              <div className="max-w-3xl">
+                <SectionHeading
+                  label="Why You Need It"
+                  title="Why does your website need content marketing?"
+                  subtitle="Your website needs content marketing"
+                  align="left"
+                />
+                <div className="space-y-3 mt-6">
+                  {service.whyNeed.map((item, index) => (
+                    <FadeIn key={index} delay={index * 0.05}>
+                      <div className="flex items-start space-x-3 p-3 rounded-lg bg-background-card border border-white/5">
+                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-foreground">{item}</span>
+                      </div>
+                    </FadeIn>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+      )}
+
+      {/* What we require from you (Video Production) */}
+      {service.whatWeRequire && (
+        <section className="py-16">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <FadeIn>
+              <div className="max-w-3xl">
+                <SectionHeading
+                  label="Requirements"
+                  title="What we require from you?"
+                  subtitle="We want"
+                  align="left"
+                />
+                <div className="space-y-3 mt-6">
+                  {service.whatWeRequire.map((item, index) => (
+                    <FadeIn key={index} delay={index * 0.05}>
+                      <div className="flex items-start space-x-3 p-3 rounded-lg bg-background-card border border-white/5">
+                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-foreground">{item}</span>
+                      </div>
+                    </FadeIn>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+      )}
+
+      {/* What do we do / Features Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="What's Included"
-            title={`Our ${service.title} Package`}
-            subtitle="Everything you need to succeed with our comprehensive service"
-          />
+          {service.title === "Photography" ? (
+            <SectionHeading
+              label="What We Do"
+              title="What do we do in Photography?"
+              align="left"
+            />
+          ) : (
+            <SectionHeading
+              label="What We Do"
+              title="What do we do?"
+              align="left"
+            />
+          )}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12 max-w-4xl mx-auto">
             {service.features.map((feature, index) => (
               <FadeIn key={index} delay={index * 0.05}>
-                <div className="flex items-start space-x-4 p-4 rounded-xl bg-background-card border border-white/5">
-                  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground text-lg">{feature}</span>
-                </div>
+                <Card className="p-6 h-full bg-background-card border border-white/5 hover:border-primary/30 transition-colors">
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="text-lg font-bold text-foreground mb-1">{feature}</h3>
+                      {service.featureDescriptions && service.featureDescriptions[feature] && (
+                        <p className="text-foreground-muted text-sm">{service.featureDescriptions[feature]}</p>
+                      )}
+                    </div>
+                  </div>
+                </Card>
               </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Our Process Section */}
+      {/* How we process / work Section */}
       <section className="py-20 bg-focus/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="Our Process"
-            title={`How We Deliver ${service.title}`}
-            subtitle="A proven methodology tailored to your needs"
-          />
+          {service.title === "Photography" || service.title === "Multimedia Production" ? (
+            <SectionHeading
+              label="Our Process"
+              title={`How ${service.title === "Photography" ? "DeltaClicks" : "DeltaClicks"} works?`}
+              align="left"
+            />
+          ) : service.title === "Video Production" ? (
+            <SectionHeading
+              label="Our Process"
+              title="How we process?"
+              align="left"
+            />
+          ) : service.title === "Event Management" ? (
+            <SectionHeading
+              label="Our Process"
+              title="How do we work?"
+              align="left"
+            />
+          ) : service.title === "Podcast" ? (
+            <SectionHeading
+              label="Our Process"
+              title="How do we work?"
+              align="left"
+            />
+          ) : service.title === "Social Media Content" ? (
+            <SectionHeading
+              label="Our Process"
+              title="How do DeltaClicks work?"
+              align="left"
+            />
+          ) : service.title === "Documentary" ? (
+            <SectionHeading
+              label="Our Process"
+              title="How does DeltaClicks work?"
+              align="left"
+            />
+          ) : service.title === "Website Design" ? (
+            <SectionHeading
+              label="Our Process"
+              title="How do we work?"
+              align="left"
+            />
+          ) : (
+            <SectionHeading
+              label="Our Process"
+              title="How do we process?"
+              subtitle="We follow this process"
+              align="left"
+            />
+          )}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {service.process.map((step, index) => (
               <FadeIn key={index} delay={index * 0.1}>
@@ -143,7 +266,6 @@ export default function ServicePage({ params }) {
                     {step.step}
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
-                  <p className="text-foreground-muted">{step.description}</p>
                 </Card>
               </FadeIn>
             ))}
@@ -151,24 +273,74 @@ export default function ServicePage({ params }) {
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Why should you choose us Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="Benefits"
-            title={`Why Invest in ${service.title}?`}
-            subtitle="The tangible advantages our clients experience"
-          />
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {service.benefits.map((benefit, index) => (
-              <FadeIn key={index} delay={index * 0.1}>
-                <Card className="p-6 h-full bg-background-card border border-white/5">
-                  <h3 className="text-lg font-bold text-foreground mb-2">{benefit.title}</h3>
-                  <p className="text-foreground-muted">{benefit.description}</p>
-                </Card>
-              </FadeIn>
-            ))}
-          </StaggerContainer>
+          {service.title === "Photography" || service.title === "Multimedia Production" || service.title === "Social Media Content" ? (
+            <SectionHeading
+              label="Why Choose Us"
+              title="Why Brands Choose DeltaClicks?"
+              align="left"
+            />
+          ) : service.title === "Video Production" ? (
+            <SectionHeading
+              label="Why Choose Us"
+              title="Why should you choose DeltaClicks?"
+              align="left"
+            />
+          ) : service.title === "Event Management" ? (
+            <SectionHeading
+              label="Why Choose Us"
+              title="Why should you choose DeltaClicks?"
+              align="left"
+            />
+          ) : service.title === "Podcast" ? (
+            <SectionHeading
+              label="Why Choose Us"
+              title="Why should you choose DeltaClicks?"
+              align="left"
+            />
+          ) : service.title === "Documentary" ? (
+            <SectionHeading
+              label="Why Choose Us"
+              title="Why should you choose DeltaClicks?"
+              align="left"
+            />
+          ) : service.title === "Website Design" ? (
+            <SectionHeading
+              label="Why Choose Us"
+              title="Why should you choose DeltaClicks?"
+              align="left"
+            />
+          ) : (
+            <SectionHeading
+              label="Why Choose Us"
+              title="Why should you choose us?"
+              align="left"
+            />
+          )}
+          {service.whyChooseUs && service.whyChooseUs.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 max-w-4xl mx-auto">
+              {service.whyChooseUs.map((item, index) => (
+                <FadeIn key={index} delay={index * 0.1}>
+                  <Card className="p-6 h-full bg-background-card border border-white/5">
+                    <h3 className="text-lg font-bold text-foreground mb-2">{item}</h3>
+                  </Card>
+                </FadeIn>
+              ))}
+            </div>
+          )}
+          {service.features && !service.whyChooseUs && (
+            <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+              {service.features.map((item, index) => (
+                <FadeIn key={index} delay={index * 0.1}>
+                  <Card className="p-6 h-full bg-background-card border border-white/5">
+                    <h3 className="text-lg font-bold text-foreground mb-2">{item}</h3>
+                  </Card>
+                </FadeIn>
+              ))}
+            </StaggerContainer>
+          )}
         </div>
       </section>
 
@@ -214,13 +386,9 @@ export default function ServicePage({ params }) {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="gradient-bg p-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Ready to Get Started?
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+              {service.cta}
             </h2>
-            <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-              Let&apos;s discuss how our {service.title.toLowerCase()} services can help your
-              business achieve its goals.
-            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 href="/contact"
@@ -228,15 +396,15 @@ export default function ServicePage({ params }) {
                 size="lg"
                 className="bg-white text-primary hover:bg-white/90"
               >
-                Contact Us Today
+                Contact Us
               </Button>
               <Button
-                href="/portfolio"
+                href="/services"
                 variant="outline"
                 size="lg"
                 className="border-white text-white hover:bg-white/10"
               >
-                View Our Work
+                All Services
               </Button>
             </div>
           </Card>

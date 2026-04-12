@@ -21,7 +21,9 @@
       "Bash(copy *)",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(node *)",
+      "Bash(git checkout *)"
     ]
   },
   "$version": 3

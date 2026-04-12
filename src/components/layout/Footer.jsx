@@ -17,6 +17,7 @@ export default function Footer() {
   const quickLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
@@ -26,7 +27,7 @@ export default function Footer() {
 
   const socialLinks = [
     { name: 'Website', href: 'https://deltaclicks.com', icon: Globe },
-    { name: 'Contact', href: 'mailto:info@deltaclicks.com', icon: Send },
+    { name: 'Contact', href: 'mailto:Connect@deltclicks.com', icon: Send },
     { name: 'Share', href: '#', icon: Share2 },
     { name: 'Video', href: 'https://youtube.com', icon: Video },
     { name: 'Chat', href: '#', icon: MessageCircle },
@@ -96,7 +97,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-6">Our Services</h3>
             <ul className="space-y-3">
-              {services.slice(0, 6).map((service) => (
+              {services.map((service) => (
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
@@ -115,22 +116,28 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-primary mt-0.5" />
-                <a href="mailto:info@deltaclicks.com" className="text-gray-400 hover:text-white transition-colors">
-                  info@deltaclicks.com
+                <a href="mailto:Connect@deltclicks.com" className="text-gray-400 hover:text-white transition-colors">
+                  Connect@deltclicks.com
                 </a>
               </li>
               <li className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-primary mt-0.5" />
-                <a href="tel:+1234567890" className="text-gray-400 hover:text-white transition-colors">
-                  +1 (234) 567-890
+                <a href="tel:+917355453408" className="text-gray-400 hover:text-white transition-colors">
+                  +91 73554 53408
                 </a>
               </li>
               <li className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-primary mt-0.5" />
-                <span className="text-gray-400">
-                  123 Business Street, Suite 100<br />
-                  New York, NY 10001
-                </span>
+                <a
+                  href="https://maps.google.com/?q=Shree+Ram+South+Court+Jagatpura+Jaipur+302017"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start space-x-3 group"
+                >
+                  <MapPin className="w-5 h-5 text-primary mt-0.5 group-hover:scale-110 transition-transform" />
+                  <span className="text-gray-400 group-hover:text-white transition-colors">
+                    A 501, Shree Ram South Court, Jagatpura, Jaipur, 302017
+                  </span>
+                </a>
               </li>
               <li className="flex items-start space-x-3">
                 <Clock className="w-5 h-5 text-primary mt-0.5" />
@@ -149,7 +156,7 @@ export default function Footer() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm text-center md:text-left">
-              &copy; {currentYear} DeltaClicks. All rights reserved.
+              &copy; {currentYear} KUFLON COMMUNICATIONS LLP. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <Link href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">

@@ -8,13 +8,13 @@ export default function ServiceSchema({ service }) {
     "description": service.description,
     "provider": {
       "@type": "Organization",
-      "name": "DeltaClicks",
+      "name": "KUFLON COMMUNICATIONS LLP",
       "url": "https://deltaclicks.com"
     },
     "serviceType": service.title,
     "areaServed": {
       "@type": "Country",
-      "name": "United States"
+      "name": "India"
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -30,7 +30,7 @@ export default function ServiceSchema({ service }) {
     "offers": {
       "@type": "Offer",
       "availability": "https://schema.org/InStock",
-      "priceCurrency": "USD",
+      "priceCurrency": "INR",
       "price": "Contact for pricing",
       "description": "Custom pricing based on project scope"
     }
