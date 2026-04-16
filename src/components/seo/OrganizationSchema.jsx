@@ -4,7 +4,7 @@ export default function OrganizationSchema() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "KUFLON COMMUNICATIONS LLP",
+    "name": "DeltaClicks - Digital Marketing Agency",
     "url": "https://deltaclicks.com",
     "logo": "https://deltaclicks.com/logo.svg",
     "description": "Full-service digital marketing agency offering SEO, SMM, SEM, Content Marketing, Web Development, and Branding services.",
@@ -12,7 +12,7 @@ export default function OrganizationSchema() {
     "founders": [
       {
         "@type": "Person",
-        "name": "KUFLON COMMUNICATIONS LLP Founders"
+        "name": "DeltaClicks Team",
       }
     ],
     "address": {

@@ -136,7 +136,7 @@ export default function ContactPage() {
           <FadeIn>
             <Card className="overflow-hidden bg-background-card border border-white/10">
               <iframe
-                title="KUFLON COMMUNICATIONS LLP Office Location"
+                title="DeltaClicks Office Location"
                 src="https://maps.google.com/maps?q=Shree+Ram+South+Court+Jagatpura+Jaipur+302017&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="450"

@@ -4,7 +4,7 @@ export default function WebSiteSchema() {
   const webSiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "KUFLON COMMUNICATIONS LLP",
+    "name": "DeltaClicks - Digital Marketing Agency",
     "url": "https://deltaclicks.com",
     "description": "Full-service digital marketing agency offering SEO, SMM, SEM, Content Marketing, Web Development, and Branding services.",
     "potentialAction": {
@@ -14,7 +14,7 @@ export default function WebSiteSchema() {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "KUFLON COMMUNICATIONS LLP",
+      "name": "DeltaClicks - Digital Marketing Agency",
       "url": "https://deltaclicks.com",
       "logo": {
         "@type": "ImageObject",
@@ -24,7 +24,7 @@ export default function WebSiteSchema() {
     "inLanguage": "en-IN",
     "isPartOf": {
       "@type": "CreativeWork",
-      "name": "KUFLON COMMUNICATIONS LLP Digital Marketing Platform"
+      "name": "DeltaClicks - Digital Marketing Agency"
     }
   };
 

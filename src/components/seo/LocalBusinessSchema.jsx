@@ -4,7 +4,7 @@ export default function LocalBusinessSchema() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "KUFLON COMMUNICATIONS LLP",
+    "name": "DeltaClicks - Digital Marketing Agency",
     "image": "https://deltaclicks.com/og-image.jpg",
     "url": "https://deltaclicks.com",
     "telephone": "+91-73554-53408",

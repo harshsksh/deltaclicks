@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import * as Icons from 'lucide-react';
@@ -43,7 +44,10 @@ export default async function ServicePage({ params }) {
     notFound();
   }
 
-  const IconComponent = Icons[service.icon] || Icons.Star;
+  const serviceImageMap = {
+    documentary: '/images/services/documentry.png',
+  };
+  const serviceImage = serviceImageMap[service.slug] || `/images/services/${service.slug}.png`;
 
   // Get 3 related services (excluding current)
   const relatedServices = services
@@ -101,8 +105,14 @@ export default async function ServicePage({ params }) {
             <FadeIn delay={0.2}>
               <div className="relative">
                 <div className="aspect-video rounded-2xl overflow-hidden gradient-bg p-1">
-                  <div className="w-full h-full bg-background-card rounded-2xl flex items-center justify-center">
-                    <IconComponent className="w-32 h-32 text-primary/50" />
+                  <div className="relative w-full h-full bg-background-card rounded-2xl overflow-hidden">
+                    <Image
+                      src={serviceImage}
+                      alt={service.title}
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 1024px) 50vw, 100vw"
+                    />
                   </div>
                 </div>
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/20 rounded-full blur-2xl" />

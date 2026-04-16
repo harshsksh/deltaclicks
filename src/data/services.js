@@ -36,8 +36,8 @@ export const services = [
     title: "Video Production",
     slug: "video-production",
     icon: "Video",
-    shortDescription: "From an idea ot final cut, DeltaClicks draft engaged and high-quality content",
-    description: "From an idea ot final cut, DeltaClicks draft engaged and high-quality content that doesn't look just good, but it also communicates with the audience. We make any content with proper research, a story idea, and according to interest.",
+    shortDescription: "From an idea to final cut, DeltaClicks draft engaged and high-quality content",
+    description: "From an idea to final cut, DeltaClicks draft engaged and high-quality content that doesn't look just good, but it also communicates with the audience. We make any content with proper research, a story idea, and according to interest.",
     whatWeRequire: [
       "Your objective",
       "Your target audience",
@@ -225,8 +225,8 @@ export const services = [
     title: "Documentary",
     slug: "documentary",
     icon: "Film",
-    shortDescription: "A documentary is not content, it's credibility in motion",
-    description: "A documentary is not content, it's credibility in motion. It demands depth, accuracy, and narrative discipline. At DeltaClicks, documentary production is treated as a process of research, interpretation, and storytelling precision. We transform real-world subjects into compelling narratives that inform, engage, and leave a lasting intellectual and emotional impact.",
+    shortDescription: "A documentary is not just content, it's credibility in motion",
+    description: "A documentary is not just content, it's credibility in motion. It demands depth, accuracy, and narrative discipline. At DeltaClicks, documentary production is treated as a process of research, interpretation, and storytelling precision. We transform real-world subjects into compelling narratives that inform, engage, and leave a lasting intellectual and emotional impact.",
     features: [
       "Brand documentaries",
       "Social and issue-based documentaries",

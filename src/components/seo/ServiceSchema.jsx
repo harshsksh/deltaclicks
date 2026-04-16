@@ -8,7 +8,7 @@ export default function ServiceSchema({ service }) {
     "description": service.description,
     "provider": {
       "@type": "Organization",
-      "name": "KUFLON COMMUNICATIONS LLP",
+      "name": "DeltaClicks - Digital Marketing Agency",
       "url": "https://deltaclicks.com"
     },
     "serviceType": service.title,
