@@ -209,7 +209,7 @@ export default function TermsPage() {
                   <h2>14. Entire Agreement</h2>
                   <p>
                     These Terms, together with our Privacy Policy and any separate service
-                    agreements, constitute the entire agreement between you and KUFLON COMMUNICATIONS LLP
+                    agreements, constitute the entire agreement between you and DeltaClicks
                     regarding our services and supersede any prior agreements.
                   </p>
                 </div>
