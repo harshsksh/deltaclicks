@@ -22,6 +22,12 @@ export default async function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/gallery`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/portfolio`,
       lastModified: new Date().toISOString(),
       changeFrequency: 'weekly',
