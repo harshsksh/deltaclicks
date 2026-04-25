@@ -35,7 +35,8 @@ export default async function GalleryPage() {
         primaryCTA={{ href: '/contact', text: 'Start Your Project' }}
         secondaryCTA={{ href: '/services', text: 'View Services' }}
         background="gradient"
-        align="center"
+        image="/images/main-page/animation illustration GIF by Tony Babel.gif"
+        align="left"
       />
 
       <section className="py-20 bg-background-light">

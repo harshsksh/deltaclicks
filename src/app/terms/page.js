@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import Hero from '@/components/sections/Hero';
 import SectionHeading from '@/components/ui/SectionHeading';
 import Card from '@/components/ui/Card';
 import FadeIn from '@/components/animations/FadeIn';
@@ -12,26 +13,14 @@ export const metadata = {
 export default function TermsPage() {
   return (
     <>
-      {/* Header */}
-      <section className="pt-32 pb-16 bg-background-light">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <Link
-              href="/"
-              className="inline-flex items-center text-foreground-muted hover:text-primary-light transition-colors mb-8"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </Link>
-            <SectionHeading
-              label="Terms of Service"
-              title="Terms and Conditions"
-              subtitle="Last updated: March 31, 2025"
-              align="left"
-            />
-          </FadeIn>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <Hero
+        title="Terms of Service"
+        subtitle="Last updated: March 31, 2025"
+        image="/images/main-page/5956413.jpg"
+        align="left"
+        background="gradient"
+      />
 
       {/* Content */}
       <article className="py-12">

@@ -15,7 +15,8 @@ export default function PortfolioPage() {
         primaryCTA={{ href: '/contact', text: 'Start Your Project' }}
         secondaryCTA={{ href: '/services', text: 'Our Services' }}
         background="gradient"
-        align="center"
+        image="/images/main-page/gif (1).gif"
+        align="left"
       />
 
       {/* Coming Soon Section */}

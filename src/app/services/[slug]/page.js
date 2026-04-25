@@ -45,9 +45,17 @@ export default async function ServicePage({ params }) {
   }
 
   const serviceImageMap = {
-    documentary: '/images/services/documentry.png',
+    'content-marketing': '/images/main-page/3680673.jpg',
+    'video-production': '/images/main-page/Software Engineer Developer GIF by Venturit.gif',
+    'photography': '/images/main-page/Fitness Gym GIF by ikeja.gif',
+    'event-management': '/images/main-page/Tiny graphic designer drawing with big pen on computer screen.jpg',
+    'podcast': '/images/main-page/10387887.jpg',
+    'multimedia-production': '/images/main-page/3359652.jpg',
+    'social-media-content': '/images/main-page/5102334.jpg',
+    'documentary': '/images/main-page/8253332.jpg',
+    'website-design': '/images/main-page/site_design_2.jpg',
   };
-  const serviceImage = serviceImageMap[service.slug] || `/images/services/${service.slug}.png`;
+  const serviceImage = serviceImageMap[service.slug] || '/images/main-page/5102334.jpg';
 
   // Get 3 related services (excluding current)
   const relatedServices = services
@@ -66,7 +74,8 @@ export default async function ServicePage({ params }) {
         primaryCTA={{ href: '/contact', text: 'Get a Quote' }}
         secondaryCTA={{ href: '/services', text: 'All Services' }}
         background="gradient"
-        align="center"
+        image={serviceImage}
+        align="left"
       />
 
       {/* Description Section */}

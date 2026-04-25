@@ -3,6 +3,7 @@ import './globals.css';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import CursorFollower from '@/components/ui/CursorFollower';
 import AOSProvider from '@/components/providers/AOSProvider';
 import OrganizationSchema from '@/components/seo/OrganizationSchema';
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
@@ -61,6 +62,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${inter.variable} scroll-smooth`}>
       <body className="min-h-screen flex flex-col font-sans antialiased">
         <ErrorBoundary>
+          <CursorFollower />
           <AOSProvider />
           <Navbar />
           <main className="flex-1">{children}</main>
