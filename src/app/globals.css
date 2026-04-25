@@ -223,6 +223,45 @@ html {
   color: var(--text-primary);
 }
 
+/* ===== GLOBAL HOVER ZOOM ===== */
+
+/* Applying a subtle zoom to common interactive and content elements */
+a, 
+button, 
+img, 
+h1, h2, h3, h4, h5, h6,
+p,
+li,
+.card,
+[class*="Card"],
+[class*="card"],
+.hover-target {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-block; /* Ensure transform works correctly on inline elements */
+  width: fit-content;
+}
+
+/* Ensure block elements remain block but still transition */
+h1, h2, h3, h4, h5, h6, p, .card, [class*="Card"], [class*="card"] {
+  display: block;
+  width: auto;
+}
+
+a:hover, 
+button:hover, 
+img:hover, 
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover,
+p:hover,
+li:hover,
+.card:hover,
+[class*="Card"]:hover,
+[class*="card"]:hover,
+.hover-target:hover {
+  transform: scale(1.03) !important;
+  z-index: 50;
+  position: relative;
+}
+
 /* Focus visible for accessibility */
 :focus-visible {
   outline: 2px solid var(--primary);

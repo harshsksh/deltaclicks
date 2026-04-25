@@ -20,7 +20,8 @@ export default function BlogPage() {
         primaryCTA={{ href: '/contact', text: 'Work With Us' }}
         secondaryCTA={{ href: '/services', text: 'Explore Services' }}
         background="gradient"
-        align="center"
+        image="/images/main-page/Webdesign Videoproduction GIF by Conik Studio.gif"
+        align="left"
       />
 
       {/* Introduction */}

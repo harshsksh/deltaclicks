@@ -47,7 +47,8 @@ export default function ServicesPage() {
         primaryCTA={{ href: '/contact', text: 'Get Started' }}
         secondaryCTA={{ href: '/portfolio', text: 'View Our Work' }}
         background="gradient"
-        align="center"
+        image="/images/main-page/Social Media Marketing GIF by whitepapercommunications.gif"
+        align="left"
       />
 
       {/* Intro Section */}

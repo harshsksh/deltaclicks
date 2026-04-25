@@ -53,7 +53,8 @@ export default function ContactPage() {
         primaryCTA={{ href: '#contact-form', text: 'Send Message' }}
         secondaryCTA={{ href: '#contact-info', text: 'Contact Info' }}
         background="gradient"
-        align="center"
+        image="/images/main-page/gif.gif"
+        align="left"
       />
 
       {/* Contact Section */}

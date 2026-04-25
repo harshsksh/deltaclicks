@@ -55,7 +55,8 @@ export default function AboutPage() {
         primaryCTA={{ href: '/contact', text: 'Work With Us' }}
         secondaryCTA={{ href: '/portfolio', text: 'View Our Work' }}
         background="gradient"
-        align="center"
+        image="/images/main-page/happy mascot GIF.gif"
+        align="left"
       />
 
       {/* Our Story Section */}
