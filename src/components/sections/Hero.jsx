@@ -19,8 +19,12 @@ export default function Hero({
   align = 'center',
   image = null,
   imageAlt = 'Hero visual',
+  imageFit = 'cover',
+  imagePosition = 'center',
+  showImageBorder = true,
 }) {
   const alignmentClass = ALIGNMENT_CLASSES[align] || ALIGNMENT_CLASSES.center;
+  const imageFitClass = imageFit === 'contain' ? 'object-contain' : 'object-cover';
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -124,13 +128,15 @@ export default function Hero({
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative aspect-square lg:aspect-auto lg:h-[500px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl order-2"
+              className={`relative aspect-square lg:aspect-auto lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl order-2 ${showImageBorder ? 'border border-white/10' : 'border-0'}`}
             >
               <Image
                 src={image}
                 alt={imageAlt}
                 fill
-                className="object-cover"
+                sizes="(max-width: 1023px) 100vw, 50vw"
+                className={imageFitClass}
+                style={{ objectPosition: imagePosition }}
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />

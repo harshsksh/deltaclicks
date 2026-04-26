@@ -57,6 +57,20 @@ export default async function ServicePage({ params }) {
   };
   const serviceImage = serviceImageMap[service.slug] || '/images/main-page/5102334.jpg';
 
+  const serviceDescriptionImageMap = {
+    'content-marketing': '/images/services/content-marketing.png',
+    'video-production': '/images/services/video-production.png',
+    'photography': '/images/services/photography.png',
+    'event-management': '/images/services/event-management.png',
+    'podcast': '/images/services/podcast.png',
+    'multimedia-production': '/images/services/multimedia-production.png',
+    'social-media-content': '/images/services/social-media-content.png',
+    'documentary': '/images/services/documentry.png',
+    'website-design': '/images/services/website-design.png',
+  };
+  const serviceDescriptionImage =
+    serviceDescriptionImageMap[service.slug] || '/images/services/content-marketing.png';
+
   // Get 3 related services (excluding current)
   const relatedServices = services
     .filter((s) => s.slug !== service.slug)
@@ -116,7 +130,7 @@ export default async function ServicePage({ params }) {
                 <div className="aspect-video rounded-2xl overflow-hidden gradient-bg p-1">
                   <div className="relative w-full h-full bg-background-card rounded-2xl overflow-hidden">
                     <Image
-                      src={serviceImage}
+                      src={serviceDescriptionImage}
                       alt={service.title}
                       fill
                       className="object-cover"
