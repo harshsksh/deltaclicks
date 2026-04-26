@@ -55,7 +55,10 @@ export default function AboutPage() {
         primaryCTA={{ href: '/contact', text: 'Work With Us' }}
         secondaryCTA={{ href: '/portfolio', text: 'View Our Work' }}
         background="gradient"
-        image="/images/main-page/happy mascot GIF.gif"
+        image="/images/main-page/Social Media Marketing GIF by whitepapercommunications.gif"
+        imageFit="cover"
+        imagePosition="top center"
+        showImageBorder={false}
         align="left"
       />
 

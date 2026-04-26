@@ -59,7 +59,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth`}>
+    <html lang="en" className={`${inter.variable} scroll-smooth`} data-scroll-behavior="smooth">
       <body className="min-h-screen flex flex-col font-sans antialiased">
         <ErrorBoundary>
           <CursorFollower />

@@ -13,17 +13,19 @@ export default function CursorFollower() {
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
       
-      // Create a sparkle every 50ms if moving
+      // Create sparkles rapidly while moving for a fuller tail effect
       const now = Date.now();
-      if (now - lastSparkleTime.current > 40) {
+      if (now - lastSparkleTime.current > 25) {
+        const sparkleColor = Math.random() > 0.35 ? 'yellow' : 'white';
         const newSparkle = {
           id: now,
           x: e.clientX,
           y: e.clientY,
-          size: Math.random() * 6 + 2,
+          size: Math.random() * 8 + 4,
           rotation: Math.random() * 360,
+          color: sparkleColor,
         };
-        setSparkles((prev) => [...prev.slice(-15), newSparkle]); // Keep max 15 sparkles
+        setSparkles((prev) => [...prev.slice(-30), newSparkle]); // Keep max 30 sparkles
         lastSparkleTime.current = now;
       }
     };
@@ -41,7 +43,7 @@ export default function CursorFollower() {
 
     // Cleanup sparkles over time
     const interval = setInterval(() => {
-      setSparkles((prev) => prev.filter((s) => Date.now() - s.id < 800));
+      setSparkles((prev) => prev.filter((s) => Date.now() - s.id < 1000));
     }, 100);
 
     return () => {
@@ -76,19 +78,28 @@ export default function CursorFollower() {
             }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="absolute w-1 h-1 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)]"
+            className="absolute rounded-full"
             style={{
               left: -2,
               top: -2,
               rotate: sparkle.rotation,
               width: sparkle.size,
               height: sparkle.size,
+              backgroundColor: sparkle.color === 'yellow' ? '#fde047' : '#ffffff',
+              boxShadow:
+                sparkle.color === 'yellow'
+                  ? '0 0 16px rgba(253,224,71,0.95), 0 0 28px rgba(250,204,21,0.75)'
+                  : '0 0 14px rgba(255,255,255,0.95), 0 0 24px rgba(255,255,255,0.65)',
             }}
           >
             {/* Inner Star Shape using CSS clip-path for extra 'sparkle' feel */}
             <div 
-              className="w-full h-full bg-white" 
-              style={{ clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)' }}
+              className="w-full h-full" 
+              style={{
+                backgroundColor: sparkle.color === 'yellow' ? '#fef08a' : '#ffffff',
+                filter: 'brightness(1.15)',
+                clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+              }}
             />
           </motion.div>
         ))}
