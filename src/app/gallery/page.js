@@ -23,12 +23,12 @@ async function getGalleryImages() {
     });
 
     if (imageFiles.length === 0) {
-      return ['placeholder-2.svg'];
+      return [];
     }
 
     return imageFiles.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
   } catch {
-    return ['placeholder-2.svg'];
+    return [];
   }
 }
 
