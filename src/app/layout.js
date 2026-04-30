@@ -62,15 +62,18 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${inter.variable} scroll-smooth`} data-scroll-behavior="smooth">
       <body className="min-h-screen flex flex-col font-sans antialiased">
         <ErrorBoundary>
-          <CursorFollower />
-          <AOSProvider />
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          {/* JSON-LD Structured Data */}
-          <OrganizationSchema />
-          <LocalBusinessSchema />
-          <WebSiteSchema />
+          <div className="scrolling-bg" aria-hidden="true" />
+          <div className="relative z-10">
+            <CursorFollower />
+            <AOSProvider />
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            {/* JSON-LD Structured Data */}
+            <OrganizationSchema />
+            <LocalBusinessSchema />
+            <WebSiteSchema />
+          </div>
         </ErrorBoundary>
       </body>
     </html>

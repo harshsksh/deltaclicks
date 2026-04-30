@@ -28,19 +28,12 @@ export default function Hero({
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background - Boundary to Focus gradient */}
-      {background === 'gradient' && (
-        <div className="absolute inset-0 bg-gradient-to-br from-boundary-dark via-boundary to-focus" />
-      )}
-
       {/* Circular black blend in top-left corner */}
       <div className="corner-blend-top-left" />
-
       {/* Circular black blend in top-right corner */}
       <div className="corner-blend-top-right" />
 
-      {/* Radial gradient for focus effect - lighter in center */}
-      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-focus/20 to-transparent pointer-events-none" />
+      {/* Radial gradient for subtle focus is intentionally removed so the global scrolling-bg remains visible. */}
 
       {/* Animated Background Shapes */}
       <div className="absolute inset-0 overflow-hidden">
