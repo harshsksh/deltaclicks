@@ -58,7 +58,7 @@ export default function ContactPage() {
       />
 
       {/* Contact Section */}
-      <section id="contact-form" className="py-20 bg-background-light">
+      <section id="contact-form" className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Contact Us"
@@ -153,7 +153,7 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-background-light">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="FAQ"

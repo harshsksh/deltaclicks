@@ -60,7 +60,7 @@ export default async function ProjectPage({ params }) {
       />
 
       {/* Project Overview */}
-      <section className="py-20 bg-background-light">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="max-w-4xl mx-auto">
@@ -119,7 +119,7 @@ export default async function ProjectPage({ params }) {
       </section>
 
       {/* Our Solution */}
-      <section className="py-20 bg-focus/20">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <FadeIn>
@@ -163,7 +163,7 @@ export default async function ProjectPage({ params }) {
 
       {/* Client Testimonial */}
       {project.testimonial && (
-        <section className="py-20 bg-background-light">
+      <section className="py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <FadeIn>
@@ -238,7 +238,7 @@ export default async function ProjectPage({ params }) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-background-light">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="gradient-bg p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

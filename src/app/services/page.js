@@ -52,7 +52,7 @@ export default function ServicesPage() {
       />
 
       {/* Intro Section */}
-      <section className="py-20 bg-background-light">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <FadeIn>
@@ -82,7 +82,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Why Choose Our Services */}
-      <section className="py-20 bg-focus/20">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Why DeltaClicks"
@@ -141,7 +141,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-background-light">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="gradient-bg p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useEffect, useMemo, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
 
@@ -10,6 +11,14 @@ const ALIGNMENT_CLASSES = {
   left: 'text-left items-start',
 };
 
+// Default hero images (from public/images/hero) - update names if you add/remove files
+const DEFAULT_ROTATING_IMAGES = [
+  '/images/hero/Gemini_Generated_Image_3mzypm3mzypm3mzy-removebg-preview.png',
+  '/images/hero/Gemini_Generated_Image_nyth5nyth5nyth5n-removebg-preview.png',
+  '/images/hero/Gemini_Generated_Image_to6b1qto6b1qto6b-removebg-preview.png',
+  '/images/hero/Gemini_Generated_Image_vmbvgxvmbvgxvmbv-removebg-preview.png',
+];
+
 export default function Hero({
   title,
   subtitle,
@@ -17,30 +26,55 @@ export default function Hero({
   secondaryCTA,
   background = 'gradient',
   align = 'center',
+  // keep `image` prop for backward compatibility but hero will primarily use the hero folder
   image = null,
+  imageSequence = null,
+  autoRotate = true,
+  // default interval is 2000ms (2s)
+  autoRotateInterval = 2500,
   imageAlt = 'Hero visual',
   imageFit = 'cover',
   imagePosition = 'center',
-  showImageBorder = true,
 }) {
   const alignmentClass = ALIGNMENT_CLASSES[align] || ALIGNMENT_CLASSES.center;
   const imageFitClass = imageFit === 'contain' ? 'object-contain' : 'object-cover';
+  const resolvedImageSequence = useMemo(() => {
+    // If an explicit imageSequence is provided use it (keeps unique, truthy values)
+    if (Array.isArray(imageSequence) && imageSequence.length > 0) {
+      return [...new Set(imageSequence.filter(Boolean))];
+    }
+
+    // Always use the hero folder images by default for every page.
+    return DEFAULT_ROTATING_IMAGES;
+  }, [imageSequence, image]);
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    setActiveIndex(0);
+  }, [resolvedImageSequence]);
+
+  useEffect(() => {
+    if (!autoRotate || isPaused || resolvedImageSequence.length < 2) return undefined;
+
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % resolvedImageSequence.length);
+    }, autoRotateInterval);
+
+    return () => clearInterval(timer);
+  }, [autoRotate, autoRotateInterval, isPaused, resolvedImageSequence.length]);
+
+  const activeImage = resolvedImageSequence[activeIndex];
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background - Boundary to Focus gradient */}
-      {background === 'gradient' && (
-        <div className="absolute inset-0 bg-gradient-to-br from-boundary-dark via-boundary to-focus" />
-      )}
-
       {/* Circular black blend in top-left corner */}
       <div className="corner-blend-top-left" />
-
       {/* Circular black blend in top-right corner */}
       <div className="corner-blend-top-right" />
 
-      {/* Radial gradient for focus effect - lighter in center */}
-      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-focus/20 to-transparent pointer-events-none" />
+      {/* Radial gradient for subtle focus is intentionally removed so the global scrolling-bg remains visible. */}
 
       {/* Animated Background Shapes */}
       <div className="absolute inset-0 overflow-hidden">
@@ -64,7 +98,7 @@ export default function Hero({
 
       {/* Content Container */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`grid grid-cols-1 ${image ? 'lg:grid-cols-2' : ''} gap-12 items-center`}>
+        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}>
           
           {/* Text Content Section */}
           <motion.div
@@ -121,25 +155,37 @@ export default function Hero({
             </motion.div>
           </motion.div>
 
-          {/* Image Section - Placed on the right as requested */}
-          {image && (
+          {/* Auto-rotating Image Section - same layout for every page */}
+          {activeImage && (
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className={`relative aspect-square lg:aspect-auto lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl order-2 ${showImageBorder ? 'border border-white/10' : 'border-0'}`}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              className={`relative w-full max-w-xl lg:max-w-2xl mx-auto lg:ml-auto aspect-4/3 lg:h-[600px] rounded-3xl overflow-visible shadow-2xl order-2`}
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
             >
-              <Image
-                src={image}
-                alt={imageAlt}
-                fill
-                sizes="(max-width: 1023px) 100vw, 50vw"
-                className={imageFitClass}
-                style={{ objectPosition: imagePosition }}
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeImage}
+                  initial={{ opacity: 0.15, scale: 1.02 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0.15, scale: 0.99 }}
+                  transition={{ duration: 0.45, ease: 'easeOut' }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={activeImage}
+                    alt={imageAlt}
+                    fill
+                    sizes="(max-width: 1023px) 100vw, 40vw"
+                    className={`${imageFitClass} [clip-path:inset(1px)]`}
+                    style={{ objectPosition: imagePosition }}
+                    priority
+                  />
+                </motion.div>
+              </AnimatePresence>
             </motion.div>
           )}
         </div>
