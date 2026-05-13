@@ -93,7 +93,7 @@ export default async function ServicePage({ params }) {
       />
 
       {/* Description Section */}
-      <section className="py-20 bg-background-light">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn>
@@ -239,7 +239,7 @@ export default async function ServicePage({ params }) {
       </section>
 
       {/* How we process / work Section */}
-      <section className="py-20 bg-focus/20">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {service.title === "Photography" || service.title === "Multimedia Production" ? (
             <SectionHeading
@@ -378,7 +378,7 @@ export default async function ServicePage({ params }) {
       </section>
 
       {/* Related Services Section */}
-      <section className="py-20 bg-background-light">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Explore More"

@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import FadeIn from '@/components/animations/FadeIn';
@@ -54,7 +53,7 @@ export default function GalleryGrid({ images }) {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
         {images.map((fileName, index) => {
           const imageSrc = `/images/gallery/${encodeURIComponent(fileName)}`;
 
@@ -63,16 +62,15 @@ export default function GalleryGrid({ images }) {
               <button
                 type="button"
                 onClick={() => openLightbox(index)}
-                className="group w-full rounded-2xl overflow-hidden border border-white/10 bg-background-card/70 hover:border-primary/60 transition-colors text-left"
+                className="group w-full h-full rounded-2xl overflow-hidden border border-white/10 bg-background-card/70 hover:border-primary/60 transition-colors text-left"
                 aria-label={`Open image ${index + 1} in lightbox`}
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
+                <div className="relative w-full aspect-4/3 overflow-hidden bg-background-card">
+                  <img
                     src={imageSrc}
                     alt={`DeltaClicks gallery item ${fileName}`}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="block w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </div>
               </button>
@@ -87,7 +85,7 @@ export default function GalleryGrid({ images }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+            className="fixed inset-0 z-100 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
             onClick={closeLightbox}
           >
             <button
@@ -120,13 +118,11 @@ export default function GalleryGrid({ images }) {
               className="relative w-full max-w-6xl h-[70vh] md:h-[80vh]"
               onClick={(event) => event.stopPropagation()}
             >
-              <Image
+              <img
                 src={`/images/gallery/${encodeURIComponent(images[activeIndex])}`}
                 alt={`DeltaClicks gallery preview ${activeIndex + 1}`}
-                fill
-                className="object-contain"
-                sizes="100vw"
-                priority
+                className="block w-full h-full object-contain"
+                loading="eager"
               />
             </motion.div>
 

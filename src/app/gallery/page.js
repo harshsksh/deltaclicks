@@ -15,10 +15,18 @@ async function getGalleryImages() {
 
   try {
     const files = await readdir(galleryPath);
+    const allowed = new Set(['.jpg', '.jpeg', '.png', '.webp', '.svg', '.gif']);
 
-    return files
-      .filter((file) => /\.(jpg|jpeg|png|webp)$/i.test(file))
-      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+    const imageFiles = files.filter((name) => {
+      const extension = path.extname(name).toLowerCase();
+      return allowed.has(extension) && !name.toLowerCase().startsWith('placeholder-');
+    });
+
+    if (imageFiles.length === 0) {
+      return [];
+    }
+
+    return imageFiles.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
   } catch {
     return [];
   }
