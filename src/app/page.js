@@ -57,7 +57,6 @@ export default function Home() {
         subtitle="We help businesses scale through strategic SEO, PPC, social media, and web development services that deliver measurable results."
         primaryCTA={{ href: '/contact', text: 'Get Started' }}
         secondaryCTA={{ href: '/portfolio', text: 'View Our Work' }}
-        image="/images/main-page/Cat Girl GIF by Pluralsight.gif"
         align="left"
       />
 
