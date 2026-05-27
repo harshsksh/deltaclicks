@@ -44,6 +44,11 @@ export default function Hero({
       return [...new Set(imageSequence.filter(Boolean))];
     }
 
+    // If a single image is provided, use it directly.
+    if (image) {
+      return [image];
+    }
+
     // Always use the hero folder images by default for every page.
     return DEFAULT_ROTATING_IMAGES;
   }, [imageSequence, image]);
@@ -66,6 +71,7 @@ export default function Hero({
   }, [autoRotate, autoRotateInterval, isPaused, resolvedImageSequence.length]);
 
   const activeImage = resolvedImageSequence[activeIndex];
+  const effectiveImageFitClass = image === null ? 'object-contain' : imageFitClass;
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -162,7 +168,7 @@ export default function Hero({
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              className={`relative w-full max-w-xl lg:max-w-2xl mx-auto lg:ml-auto aspect-4/3 lg:h-[600px] rounded-3xl overflow-visible shadow-2xl order-2`}
+              className={`relative w-full max-w-70 sm:max-w-sm md:max-w-md lg:max-w-2xl mx-auto lg:ml-auto h-60 sm:h-80 md:h-100 lg:h-150 bg-transparent order-2`}
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
@@ -179,8 +185,8 @@ export default function Hero({
                     src={activeImage}
                     alt={imageAlt}
                     fill
-                    sizes="(max-width: 1023px) 100vw, 40vw"
-                    className={`${imageFitClass} [clip-path:inset(1px)]`}
+                    sizes="(max-width: 639px) 280px, (max-width: 767px) 384px, (max-width: 1023px) 448px, 512px"
+                    className={effectiveImageFitClass}
                     style={{ objectPosition: imagePosition }}
                     priority
                   />
