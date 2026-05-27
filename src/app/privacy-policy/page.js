@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import Hero from '@/components/sections/Hero';
 import SectionHeading from '@/components/ui/SectionHeading';
 import Card from '@/components/ui/Card';
 import FadeIn from '@/components/animations/FadeIn';
@@ -12,26 +13,14 @@ export const metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <>
-      {/* Header */}
-      <section className="pt-32 pb-16 bg-background-light">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <Link
-              href="/"
-              className="inline-flex items-center text-foreground-muted hover:text-primary-light transition-colors mb-8"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </Link>
-            <SectionHeading
-              label="Privacy Policy"
-              title="Your Privacy Matters to Us"
-              subtitle="Last updated: March 31, 2025"
-              align="left"
-            />
-          </FadeIn>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <Hero
+        title="Privacy Policy"
+        subtitle="Last updated: March 31, 2025"
+        image="/images/main-page/8253332.jpg"
+        align="left"
+        background="gradient"
+      />
 
       {/* Content */}
       <article className="py-12">
@@ -126,7 +115,7 @@ export default function PrivacyPolicyPage() {
                   </ul>
                   <p>
                     To exercise these rights, please contact us at{' '}
-                    <a href="mailto:privacy@deltaclicks.com" className="text-primary-light">privacy@deltaclicks.com</a>
+                    <a href="mailto:Connect@deltclicks.com" className="text-primary-light">Connect@deltclicks.com</a>
                   </p>
 
                   <h2>6. Third-Party Links</h2>
@@ -163,8 +152,8 @@ export default function PrivacyPolicyPage() {
                     practices, please contact us:
                   </p>
                   <ul>
-                    <li><strong>Email:</strong> privacy@deltaclicks.com</li>
-                    <li><strong>Address:</strong> 123 Digital Avenue, New York, NY 10001</li>
+                    <li><strong>Email:</strong> Connect@deltclicks.com</li>
+                    <li><strong>Address:</strong> A 501, Shree Ram South Court, Jagatpura, Jaipur, 302017</li>
                   </ul>
                   <p>
                     By using our website and services, you acknowledge that you have read and 

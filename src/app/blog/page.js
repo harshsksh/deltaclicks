@@ -1,213 +1,142 @@
-'use client';
-
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Hero from '@/components/sections/Hero';
 import SectionHeading from '@/components/ui/SectionHeading';
 import Card from '@/components/ui/Card';
-import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 import FadeIn from '@/components/animations/FadeIn';
-import StaggerContainer from '@/components/animations/StaggerContainer';
-import { blog, getFeaturedPost, getBlogCategories } from '@/data/blog';
+
+export const metadata = {
+  title: 'DeltaClicks: Crafting Stories, Creating Impact',
+  description: 'DeltaClicks stands at the forefront of digital transformation, offering creative and marketing solutions designed to help businesses thrive.',
+};
 
 export default function BlogPage() {
-  const featuredPost = getFeaturedPost();
-  const categories = getBlogCategories();
-  const [activeCategory, setActiveCategory] = useState('All');
-
-  const filteredPosts = activeCategory === 'All'
-    ? blog
-    : blog.filter(post => post.category === activeCategory);
-
-  // Exclude featured post from grid
-  const gridPosts = featuredPost && activeCategory === 'All'
-    ? filteredPosts.filter(post => post.slug !== featuredPost.slug)
-    : filteredPosts;
-
   return (
     <>
       {/* Hero Section */}
       <Hero
-        title="Insights & Resources"
-        subtitle="Stay ahead in digital marketing with expert tips, industry trends, and actionable strategies."
+        title="DeltaClicks: Crafting Stories, Creating Impact"
+        subtitle="Blending storytelling with strategy to empower brands in the digital world"
         primaryCTA={{ href: '/contact', text: 'Work With Us' }}
-        secondaryCTA={{ href: '/services', text: 'Our Services' }}
+        secondaryCTA={{ href: '/services', text: 'Explore Services' }}
         background="gradient"
-        align="center"
+        image="/images/main-page/Webdesign Videoproduction GIF by Conik Studio.gif"
+        align="left"
       />
 
-      {/* Featured Post */}
-      {featuredPost && activeCategory === 'All' && (
-        <section className="py-20 bg-background-light">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <FadeIn>
-              <div className="mb-8">
-                <Badge text="Featured Post" variant="accent" />
-              </div>
-              <Card className="overflow-hidden bg-background-card border border-white/10">
-                <div className="grid grid-cols-1 lg:grid-cols-2">
-                  <div className="relative h-64 lg:h-auto">
-                    <Image
-                      src={featuredPost.image}
-                      alt={featuredPost.title}
-                      fill
-                      className="object-cover"
-                      priority
-                    />
-                  </div>
-                  <div className="p-8 lg:p-12 flex flex-col justify-center">
-                    <div className="flex items-center gap-4 text-foreground-muted text-sm mb-4">
-                      <span className="flex items-center">
-                        <Calendar className="w-4 h-4 mr-1" />
-                        {new Date(featuredPost.date).toLocaleDateString('en-US', { 
-                          year: 'numeric', 
-                          month: 'long', 
-                          day: 'numeric' 
-                        })}
-                      </span>
-                      <span className="flex items-center">
-                        <Clock className="w-4 h-4 mr-1" />
-                        {featuredPost.readTime}
-                      </span>
-                    </div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                      {featuredPost.title}
-                    </h2>
-                    <p className="text-foreground-muted text-lg mb-6">
-                      {featuredPost.excerpt}
-                    </p>
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold">
-                        {featuredPost.author.charAt(0)}
-                      </div>
-                      <div>
-                        <div className="text-foreground font-medium">{featuredPost.author}</div>
-                        <div className="text-foreground-muted text-sm">{featuredPost.authorRole}</div>
-                      </div>
-                    </div>
-                    <Link
-                      href={`/blog/${featuredPost.slug}`}
-                      className="inline-flex items-center text-primary-light font-semibold hover:text-primary transition-colors group w-fit"
-                    >
-                      Read Full Article
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
-                </div>
-              </Card>
-            </FadeIn>
-          </div>
-        </section>
-      )}
-
-      {/* Category Filter */}
-      <section className="py-12 sticky top-24 z-30 border-b border-white/10 bg-background/95 backdrop-blur-md">
+      {/* Introduction */}
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-3">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-5 py-2.5 rounded-full font-medium transition-all duration-300 ${
-                  activeCategory === category
-                    ? 'gradient-bg text-white glow'
-                    : 'bg-background-card text-foreground-muted hover:text-foreground border border-white/10 hover:border-primary/30'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <FadeIn>
+              <div className="space-y-4 text-foreground-muted text-lg leading-relaxed">
+                <p>
+                  In today&apos;s fast-evolving digital landscape, brands need more than just visibility—they need meaningful engagement. DeltaClicks stands at the forefront of this transformation, offering a comprehensive suite of creative and marketing solutions designed to help businesses thrive.
+                </p>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* Blog Posts Grid */}
+      {/* Blog 1 */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="Latest Articles"
-            title={activeCategory === 'All' ? 'All Blog Posts' : activeCategory}
-            subtitle={`${gridPosts.length} article${gridPosts.length !== 1 ? 's' : ''} ${activeCategory === 'All' ? 'in our blog' : `in ${activeCategory}`}`}
-          />
-          
-          {gridPosts.length === 0 ? (
-            <div className="text-center py-20">
-              <p className="text-foreground-muted text-xl">No posts found in this category.</p>
-            </div>
-          ) : (
-            <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-              {gridPosts.map((post, index) => (
-                <FadeIn key={post.slug} delay={index * 0.1}>
-                  <Card className="group overflow-hidden bg-background-card border border-white/5 hover:border-primary/30 transition-colors h-full flex flex-col">
-                    <div className="relative h-48 overflow-hidden">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute top-4 left-4">
-                        <Badge text={post.category} variant="primary" />
-                      </div>
-                    </div>
-                    <div className="p-6 flex-1 flex flex-col">
-                      <div className="flex items-center gap-4 text-foreground-muted text-sm mb-3">
-                        <span className="flex items-center">
-                          <Calendar className="w-3 h-3 mr-1" />
-                          {new Date(post.date).toLocaleDateString('en-US', { 
-                            month: 'short', 
-                            day: 'numeric',
-                            year: 'numeric'
-                          })}
-                        </span>
-                        <span className="flex items-center">
-                          <Clock className="w-3 h-3 mr-1" />
-                          {post.readTime}
-                        </span>
-                      </div>
-                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary-light transition-colors line-clamp-2">
-                        {post.title}
-                      </h3>
-                      <p className="text-foreground-muted mb-4 line-clamp-3 flex-1">
-                        {post.excerpt}
-                      </p>
-                      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
-                        <div className="w-8 h-8 rounded-full gradient-bg flex items-center justify-center text-white text-sm font-bold">
-                          {post.author.charAt(0)}
-                        </div>
-                        <div className="text-sm">
-                          <div className="text-foreground font-medium">{post.author}</div>
-                        </div>
-                      </div>
-                      <Link
-                        href={`/blog/${post.slug}`}
-                        className="inline-flex items-center text-primary-light font-semibold hover:text-primary transition-colors group mt-4"
-                      >
-                        Read More
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </div>
-                  </Card>
-                </FadeIn>
-              ))}
-            </StaggerContainer>
-          )}
+          <div className="max-w-4xl mx-auto">
+            <FadeIn>
+              <div>
+                <SectionHeading
+                  label="Blog 01"
+                  title="Digital Presence Always Enhances Brand Value"
+                  align="left"
+                />
+                <div className="space-y-4 text-foreground-muted text-lg leading-relaxed">
+                  <p>
+                    In today&apos;s hyper-connected world, a strong digital presence is no longer optional; it is a cornerstone of brand value. Whether a business is a startup or an established enterprise, its visibility and engagement across digital platforms directly influence how it is perceived by its audience.
+                  </p>
+                  <p>
+                    A well-crafted digital presence builds credibility. When potential customers search for a brand online, they expect to find a professional website, active social media profiles, and consistent content. The absence of these elements often raises doubts about legitimacy, while a polished digital footprint signals trustworthiness and reliability. First impressions are increasingly digital, and brands that invest in this space gain an immediate advantage.
+                  </p>
+                  <p>
+                    Beyond credibility, digital presence amplifies reach. Traditional marketing methods are limited by geography and cost, but digital platforms allow brands to connect with a global audience instantly. Through search engines, social media, and content marketing, businesses can target specific demographics and tailor their messaging to resonate with different audience segments. This precision not only increases visibility but also improves conversion rates.
+                  </p>
+                  <p>
+                    Engagement is another critical factor. Digital platforms enable two-way communication, allowing brands to interact directly with customers. Responding to queries, addressing concerns, and participating in conversations humanizes a brand and fosters loyalty. Over time, this engagement builds a community that advocates for the brand, further enhancing its value.
+                  </p>
+                  <p>
+                    Moreover, consistent digital activity strengthens brand identity. Through visual elements, tone of voice, and storytelling, businesses can create a cohesive narrative that differentiates them from competitors. This consistency helps customers recognize and remember the brand, reinforcing its position in the market.
+                  </p>
+                  <p>
+                    In essence, digital presence is a powerful driver of brand value. It shapes perception, expands reach, encourages engagement, and solidifies identity. Brands that strategically invest in their digital footprint are not just keeping up with the times; they are positioning themselves for sustained growth and relevance in an increasingly digital-first world.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog 2 */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <FadeIn>
+              <div>
+                <SectionHeading
+                  label="Blog 02"
+                  title="SEO Is Very Helpful in Boosting Your Brand Visibility"
+                  align="left"
+                />
+                <div className="space-y-4 text-foreground-muted text-lg leading-relaxed">
+                  <p>
+                    Search Engine Optimization (SEO) has become one of the most powerful tools for boosting brand visibility in the digital age. As consumers increasingly rely on search engines to discover products, services, and information, businesses that invest in SEO gain a clear competitive advantage.
+                  </p>
+                  <p>
+                    At its core, SEO is about improving a website&apos;s ranking on search engine results pages. When your brand appears on the first page of platforms like Google, it significantly increases the chances of being noticed by potential customers. Most users rarely scroll beyond the top results, making high rankings crucial for visibility and traffic.
+                  </p>
+                  <p>
+                    One of the key strengths of SEO is its ability to attract organic traffic. Unlike paid advertisements, SEO-driven traffic is cost-effective and sustainable over time. By optimizing keywords, creating high-quality content, and improving website structure, brands can consistently draw in users who are actively searching for what they offer. This not only increases website visits but also enhances the likelihood of conversions.
+                  </p>
+                  <p>
+                    SEO also builds credibility and trust. Users tend to associate higher search rankings with authority and reliability. When a brand consistently appears in top search results, it reinforces its reputation as a credible source within its industry. Additionally, practices like optimizing page speed, mobile responsiveness, and user experience further contribute to a positive brand image.
+                  </p>
+                  <p>
+                    Another advantage of SEO is its ability to target the right audience. Through keyword research and analytics, businesses can understand user intent and tailor their content accordingly. This ensures that the brand reaches people who are genuinely interested, leading to better engagement and stronger customer relationships.
+                  </p>
+                  <p>
+                    In conclusion, SEO is more than just a marketing strategy; it is a long-term investment in brand visibility and growth. By enhancing online presence, driving organic traffic, and building trust, SEO helps businesses stand out in a crowded digital landscape and connect effectively with their audience.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Closing */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <FadeIn>
+              <div className="space-y-4 text-foreground-muted text-lg leading-relaxed">
+                <p>
+                  These insights reflect a simple reality: brands that build a meaningful digital presence and invest in strong SEO are better positioned to grow, compete, and stay relevant.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-background-light">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="gradient-bg p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Need Help With Your Digital Marketing?
+              Ready to Create Something Impactful?
             </h2>
             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-              Our experts are here to help you implement these strategies and achieve real results 
-              for your business.
+              Let&apos;s discuss how DeltaClicks can help your brand tell its story and make a lasting impact.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -216,7 +145,7 @@ export default function BlogPage() {
                 size="lg"
                 className="bg-white text-primary hover:bg-white/90"
               >
-                Get a Free Consultation
+                Get in Touch
               </Button>
               <Button
                 href="/services"
@@ -225,6 +154,7 @@ export default function BlogPage() {
                 className="border-white text-white hover:bg-white/10"
               >
                 Explore Services
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
           </Card>

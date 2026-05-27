@@ -11,16 +11,17 @@ import FadeIn from '@/components/animations/FadeIn';
 import { portfolio, getProjectBySlug } from '@/data/portfolio';
 
 // Generate static params for all portfolio slugs
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return portfolio.map((project) => ({
     slug: project.slug,
   }));
 }
 
 // Generate metadata for each project page
-export function generateMetadata({ params }) {
-  const project = getProjectBySlug(params.slug);
-  
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
+
   if (!project) {
     return {
       title: 'Project Not Found',
@@ -33,8 +34,9 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function ProjectPage({ params }) {
-  const project = getProjectBySlug(params.slug);
+export default async function ProjectPage({ params }) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     notFound();
@@ -58,7 +60,7 @@ export default function ProjectPage({ params }) {
       />
 
       {/* Project Overview */}
-      <section className="py-20 bg-background-light">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="max-w-4xl mx-auto">
@@ -117,7 +119,7 @@ export default function ProjectPage({ params }) {
       </section>
 
       {/* Our Solution */}
-      <section className="py-20 bg-focus/20">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <FadeIn>
@@ -161,7 +163,7 @@ export default function ProjectPage({ params }) {
 
       {/* Client Testimonial */}
       {project.testimonial && (
-        <section className="py-20 bg-background-light">
+      <section className="py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <FadeIn>
@@ -236,7 +238,7 @@ export default function ProjectPage({ params }) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-background-light">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="gradient-bg p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

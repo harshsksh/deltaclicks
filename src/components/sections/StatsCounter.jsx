@@ -6,7 +6,7 @@ import StaggerContainer from '@/components/animations/StaggerContainer';
 
 export default function StatsCounter({ stats }) {
   return (
-    <section className="py-20 bg-primary">
+    <section className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (

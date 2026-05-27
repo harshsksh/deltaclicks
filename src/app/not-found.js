@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-boundary-dark via-boundary to-focus relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background decorations */}
       <div className="corner-blend-top-left" />
       <div className="corner-blend-top-right" />
@@ -93,10 +93,6 @@ export default function NotFound() {
               <span className="text-foreground-muted">•</span>
               <Link href="/portfolio" className="text-primary-light hover:text-primary transition-colors">
                 Portfolio
-              </Link>
-              <span className="text-foreground-muted">•</span>
-              <Link href="/blog" className="text-primary-light hover:text-primary transition-colors">
-                Blog
               </Link>
               <span className="text-foreground-muted">•</span>
               <Link href="/contact" className="text-primary-light hover:text-primary transition-colors">

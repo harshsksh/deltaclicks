@@ -3,6 +3,7 @@ import './globals.css';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import CursorFollower from '@/components/ui/CursorFollower';
 import AOSProvider from '@/components/providers/AOSProvider';
 import OrganizationSchema from '@/components/seo/OrganizationSchema';
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
@@ -22,7 +23,7 @@ export const metadata = {
   metadataBase: new URL('https://deltaclicks.com'),
   title: {
     default: 'DeltaClicks - Digital Marketing Agency',
-    template: '%s | DeltaClicks',
+    template: '%s | DeltaClicks - Digital Marketing Agency',
   },
   description: 'Full-service digital marketing agency offering SEO, SMM, SEM, Content Marketing, Web Development, and Branding services to help your business grow online.',
   keywords: ['digital marketing', 'SEO', 'social media marketing', 'PPC', 'web development', 'branding', 'content marketing'],
@@ -32,7 +33,7 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://deltaclicks.com',
-    siteName: 'DeltaClicks',
+    siteName: 'DeltaClicks - Digital Marketing Agency',
     title: 'DeltaClicks - Digital Marketing Agency',
     description: 'Full-service digital marketing agency offering SEO, SMM, SEM, Content Marketing, Web Development, and Branding services.',
     images: [
@@ -58,17 +59,21 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth`}>
+    <html lang="en" className={`${inter.variable} scroll-smooth`} data-scroll-behavior="smooth">
       <body className="min-h-screen flex flex-col font-sans antialiased">
         <ErrorBoundary>
-          <AOSProvider />
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          {/* JSON-LD Structured Data */}
-          <OrganizationSchema />
-          <LocalBusinessSchema />
-          <WebSiteSchema />
+          <div className="scrolling-bg" aria-hidden="true" />
+          <div className="relative z-10">
+            <CursorFollower />
+            <AOSProvider />
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            {/* JSON-LD Structured Data */}
+            <OrganizationSchema />
+            <LocalBusinessSchema />
+            <WebSiteSchema />
+          </div>
         </ErrorBoundary>
       </body>
     </html>

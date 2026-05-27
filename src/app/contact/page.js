@@ -14,17 +14,27 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email Us',
-    details: ['hello@deltaclicks.com', 'support@deltaclicks.com'],
+    details: ['Connect@deltclicks.com'],
   },
   {
     icon: Phone,
     title: 'Call Us',
-    details: ['+1 (555) 123-4567', '+1 (555) 987-6543'],
+    details: ['+91 73554 53408'],
   },
   {
     icon: MapPin,
     title: 'Visit Us',
-    details: ['123 Digital Avenue', 'New York, NY 10001'],
+    details: [
+      <a
+        key="address"
+        href="https://maps.google.com/?q=Shree+Ram+South+Court+Jagatpura+Jaipur+302017"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:text-primary transition-colors"
+      >
+        A 501, Shree Ram South Court, Jagatpura, Jaipur, 302017
+      </a>
+    ],
   },
   {
     icon: Clock,
@@ -43,11 +53,12 @@ export default function ContactPage() {
         primaryCTA={{ href: '#contact-form', text: 'Send Message' }}
         secondaryCTA={{ href: '#contact-info', text: 'Contact Info' }}
         background="gradient"
-        align="center"
+        image="/images/main-page/download.png"
+        align="left"
       />
 
       {/* Contact Section */}
-      <section id="contact-form" className="py-20 bg-background-light">
+      <section id="contact-form" className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Contact Us"
@@ -120,29 +131,29 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section (Placeholder) */}
+      {/* Map Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <Card className="overflow-hidden bg-background-card border border-white/10">
-              <div className="aspect-video bg-gradient-to-br from-focus to-boundary flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-16 h-16 text-primary/50 mx-auto mb-4" />
-                  <p className="text-foreground-muted text-lg">
-                    Office Location Map
-                  </p>
-                  <p className="text-foreground-muted text-sm mt-2">
-                    123 Digital Avenue, New York, NY 10001
-                  </p>
-                </div>
-              </div>
+              <iframe
+                title="DeltaClicks Office Location"
+                src="https://maps.google.com/maps?q=Shree+Ram+South+Court+Jagatpura+Jaipur+302017&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full"
+              />
             </Card>
           </FadeIn>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-background-light">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="FAQ"
@@ -194,14 +205,14 @@ export default function ContactPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:hello@deltaclicks.com"
+                href="mailto:Connect@deltclicks.com"
                 className="inline-flex items-center justify-center bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-full font-medium transition-colors"
               >
                 <Mail className="w-5 h-5 mr-2" />
                 Email Us
               </a>
               <a
-                href="tel:+15551234567"
+                href="tel:+917355453408"
                 className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full font-medium transition-colors"
               >
                 <Phone className="w-5 h-5 mr-2" />

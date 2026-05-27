@@ -4,7 +4,7 @@ export default function OrganizationSchema() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "DeltaClicks",
+    "name": "DeltaClicks - Digital Marketing Agency",
     "url": "https://deltaclicks.com",
     "logo": "https://deltaclicks.com/logo.svg",
     "description": "Full-service digital marketing agency offering SEO, SMM, SEM, Content Marketing, Web Development, and Branding services.",
@@ -12,23 +12,23 @@ export default function OrganizationSchema() {
     "founders": [
       {
         "@type": "Person",
-        "name": "DeltaClicks Founders"
+        "name": "DeltaClicks Team",
       }
     ],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "123 Digital Avenue",
-      "addressLocality": "New York",
-      "addressRegion": "NY",
-      "postalCode": "10001",
-      "addressCountry": "US"
+      "streetAddress": "A 501, Shree Ram South Court, Jagatpura",
+      "addressLocality": "Jaipur",
+      "addressRegion": "Rajasthan",
+      "postalCode": "302017",
+      "addressCountry": "IN"
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-555-123-4567",
+      "telephone": "+91-73554-53408",
       "contactType": "Customer Service",
-      "email": "hello@deltaclicks.com",
-      "areaServed": "US",
+      "email": "Connect@deltclicks.com",
+      "areaServed": "IN",
       "availableLanguage": "English"
     },
     "sameAs": [

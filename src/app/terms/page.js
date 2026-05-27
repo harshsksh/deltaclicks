@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import Hero from '@/components/sections/Hero';
 import SectionHeading from '@/components/ui/SectionHeading';
 import Card from '@/components/ui/Card';
 import FadeIn from '@/components/animations/FadeIn';
@@ -12,26 +13,14 @@ export const metadata = {
 export default function TermsPage() {
   return (
     <>
-      {/* Header */}
-      <section className="pt-32 pb-16 bg-background-light">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <Link
-              href="/"
-              className="inline-flex items-center text-foreground-muted hover:text-primary-light transition-colors mb-8"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </Link>
-            <SectionHeading
-              label="Terms of Service"
-              title="Terms and Conditions"
-              subtitle="Last updated: March 31, 2025"
-              align="left"
-            />
-          </FadeIn>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <Hero
+        title="Terms of Service"
+        subtitle="Last updated: March 31, 2025"
+        image="/images/main-page/5956413.jpg"
+        align="left"
+        background="gradient"
+      />
 
       {/* Content */}
       <article className="py-12">
@@ -184,10 +173,9 @@ export default function TermsPage() {
 
                   <h2>11. Governing Law</h2>
                   <p>
-                    These Terms shall be governed by and construed in accordance with the laws of 
-                    the State of New York, United States, without regard to its conflict of law 
-                    provisions. Any disputes arising under these Terms shall be subject to the 
-                    exclusive jurisdiction of the courts located in New York.
+                    These Terms shall be governed by and construed in accordance with the laws of
+                    India, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be subject to the
+                    exclusive jurisdiction of the courts located in Jaipur, Rajasthan.
                   </p>
 
                   <h2>12. Changes to Terms</h2>
@@ -203,14 +191,14 @@ export default function TermsPage() {
                     If you have any questions about these Terms, please contact us:
                   </p>
                   <ul>
-                    <li><strong>Email:</strong> legal@deltaclicks.com</li>
-                    <li><strong>Address:</strong> 123 Digital Avenue, New York, NY 10001</li>
+                    <li><strong>Email:</strong> Connect@deltclicks.com</li>
+                    <li><strong>Address:</strong> A 501, Shree Ram South Court, Jagatpura, Jaipur, 302017</li>
                   </ul>
 
                   <h2>14. Entire Agreement</h2>
                   <p>
-                    These Terms, together with our Privacy Policy and any separate service 
-                    agreements, constitute the entire agreement between you and DeltaClicks 
+                    These Terms, together with our Privacy Policy and any separate service
+                    agreements, constitute the entire agreement between you and DeltaClicks
                     regarding our services and supersede any prior agreements.
                   </p>
                 </div>

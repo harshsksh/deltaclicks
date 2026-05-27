@@ -47,27 +47,20 @@ export default function ServicesPage() {
         primaryCTA={{ href: '/contact', text: 'Get Started' }}
         secondaryCTA={{ href: '/portfolio', text: 'View Our Work' }}
         background="gradient"
-        align="center"
+        image="/images/main-page/Social Media Marketing GIF by whitepapercommunications.gif"
+        align="left"
       />
 
       {/* Intro Section */}
-      <section className="py-20 bg-background-light">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <FadeIn>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Comprehensive Digital Marketing Solutions
+                Our Services
               </h2>
               <p className="text-foreground-muted text-lg leading-relaxed mb-6">
-                At DeltaClicks, we offer a full suite of digital marketing services designed to help
-                your business thrive in the online world. Whether you&apos;re looking to improve your search
-                rankings, engage customers on social media, or build a stunning website, our team of
-                experts has you covered.
-              </p>
-              <p className="text-foreground-muted text-lg leading-relaxed">
-                Our integrated approach ensures that all your digital marketing efforts work together 
-                seamlessly, amplifying results and maximizing your return on investment. Let us help 
-                you navigate the complex digital landscape with confidence.
+                At DeltaClicks, we blend creativity, strategy, in-depth research, and technology to deliver powerful digital solutions that help brands grow, engage, and convert.
               </p>
             </FadeIn>
           </div>
@@ -89,7 +82,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Why Choose Our Services */}
-      <section className="py-20 bg-focus/20">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Why DeltaClicks"
@@ -148,7 +141,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-background-light">
+      <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="gradient-bg p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

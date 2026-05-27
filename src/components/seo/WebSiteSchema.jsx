@@ -4,7 +4,7 @@ export default function WebSiteSchema() {
   const webSiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "DeltaClicks",
+    "name": "DeltaClicks - Digital Marketing Agency",
     "url": "https://deltaclicks.com",
     "description": "Full-service digital marketing agency offering SEO, SMM, SEM, Content Marketing, Web Development, and Branding services.",
     "potentialAction": {
@@ -14,17 +14,17 @@ export default function WebSiteSchema() {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "DeltaClicks",
+      "name": "DeltaClicks - Digital Marketing Agency",
       "url": "https://deltaclicks.com",
       "logo": {
         "@type": "ImageObject",
         "url": "https://deltaclicks.com/logo.svg"
       }
     },
-    "inLanguage": "en-US",
+    "inLanguage": "en-IN",
     "isPartOf": {
       "@type": "CreativeWork",
-      "name": "DeltaClicks Digital Marketing Platform"
+      "name": "DeltaClicks - Digital Marketing Agency"
     }
   };
 

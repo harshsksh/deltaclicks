@@ -4,23 +4,23 @@ export default function LocalBusinessSchema() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "DeltaClicks",
+    "name": "DeltaClicks - Digital Marketing Agency",
     "image": "https://deltaclicks.com/og-image.jpg",
     "url": "https://deltaclicks.com",
-    "telephone": "+1-555-123-4567",
-    "email": "hello@deltaclicks.com",
+    "telephone": "+91-73554-53408",
+    "email": "Connect@deltclicks.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "123 Digital Avenue",
-      "addressLocality": "New York",
-      "addressRegion": "NY",
-      "postalCode": "10001",
-      "addressCountry": "US"
+      "streetAddress": "A 501, Shree Ram South Court, Jagatpura",
+      "addressLocality": "Jaipur",
+      "addressRegion": "Rajasthan",
+      "postalCode": "302017",
+      "addressCountry": "IN"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 40.7128,
-      "longitude": -74.0060
+      "latitude": 26.8353,
+      "longitude": 75.8193
     },
     "openingHoursSpecification": [
       {

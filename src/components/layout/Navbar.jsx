@@ -27,6 +27,7 @@ export default function Navbar() {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services', hasDropdown: true },
+    { name: 'Gallery', href: '/gallery' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
@@ -34,7 +35,10 @@ export default function Navbar() {
 
   return (
     <>
-      <header
+      <motion.header
+        initial={{ y: -28, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.45, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? 'bg-background/95 backdrop-blur-md shadow-lg border-b border-white/10'
           : 'bg-transparent'
@@ -54,6 +58,7 @@ export default function Navbar() {
                   sizes="(max-width: 640px) 256px, 320px"
                   className="object-contain transition-transform group-hover:scale-105"
                   priority
+                  loading="eager"
                 />
               </div>
             </Link>
@@ -63,7 +68,9 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <div key={link.name} className="relative">
                   {link.hasDropdown ? (
-                    <div
+                    <motion.div
+                      whileHover={{ y: -2 }}
+                      transition={{ type: 'spring', stiffness: 280, damping: 20 }}
                       className={`flex items-center space-x-1 cursor-pointer transition-colors ${pathname === link.href
                         ? 'gradient-text font-semibold'
                         : isScrolled
@@ -75,9 +82,14 @@ export default function Navbar() {
                     >
                       <span>{link.name}</span>
                       <ChevronDown className="w-4 h-4" />
-                    </div>
+                    </motion.div>
                   ) : (
-                    <Link
+                    <motion.div
+                      whileHover={{ y: -2 }}
+                      transition={{ type: 'spring', stiffness: 280, damping: 20 }}
+                      className="relative"
+                    >
+                      <Link
                       href={link.href}
                       className={`transition-colors ${pathname === link.href
                         ? 'gradient-text font-semibold'
@@ -85,9 +97,16 @@ export default function Navbar() {
                           ? 'text-foreground-muted hover:text-foreground'
                           : 'text-white/90 hover:text-white'
                         }`}
-                    >
-                      {link.name}
-                    </Link>
+                      >
+                        {link.name}
+                      </Link>
+                      <motion.span
+                        className="absolute left-0 -bottom-0.5 h-0.5 bg-primary rounded-full"
+                        initial={{ width: 0, opacity: 0 }}
+                        whileHover={{ width: '100%', opacity: 1 }}
+                        transition={{ duration: 0.25 }}
+                      />
+                    </motion.div>
                   )}
                 </div>
               ))}
@@ -95,16 +114,20 @@ export default function Navbar() {
 
             {/* CTA Button */}
             <div className="hidden lg:block">
-              <Link
+              <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.98 }}>
+                <Link
                 href="/contact"
                 className="gradient-bg hover:opacity-90 text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 glow"
-              >
-                Get a Quote
-              </Link>
+                >
+                  Get a Quote
+                </Link>
+              </motion.div>
             </div>
 
             {/* Mobile Menu Button */}
-            <button
+            <motion.button
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.92 }}
               className="lg:hidden p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
@@ -114,7 +137,7 @@ export default function Navbar() {
               ) : (
                 <Menu className={`w-6 h-6 ${isScrolled ? 'text-foreground' : 'text-white'}`} />
               )}
-            </button>
+            </motion.button>
           </div>
         </nav>
 
@@ -125,6 +148,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
               className="hidden lg:block absolute top-full left-0 right-0 bg-background shadow-xl border-t border-white/10"
               onMouseEnter={() => setOpenServiceDropdown('services')}
               onMouseLeave={() => setOpenServiceDropdown(null)}
@@ -134,23 +158,28 @@ export default function Navbar() {
                   {services.map((service) => {
                     const IconComponent = getIcon(service.icon);
                     return (
-                      <Link
+                      <motion.div
                         key={service.slug}
-                        href={`/services/${service.slug}`}
-                        className="flex items-start space-x-3 p-3 rounded-lg hover:bg-white/5 transition-colors group"
+                        whileHover={{ y: -4, scale: 1.02 }}
+                        transition={{ type: 'spring', stiffness: 260, damping: 18 }}
                       >
-                        <div className="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center group-hover:opacity-90 transition-opacity">
-                          <IconComponent className="w-5 h-5 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-medium text-foreground group-hover:text-primary-light transition-colors">
-                            {service.title}
-                          </h4>
-                          <p className="text-sm text-foreground-muted mt-1 line-clamp-2">
-                            {service.shortDescription}
-                          </p>
-                        </div>
-                      </Link>
+                        <Link
+                          href={`/services/${service.slug}`}
+                          className="flex items-start space-x-3 p-3 rounded-lg hover:bg-white/5 transition-colors group"
+                        >
+                          <div className="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center group-hover:opacity-90 transition-opacity group-hover:scale-105">
+                            <IconComponent className="w-5 h-5 text-white" />
+                          </div>
+                          <div>
+                            <h4 className="font-medium text-foreground group-hover:text-primary-light transition-colors">
+                              {service.title}
+                            </h4>
+                            <p className="text-sm text-foreground-muted mt-1 line-clamp-2">
+                              {service.shortDescription}
+                            </p>
+                          </div>
+                        </Link>
+                      </motion.div>
                     );
                   })}
                 </div>
@@ -158,7 +187,7 @@ export default function Navbar() {
             </motion.div>
           )}
         </AnimatePresence>
-      </header>
+      </motion.header>
 
       {/* Mobile Menu */}
       <AnimatePresence>

@@ -223,6 +223,53 @@ html {
   color: var(--text-primary);
 }
 
+/* ===== GLOBAL HOVER ZOOM ===== */
+
+/* Applying a subtle zoom to common interactive and content elements */
+a, 
+button, 
+img, 
+h1, h2, h3, h4, h5, h6,
+p,
+.card,
+[class*="Card"],
+[class*="card"],
+.hover-target {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-block; /* Ensure transform works correctly on inline elements */
+  width: fit-content;
+}
+
+/* Ensure block elements remain block but still transition */
+h1, h2, h3, h4, h5, h6, p, .card, [class*="Card"], [class*="card"] {
+  display: block;
+  width: auto;
+}
+
+a:hover, 
+button:hover, 
+img:hover, 
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover,
+p:hover,
+.card:hover,
+[class*="Card"]:hover,
+[class*="card"]:hover,
+.hover-target:hover {
+  transform: scale(1.03) !important;
+  z-index: 50;
+  position: relative;
+}
+
+/* Ensure list elements keep their block layout (prevent global inline-block from affecting lists) */
+ul, ol {
+  display: block;
+}
+
+ul li, ol li {
+  display: block;
+  width: auto;
+}
+
 /* Focus visible for accessibility */
 :focus-visible {
   outline: 2px solid var(--primary);
@@ -240,4 +287,45 @@ html {
   html {
     scroll-behavior: auto;
   }
+}
+
+/* ===== HORIZONTAL SCROLLING BACKGROUND ===== */
+/* Place a wide, tileable image in `public/images/background/scrolling-bg.png` */
+.scrolling-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url('/images/background/scrolling-bg.png');
+  background-repeat: repeat-x;
+  background-position: 0 50%;
+  background-size: auto 100%;
+  opacity: 0.12;
+  mix-blend-mode: screen;
+  filter: saturate(1.05) blur(0.2px);
+  animation: scrollBg var(--bg-scroll-duration, 80s) linear infinite;
+}
+
+.scrolling-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10,2,16,0.18), rgba(18,6,36,0.06));
+  pointer-events: none;
+}
+
+@keyframes scrollBg {
+  from { background-position: 0 50%; }
+  to { background-position: -10000px 50%; }
+}
+
+/* Utility: speed control and opacity overrides */
+:root {
+  --bg-scroll-duration: 80s; /* lower = faster */
+}
+
+/* Make sure main content stacks above the background */
+.relative.z-10 {
+  position: relative;
+  z-index: 10;
 }
