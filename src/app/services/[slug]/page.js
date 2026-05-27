@@ -45,17 +45,17 @@ export default async function ServicePage({ params }) {
   }
 
   const serviceImageMap = {
-    'content-marketing': '/images/main-page/3680673.jpg',
-    'video-production': '/images/main-page/Software Engineer Developer GIF by Venturit.gif',
-    'photography': '/images/main-page/Fitness Gym GIF by ikeja.gif',
-    'event-management': '/images/main-page/Tiny graphic designer drawing with big pen on computer screen.jpg',
-    'podcast': '/images/main-page/10387887.jpg',
-    'multimedia-production': '/images/main-page/3359652.jpg',
-    'social-media-content': '/images/main-page/5102334.jpg',
-    'documentary': '/images/main-page/8253332.jpg',
-    'website-design': '/images/main-page/site_design_2.jpg',
+    'content-marketing': '/images/services/content-marketing.png',
+    'video-production': '/images/services/video-production.png',
+    'photography': '/images/services/photography.png',
+    'event-management': '/images/services/event-management.png',
+    'podcast': '/images/services/podcast.png',
+    'multimedia-production': '/images/services/multimedia-production.png',
+    'social-media-content': '/images/services/social-media-content.png',
+    'documentary': '/images/services/documentry.png',
+    'website-design': '/images/services/website-design.png',
   };
-  const serviceImage = serviceImageMap[service.slug] || '/images/main-page/5102334.jpg';
+  const serviceImage = serviceImageMap[service.slug] || '/images/services/content-marketing.png';
 
   const serviceDescriptionImageMap = {
     'content-marketing': '/images/services/content-marketing.png',
@@ -162,7 +162,7 @@ export default async function ServicePage({ params }) {
                   {service.whyNeed.map((item, index) => (
                     <FadeIn key={index} delay={index * 0.05}>
                       <div className="flex items-start space-x-3 p-3 rounded-lg bg-background-card border border-white/5">
-                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                         <span className="text-foreground">{item}</span>
                       </div>
                     </FadeIn>
@@ -190,7 +190,7 @@ export default async function ServicePage({ params }) {
                   {service.whatWeRequire.map((item, index) => (
                     <FadeIn key={index} delay={index * 0.05}>
                       <div className="flex items-start space-x-3 p-3 rounded-lg bg-background-card border border-white/5">
-                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                         <span className="text-foreground">{item}</span>
                       </div>
                     </FadeIn>
@@ -223,7 +223,7 @@ export default async function ServicePage({ params }) {
               <FadeIn key={index} delay={index * 0.05}>
                 <Card className="p-6 h-full bg-background-card border border-white/5 hover:border-primary/30 transition-colors">
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-6 h-6 text-primary shrink-0 mt-0.5" />
                     <div>
                       <h3 className="text-lg font-bold text-foreground mb-1">{feature}</h3>
                       {service.featureDescriptions && service.featureDescriptions[feature] && (

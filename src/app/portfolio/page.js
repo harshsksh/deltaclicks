@@ -16,7 +16,7 @@ export default function PortfolioPage() {
         primaryCTA={{ href: '/contact', text: 'Start Your Project' }}
         secondaryCTA={{ href: '/services', text: 'Our Services' }}
         background="gradient"
-        image="/images/main-page/Software Engineer Developer GIF by Venturit.gif"
+        image="/images/hero/Gemini_Generated_Image_nyth5nyth5nyth5n-removebg-preview.png"
         align="left"
       />
 

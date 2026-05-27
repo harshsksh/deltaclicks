@@ -43,7 +43,7 @@ export default async function GalleryPage() {
         primaryCTA={{ href: '/contact', text: 'Start Your Project' }}
         secondaryCTA={{ href: '/services', text: 'View Services' }}
         background="gradient"
-        image="/images/main-page/animation illustration GIF by Tony Babel.gif"
+        image="/images/hero/Gemini_Generated_Image_3mzypm3mzypm3mzy-removebg-preview.png"
         align="left"
       />
 

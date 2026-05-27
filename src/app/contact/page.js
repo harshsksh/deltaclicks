@@ -54,7 +54,7 @@ export default function ContactPage() {
         primaryCTA={{ href: '#contact-form', text: 'Send Message' }}
         secondaryCTA={{ href: '#contact-info', text: 'Contact Info' }}
         background="gradient"
-        image="/images/main-page/download.png"
+        image="/images/hero/Gemini_Generated_Image_vmbvgxvmbvgxvmbv-removebg-preview.png"
         align="left"
       />
 

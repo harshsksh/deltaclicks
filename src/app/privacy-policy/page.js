@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
       <Hero
         title="Privacy Policy"
         subtitle="Last updated: March 31, 2025"
-        image="/images/main-page/8253332.jpg"
+        image="/images/hero/Gemini_Generated_Image_nyth5nyth5nyth5n-removebg-preview.png"
         align="left"
         background="gradient"
       />

@@ -17,7 +17,7 @@ export default function TermsPage() {
       <Hero
         title="Terms of Service"
         subtitle="Last updated: March 31, 2025"
-        image="/images/main-page/5956413.jpg"
+        image="/images/hero/Gemini_Generated_Image_to6b1qto6b1qto6b-removebg-preview.png"
         align="left"
         background="gradient"
       />

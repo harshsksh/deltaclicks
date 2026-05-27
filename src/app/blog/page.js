@@ -21,7 +21,7 @@ export default function BlogPage() {
         primaryCTA={{ href: '/contact', text: 'Work With Us' }}
         secondaryCTA={{ href: '/services', text: 'Explore Services' }}
         background="gradient"
-        image="/images/main-page/Webdesign Videoproduction GIF by Conik Studio.gif"
+        image="/images/hero/Gemini_Generated_Image_to6b1qto6b1qto6b-removebg-preview.png"
         align="left"
       />
 
