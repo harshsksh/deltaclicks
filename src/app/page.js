@@ -5,6 +5,7 @@ import Hero from '@/components/sections/Hero';
 import ServicesGrid from '@/components/sections/ServicesGrid';
 import StatsCounter from '@/components/sections/StatsCounter';
 import Testimonials from '@/components/sections/Testimonials';
+import TeamSection from '@/components/sections/TeamSection';
 import CTABanner from '@/components/sections/CTABanner';
 import SectionHeading from '@/components/ui/SectionHeading';
 import Card from '@/components/ui/Card';
@@ -135,6 +136,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <TeamSection />
 
       {/* CTA Banner Section */}
       <CTABanner

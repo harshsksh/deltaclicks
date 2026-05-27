@@ -6,6 +6,7 @@ import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import FadeIn from '@/components/animations/FadeIn';
 import StaggerContainer from '@/components/animations/StaggerContainer';
+import TeamSection from '@/components/sections/TeamSection';
 
 export const metadata = {
   title: 'About Us',
@@ -174,6 +175,8 @@ export default function AboutPage() {
           </StaggerContainer>
         </div>
       </section>
+
+      <TeamSection />
 
       {/* CTA Section */}
       <section className="py-20">

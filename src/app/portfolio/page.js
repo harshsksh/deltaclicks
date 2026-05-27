@@ -4,6 +4,7 @@ import Hero from '@/components/sections/Hero';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import FadeIn from '@/components/animations/FadeIn';
+import TeamSection from '@/components/sections/TeamSection';
 
 export default function PortfolioPage() {
   return (
@@ -55,6 +56,8 @@ export default function PortfolioPage() {
           </div>
         </div>
       </section>
+
+      <TeamSection />
 
       {/* CTA Section */}
       <section className="py-20">

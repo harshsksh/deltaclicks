@@ -4,6 +4,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import Card from '@/components/ui/Card';
 import ContactForm from '@/components/forms/ContactForm';
 import FadeIn from '@/components/animations/FadeIn';
+import TeamSection from '@/components/sections/TeamSection';
 
 export const metadata = {
   title: 'Contact Us',
@@ -191,6 +192,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <TeamSection />
 
       {/* CTA Section */}
       <section className="py-20">

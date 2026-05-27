@@ -4,6 +4,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import FadeIn from '@/components/animations/FadeIn';
+import TeamSection from '@/components/sections/TeamSection';
 
 export const metadata = {
   title: 'DeltaClicks: Crafting Stories, Creating Impact',
@@ -127,6 +128,8 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
+
+      <TeamSection />
 
       {/* CTA Section */}
       <section className="py-20">
