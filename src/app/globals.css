@@ -75,17 +75,9 @@
   --font-sans: var(--font-inter), Arial, Helvetica, sans-serif;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #ffffff;
-    --background-light: #f5f5f5;
-    --foreground: #0a0a0a;
-    --foreground-muted: #525252;
-  }
-}
-
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
