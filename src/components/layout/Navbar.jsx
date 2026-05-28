@@ -23,6 +23,11 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    setOpenServiceDropdown(null);
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
+
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
