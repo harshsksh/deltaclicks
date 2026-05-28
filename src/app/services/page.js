@@ -47,7 +47,6 @@ export default function ServicesPage() {
         primaryCTA={{ href: '/contact', text: 'Get Started' }}
         secondaryCTA={{ href: '/portfolio', text: 'View Our Work' }}
         background="gradient"
-        image="/images/hero/Gemini_Generated_Image_vmbvgxvmbvgxvmbv-removebg-preview.png"
         align="left"
       />
 

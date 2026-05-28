@@ -88,7 +88,6 @@ export default async function ServicePage({ params }) {
         primaryCTA={{ href: '/contact', text: 'Get a Quote' }}
         secondaryCTA={{ href: '/services', text: 'All Services' }}
         background="gradient"
-        image={serviceImage}
         align="left"
       />
 
