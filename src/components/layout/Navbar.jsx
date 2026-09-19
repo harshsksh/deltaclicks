@@ -32,6 +32,7 @@ export default function Navbar() {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services', hasDropdown: true },
+    { name: 'Election Campaign', href: '/election', highlight: true },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Blog', href: '/blog' },
@@ -96,14 +97,18 @@ export default function Navbar() {
                     >
                       <Link
                       href={link.href}
-                      className={`transition-colors ${pathname === link.href
-                        ? 'gradient-text font-semibold'
-                        : isScrolled
-                          ? 'text-foreground-muted hover:text-foreground'
-                          : 'text-white/90 hover:text-white'
+                      className={`transition-colors flex items-center space-x-1 ${
+                        link.highlight
+                          ? 'bg-primary/20 text-primary-light px-3 py-1.5 rounded-full border border-primary/30 hover:bg-primary/30 font-semibold'
+                          : pathname === link.href
+                          ? 'gradient-text font-semibold'
+                          : isScrolled
+                            ? 'text-foreground-muted hover:text-foreground'
+                            : 'text-white/90 hover:text-white'
                         }`}
                       >
-                        {link.name}
+                        {link.highlight && <span className="text-primary-light">✨</span>}
+                        <span>{link.name}</span>
                       </Link>
                       <motion.span
                         className="absolute left-0 -bottom-0.5 h-0.5 bg-primary rounded-full"
@@ -255,12 +260,16 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`block py-2 font-medium ${pathname === link.href
-                        ? 'gradient-text'
-                        : 'text-foreground-muted hover:text-foreground'
+                      className={`block py-2 font-medium flex items-center space-x-2 ${
+                        link.highlight
+                          ? 'bg-primary/20 text-primary-light px-4 py-2 rounded-xl border border-primary/30'
+                          : pathname === link.href
+                          ? 'gradient-text'
+                          : 'text-foreground-muted hover:text-foreground'
                         }`}
                     >
-                      {link.name}
+                      {link.highlight && <span>✨</span>}
+                      <span>{link.name}</span>
                     </Link>
                   )}
                 </div>

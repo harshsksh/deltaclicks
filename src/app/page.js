@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Video, Share2, Camera, Award, MapPin } from 'lucide-react';
 import Hero from '@/components/sections/Hero';
 import ServicesGrid from '@/components/sections/ServicesGrid';
 import StatsCounter from '@/components/sections/StatsCounter';
@@ -60,6 +60,68 @@ export default function Home() {
         secondaryCTA={{ href: '/portfolio', text: 'View Our Work' }}
         align="left"
       />
+
+      {/* Election Section */}
+      <section className="py-20 bg-background-card">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            label="Election 2027"
+            title="Strategic Content Partner for Political Campaigns"
+            subtitle="TURN YOUR POLITICAL JOURNEY INTO A POWERFUL DIGITAL STORY. Integrated video production, social media, and digital storytelling tailored for UP Assembly Elections 2027."
+          />
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {[
+              {
+                icon: Video,
+                title: 'Campaign Video Production',
+                description: 'Candidate introduction, manifesto videos, rally coverage, and documentary-style content for digital platforms.',
+              },
+              {
+                icon: Share2,
+                title: 'Social Media Content',
+                description: 'Structured content pipeline for Instagram, Facebook, YouTube, WhatsApp including Reels, graphics, and event highlights.',
+              },
+              {
+                icon: Camera,
+                title: 'On-Ground Content Team',
+                description: 'Rapid on-ground documentation of constituency visits, public meetings, and grassroots activities. Capture. Edit. Publish.',
+              },
+              {
+                icon: Award,
+                title: 'Candidate Branding',
+                description: 'Consistent visual identity across all channels including photography style, templates, and typography systems.',
+              },
+              {
+                icon: MapPin,
+                title: 'Constituency Storytelling',
+                description: 'Transform local realities, people, places, and aspirations into compelling stories for your campaign narrative.',
+              }
+            ].map((item, index) => {
+              const ItemIcon = item.icon;
+              return (
+                <FadeIn key={index} delay={index * 0.1}>
+                  <Card className="p-6 h-full text-center border border-white/5 hover:border-primary/50 transition-all">
+                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <ItemIcon className="w-7 h-7 text-primary-light" />
+                    </div>
+                    <h3 className="text-xl font-bold text-text-primary mb-2">{item.title}</h3>
+                    <p className="text-text-secondary">{item.description}</p>
+                  </Card>
+                </FadeIn>
+              );
+            })}
+          </StaggerContainer>
+          <div className="text-center mt-12">
+            <Link
+              href="/election"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-primary text-white font-bold hover:bg-primary-dark transition-all shadow-lg shadow-primary/30"
+            >
+              View Full Election Campaign Strategy
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Services Overview Section */}
       <section className="py-20">

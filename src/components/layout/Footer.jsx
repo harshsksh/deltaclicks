@@ -27,8 +27,8 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { name: 'Website', href: 'https://deltaclicks.com', icon: Globe },
-    { name: 'Contact', href: 'mailto:Connect@deltclicks.com', icon: Send },
+    { name: 'Website', href: 'https://deltaclicks.in', icon: Globe },
+    { name: 'Contact', href: 'https://deltaclicks.in', icon: Send },
     { name: 'Share', href: '#', icon: Share2 },
     { name: 'Video', href: 'https://youtube.com', icon: Video },
     { name: 'Chat', href: '#', icon: MessageCircle },
@@ -116,9 +116,14 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
-                <Mail className="w-5 h-5 text-primary mt-0.5" />
-                <a href="mailto:Connect@deltclicks.com" className="text-gray-400 hover:text-white transition-colors">
-                  Connect@deltclicks.com
+                <Globe className="w-5 h-5 text-primary mt-0.5" />
+                <a
+                  href="https://deltaclicks.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  deltaclicks.in
                 </a>
               </li>
               <li className="flex items-start space-x-3">
