@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { 
   Video, 
@@ -17,63 +17,20 @@ import {
   Layers, 
   CheckCircle2, 
   ArrowRight,
-  Languages,
   Check
 } from 'lucide-react';
 import Card from '@/components/ui/Card';
 
 export default function ElectionPage() {
-  const [activeLang, setActiveLang] = useState('both'); // 'hi', 'en', 'both'
 
   return (
-    <div className="min-h-screen bg-background text-foreground py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-background text-foreground pt-32 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         
-        {/* Language Selection Header */}
-        <div className="sticky top-28 z-40 mb-8 bg-[#18072b] backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl flex flex-wrap items-center justify-between gap-4 isolate pointer-events-auto">
-          <div className="flex items-center space-x-2 text-primary font-bold text-base md:text-lg">
-            <Languages className="w-6 h-6 text-primary-light" />
-            <span>Select View / भाषा चुनें:</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setActiveLang('hi')}
-              className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-all ${
-                activeLang === 'hi' 
-                  ? 'bg-primary text-white shadow-lg shadow-primary/30 ring-2 ring-primary-light' 
-                  : 'bg-white/5 text-foreground-muted hover:bg-white/10'
-              }`}
-            >
-              🇮🇳 हिंदी (Hindi)
-            </button>
-            <button
-              onClick={() => setActiveLang('en')}
-              className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-all ${
-                activeLang === 'en' 
-                  ? 'bg-primary text-white shadow-lg shadow-primary/30 ring-2 ring-primary-light' 
-                  : 'bg-white/5 text-foreground-muted hover:bg-white/10'
-              }`}
-            >
-              🇬🇧 English
-            </button>
-            <button
-              onClick={() => setActiveLang('both')}
-              className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-all ${
-                activeLang === 'both' 
-                  ? 'bg-primary text-white shadow-lg shadow-primary/30 ring-2 ring-primary-light' 
-                  : 'bg-white/5 text-foreground-muted hover:bg-white/10'
-              }`}
-            >
-              🌐 Both / दोनों (Hindi & English)
-            </button>
-          </div>
-        </div>
-
         {/* ========================================================================= */}
         {/* 🇮🇳 HINDI SECTION */}
         {/* ========================================================================= */}
-        {(activeLang === 'hi' || activeLang === 'both') && (
-          <section className="mb-20">
+        <section className="mb-20">
             
             {/* Hindi Main Hero */}
             <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary/30 via-background-card to-background p-8 md:p-12 border border-primary/30 shadow-2xl mb-12">
@@ -471,27 +428,23 @@ export default function ElectionPage() {
             </div>
 
           </section>
-        )}
 
-        {/* Divider if showing both */}
-        {activeLang === 'both' && (
-          <div className="relative my-20">
-            <div className="absolute inset-0 flex items-center" aria-hidden="true">
-              <div className="w-full border-t border-primary/40"></div>
-            </div>
-            <div className="relative flex justify-center">
-              <span className="bg-primary text-white font-extrabold px-6 py-2 rounded-full text-base tracking-wider uppercase shadow-xl">
-                ENGLISH VERSION BELOW
-              </span>
-            </div>
+        {/* Divider */}
+        <div className="relative my-20">
+          <div className="absolute inset-0 flex items-center" aria-hidden="true">
+            <div className="w-full border-t border-primary/40"></div>
           </div>
-        )}
+          <div className="relative flex justify-center">
+            <span className="bg-primary text-white font-extrabold px-6 py-2 rounded-full text-base tracking-wider uppercase shadow-xl">
+              ENGLISH VERSION BELOW
+            </span>
+          </div>
+        </div>
 
         {/* ========================================================================= */}
         {/* 🇬🇧 ENGLISH SECTION */}
         {/* ========================================================================= */}
-        {(activeLang === 'en' || activeLang === 'both') && (
-          <section className="mb-20">
+        <section className="mb-20">
             
             {/* English Main Hero */}
             <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary/30 via-background-card to-background p-8 md:p-12 border border-primary/30 shadow-2xl mb-12">
@@ -875,7 +828,6 @@ export default function ElectionPage() {
             </div>
 
           </section>
-        )}
 
       </div>
     </div>
